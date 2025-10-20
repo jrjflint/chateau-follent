@@ -4,6 +4,16 @@ Chateau Follent
 
 Add an AGENTS.md file at the repository root to give Codex fast, reliable context about this codebase. Keep it concise and actionable. Use the template below and update sections as the project evolves.
 
+## Local development with Docker Compose
+
+To preview the static site locally, use the provided `docker-compose.yml` file. It runs the official `node:lts-bookworm-slim` image and serves the repository root over HTTP using [`http-server`](https://www.npmjs.com/package/http-server).
+
+```bash
+docker compose up
+```
+
+The site becomes available at [http://localhost:3000](http://localhost:3000). Any changes you make to `index.html`, `styles.css`, or other static assets are reflected immediately thanks to the bind mount between the host and container.
+
 ### What to include
 
 - Purpose and scope of the project
