@@ -6,7 +6,7 @@ Project Overview
 - Non-goals: Shipping application runtime code in this phase.
 
 Codebase Map
-- Docs: README.md (repo guidance), PRD.md (product requirements), AGENT.md (this file), chanelog.md (decision/change notes), tasks/todo.md (work items).
+- Docs: README.md (repo guidance), PRD.md (product requirements), AGENT.md (this file), CHANGELOG.md (decision/change notes), tasks/todo.md (work items).
 - Entry points: None yet (no app code present).
 - Tests: None yet.
 
@@ -22,7 +22,7 @@ Guardrails
 
 Common Tasks
 - Update PRD: refine scope, goals, and acceptance criteria.
-- Record decisions: append brief entries to chanelog.md with date and rationale.
+- Record decisions: append brief entries to CHANGELOG.md with date and rationale.
 - Plan work: add actionable items to tasks/todo.md with owners and priority.
 
 Validation & Review
