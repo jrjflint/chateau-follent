@@ -12,3 +12,8 @@
 
 ### Changed
 - Refined global styling by importing Libre Baskerville and Montserrat web fonts to align with Chateau Follent branding.
+
+## 2025-10-21
+
+### Fixed
+- Updated the Docker Compose bind mount to remove the macOS-specific `delegated` flag so the preview workflow works on Linux hosts.
