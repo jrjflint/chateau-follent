@@ -3,7 +3,7 @@ services:
     image: node:lts-bookworm-slim
     working_dir: /app
     volumes:
-      - ./:/app:delegated
+      - ./:/app
     command: >-
       sh -c "npx --yes http-server ./ -p 3000 -c-1"
     ports:
