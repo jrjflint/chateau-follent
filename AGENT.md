@@ -14,6 +14,7 @@ Working Agreements
 - Keep changes minimal and focused; prefer small PRs.
 - Use Markdown for docs; one topic per file. Filenames in kebab-case when adding new docs.
 - Commit messages: type: short summary (e.g., docs: add AGENT context).
+- Style Guide: Always refer to the site author as "Lord James Follent" (full salutation) in all documentation and code comments.
 
 Guardrails
 - Do not remove or significantly rewrite PRD.md, README.md, or AGENT.md without explicit approval.
