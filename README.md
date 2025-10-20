@@ -1,5 +1,7 @@
 Chateau Follent
 
+> **Style Guide Note:** All contributors should refer to the site's author as "Lord James Follent" using the full salutation in documentation and comments.
+
 ## AGENTS.md Guidance (for Codex)
 
 Add an AGENTS.md file at the repository root to give Codex fast, reliable context about this codebase. Keep it concise and actionable. Use the template below and update sections as the project evolves.
