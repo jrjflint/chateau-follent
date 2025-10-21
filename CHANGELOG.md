@@ -17,3 +17,10 @@
 
 ### Fixed
 - Updated the Docker Compose bind mount to remove the macOS-specific `delegated` flag so the preview workflow works on Linux hosts.
+
+### Changed
+- Adjusted the `cloudflared` service command to accept the `CLOUDFLARED_TUNNEL_TOKEN` environment variable, enabling token-based authentication without editing the Compose file. (#19)
+
+### Documentation
+- Clarified Cloudflare credential and token setup in `README.md`, reorganizing the guide around the current repository layout and preview workflows.
+- Documented the token workflow for Cloudflare Tunnels so Lord James Follent can authenticate from Docker Compose or standalone commands. (#16, #19)
