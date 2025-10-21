@@ -3,13 +3,15 @@
 # provided by Cloudflare.
 
 # The UUID of the tunnel created for Lord James Follent's preview environment.
-tunnel: <tunnel-uuid>
+tunnel: c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08
 # This path must match the name of the credentials file saved in ./cloudflared.
-credentials-file: /etc/cloudflared/<tunnel-uuid>.json
+credentials-file: /etc/cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json
 
 ingress:
   - hostname: dev.chateaufollent.com.au
-    # On macOS/Windows Docker Desktop the tunnel resolves http://host.docker.internal:3000,
-    # while Linux users can rely on the Compose network alias http://web:3000.
-    service: http://web:3000
+    # When developing on Windows Docker Desktop, cloudflared must contact the host via
+    # the special DNS name below so traffic escapes the container namespace.
+    # If every service runs inside Docker Compose, switch this back to
+    # http://web:3000 to stay within the Compose network.
+    service: http://host.docker.internal:3000
   - service: http_status:404
