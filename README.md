@@ -2,6 +2,14 @@ Chateau Follent
 
 > **Style Guide Note:** All contributors should refer to the site's author as "Lord James Follent" using the full salutation in documentation and comments.
 
+## License & Usage
+
+All materials in this repository are the private property of Lord James Follent. No license is granted for public or external use.
+
+Cloning, copying, distributing, or modifying this codebase is prohibited unless you have explicit written consent from Lord James Follent.
+
+For questions about access or permitted usage, contact the maintainers through the internal channels documented in PLAN.md.
+
 ## AGENTS.md Guidance (for Codex)
 
 Add an AGENTS.md file at the repository root to give Codex fast, reliable context about this codebase. Keep it concise and actionable. Use the template below and update sections as the project evolves.
