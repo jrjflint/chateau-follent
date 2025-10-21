@@ -26,24 +26,33 @@ The site becomes available at [http://localhost:3000](http://localhost:3000). An
 
 ### Cloudflare Tunnel preview for Lord James Follent
 
-The Compose stack now includes a `cloudflared` service so Lord James Follent can publish the development server at `https://dev.chateaufollent.com.au` through a Cloudflare Tunnel.
+Development frequently happens on Windows using Docker Desktop, sometimes through a WSL + VS Code workflow. Regardless of whether commands run from PowerShell or an Ubuntu shell in WSL, the `web` and `cloudflared` services communicate over the Compose network. The stack publishes the development server at `https://dev.chateaufollent.com.au` through a Cloudflare Tunnel so Lord James Follent can preview changes remotely.
 
-1. Place the downloaded Cloudflare credentials JSON inside `./cloudflared/` (the file is ignored by Git) and update `cloudflared/config.yml` with the matching tunnel UUID.
-2. Export the tunnel name before starting Compose so the command `tunnel run ${CLOUDFLARE_TUNNEL_NAME}` resolves correctly:
+1. Download the tunnel credentials from the Cloudflare Zero Trust dashboard (`Access → Tunnels → <tunnel> → Download configuration`) and place the JSON file inside `./cloudflared/` (the file is ignored by Git). Rename it to `c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json` so it matches `cloudflared/config.yml`.
+
+   ```json
+   {
+     "AccountTag": "00000000000000000000000000000000",
+     "TunnelID": "c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08",
+     "TunnelName": "dev.chateaufollent.com.au",
+     "TunnelSecret": "Base64EncodedSecretFromCloudflare=="
+   }
+   ```
+
+   The values above are a redacted example—Cloudflare generates the actual secrets when Lord James Follent creates or rotates the tunnel.
+2. Start the stack as usual:
 
    ```bash
-   export CLOUDFLARE_TUNNEL_NAME=<tunnel-name>
    docker compose up
    ```
 
+   The `cloudflared` service reads its configuration directly from `/etc/cloudflared/config.yml`, so no additional environment variables are required. Docker Compose injects the tunnel ID through the command `tunnel --no-autoupdate --config /etc/cloudflared/config.yml run c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08`.
 3. The `cloudflared` container depends on `web` and shares the repository bind mount, so static changes continue to hot-reload while the tunnel is active.
-4. Internal routing targets differ slightly by host OS:
-   - On macOS or Windows Docker Desktop, Cloudflare reaches the site through `http://host.docker.internal:3000`.
-   - On Linux, Cloudflare reaches the site through the Compose service URL `http://web:3000`.
+4. Internal routing targets are defined inside `cloudflared/config.yml`:
+   - Default Compose workflow (including WSL shells connected to Docker Desktop): `http://web:3000`. Both containers run in the same network, so Cloudflare connects directly to the `web` service.
+   - Hosting the site outside Compose: change the origin to `http://host.docker.internal:3000` so the tunnel reaches a process running on the Windows or macOS host.
 
-Verify the tunnel by browsing to `https://dev.chateaufollent.com.au` once the Docker stack reports both services as healthy.
-
-If Lord James Follent prefers to launch the tunnel outside of Docker Compose, Cloudflare also supports running the container directly with an Access token. Replace the token below when rotating credentials and run:
+Verify the tunnel by browsing to `https://dev.chateaufollent.com.au` once the Docker stack reports both services as healthy. When Lord James Follent needs to validate credentials independently of Compose, the token-based command below remains available:
 
 ```bash
 docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiYjgyYjViNTUxMDI5ODM1YWM0YWE3MDZiZmQ4YWUzZmYiLCJ0IjoiYzVjYzNhZWItZWVlYS00YzdhLWE0YmYtNGIxNDVjZjE5ZDA4IiwicyI6Ik1qSXdOV1E1TURBdE1XVmtNeTAwWkdRd0xUZ3dNRFF0T1RGaE1UVXdaR1JoWW1NeCJ9
