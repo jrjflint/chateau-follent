@@ -40,13 +40,17 @@ body {
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 
+header {
+  text-align: left;
+}
+
 main {
   width: min(100%, 42rem);
   padding: clamp(1.5rem, 2vw + 1rem, 3rem);
   background-color: var(--color-surface);
   border-radius: var(--radius-soft);
   box-shadow: 0 1.5rem 3rem var(--color-shadow);
-  text-align: center;
+  text-align: left;
   border: 1px solid var(--color-border);
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
@@ -74,6 +78,7 @@ p {
   color: var(--color-muted);
   margin-top: 0;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 /* -------------------------------------------------- */
