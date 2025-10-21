@@ -14,10 +14,17 @@ services:
 
   cloudflared:
     image: cloudflare/cloudflared:latest
-    command: tunnel --no-autoupdate run
+    command: >-
+      sh -c 'if [ -n "${CLOUDFLARED_TUNNEL_TOKEN:-}" ]; then
+        tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}";
+      else
+        tunnel --no-autoupdate --config /etc/cloudflared/config.yml run c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08;
+      fi'
     depends_on:
       - web
     volumes:
       - ./cloudflared/config.yml:/etc/cloudflared/config.yml:ro
       - ./cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:/etc/cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:ro
+    environment:
+      CLOUDFLARED_TUNNEL_TOKEN: ${CLOUDFLARED_TUNNEL_TOKEN:-}
     restart: unless-stopped
