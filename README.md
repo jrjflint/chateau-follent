@@ -45,10 +45,16 @@ Development is primarily performed on Windows Docker Desktop, so the repository 
 Verify the tunnel by browsing to `https://dev.chateaufollent.com.au` once the Docker stack reports both services as healthy. When Lord James Follent needs to validate credentials independently of Compose, the token-based command below remains available:
 
 ```bash
-docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiYjgyYjViNTUxMDI5ODM1YWM0YWE3MDZiZmQ4YWUzZmYiLCJ0IjoiYzVjYzNhZWItZWVlYS00YzdhLWE0YmYtNGIxNDVjZjE5ZDA4IiwicyI6Ik1qSXdOV1E1TURBdE1XVmtNeTAwWkdRd0xUZ3dNRFF0T1RGaE1UVXdaR1JoWW1NeCJ9
+docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}"
 ```
 
-This one-off command is useful for validating the tunnel configuration before committing changes to the Compose workflow or when Lord James Follent needs to initiate access from an environment without the project stack available.
+Before running this command, Lord James Follent must source `CLOUDFLARED_TUNNEL_TOKEN` from a secure store (for example, the Cloudflare Zero Trust dashboard, an approved secrets manager, or an encrypted password vault) and export it only for the active shell session:
+
+```bash
+export CLOUDFLARED_TUNNEL_TOKEN="$(op read op://ChateauFollent/Cloudflare/dev-tunnel-token)"
+```
+
+Replace the `op` example with the equivalent command for the chosen secrets manager; never commit the raw token to the repository or shell history. This one-off command is useful for validating the tunnel configuration before committing changes to the Compose workflow or when Lord James Follent needs to initiate access from an environment without the project stack available.
 
 ### What to include
 
