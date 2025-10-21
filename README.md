@@ -56,6 +56,25 @@ export CLOUDFLARED_TUNNEL_TOKEN="$(op read op://ChateauFollent/Cloudflare/dev-tu
 
 Replace the `op` example with the equivalent command for the chosen secrets manager; never commit the raw token to the repository or shell history. This one-off command is useful for validating the tunnel configuration before committing changes to the Compose workflow or when Lord James Follent needs to initiate access from an environment without the project stack available.
 
+#### Token-managed Docker Compose workflow
+
+When Lord James Follent prefers to keep the tunnel token inside Compose instead of mounting the Cloudflare credential JSON, the stack now accepts the `CLOUDFLARED_TUNNEL_TOKEN` environment variable directly.
+
+1. Add a `.env` file (already ignored by Git) alongside `docker-compose.yml` with the secure token value:
+
+   ```ini
+   CLOUDFLARED_TUNNEL_TOKEN=run-token-from-secure-vault
+   ```
+
+   Alternatively, export the variable in the shell before running Docker Compose. Always source the secret from an approved vault.
+2. Launch the stack normally:
+
+   ```bash
+   docker compose up
+   ```
+
+3. The `cloudflared` service detects the token and starts the tunnel with `tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}"`. If the token is absent, the container automatically falls back to the configuration-and-credential workflow documented above, so both methods can coexist without editing the Compose file each time.
+
 ### What to include
 
 - Purpose and scope of the project
