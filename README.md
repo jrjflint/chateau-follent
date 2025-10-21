@@ -43,6 +43,14 @@ The Compose stack now includes a `cloudflared` service so Lord James Follent can
 
 Verify the tunnel by browsing to `https://dev.chateaufollent.com.au` once the Docker stack reports both services as healthy.
 
+If Lord James Follent prefers to launch the tunnel outside of Docker Compose, Cloudflare also supports running the container directly with an Access token. Replace the token below when rotating credentials and run:
+
+```bash
+docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiYjgyYjViNTUxMDI5ODM1YWM0YWE3MDZiZmQ4YWUzZmYiLCJ0IjoiYzVjYzNhZWItZWVlYS00YzdhLWE0YmYtNGIxNDVjZjE5ZDA4IiwicyI6Ik1qSXdOV1E1TURBdE1XVmtNeTAwWkdRd0xUZ3dNRFF0T1RGaE1UVXdaR1JoWW1NeCJ9
+```
+
+This one-off command is useful for validating the tunnel configuration before committing changes to the Compose workflow or when Lord James Follent needs to initiate access from an environment without the project stack available.
+
 ### What to include
 
 - Purpose and scope of the project
