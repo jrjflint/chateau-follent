@@ -14,10 +14,10 @@ services:
 
   cloudflared:
     image: cloudflare/cloudflared:latest
-    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08
+    command: tunnel --no-autoupdate run
     depends_on:
       - web
     volumes:
-      - ./:/app
-      - ./cloudflared:/etc/cloudflared
+      - ./cloudflared/config.yml:/etc/cloudflared/config.yml:ro
+      - ./cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:/etc/cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:ro
     restart: unless-stopped
