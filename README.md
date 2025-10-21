@@ -24,6 +24,25 @@ docker compose up
 
 The site becomes available at [http://localhost:3000](http://localhost:3000). Any changes you make to `index.html`, `styles.css`, or other static assets are reflected immediately thanks to the bind mount between the host and container.
 
+### Cloudflare Tunnel preview for Lord James Follent
+
+The Compose stack now includes a `cloudflared` service so Lord James Follent can publish the development server at `https://dev.chateaufollent.com.au` through a Cloudflare Tunnel.
+
+1. Place the downloaded Cloudflare credentials JSON inside `./cloudflared/` (the file is ignored by Git) and update `cloudflared/config.yml` with the matching tunnel UUID.
+2. Export the tunnel name before starting Compose so the command `tunnel run ${CLOUDFLARE_TUNNEL_NAME}` resolves correctly:
+
+   ```bash
+   export CLOUDFLARE_TUNNEL_NAME=<tunnel-name>
+   docker compose up
+   ```
+
+3. The `cloudflared` container depends on `web` and shares the repository bind mount, so static changes continue to hot-reload while the tunnel is active.
+4. Internal routing targets differ slightly by host OS:
+   - On macOS or Windows Docker Desktop, Cloudflare reaches the site through `http://host.docker.internal:3000`.
+   - On Linux, Cloudflare reaches the site through the Compose service URL `http://web:3000`.
+
+Verify the tunnel by browsing to `https://dev.chateaufollent.com.au` once the Docker stack reports both services as healthy.
+
 ### What to include
 
 - Purpose and scope of the project

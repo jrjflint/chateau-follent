@@ -11,3 +11,13 @@ services:
     environment:
       NODE_ENV: development
     restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel run ${CLOUDFLARE_TUNNEL_NAME}
+    depends_on:
+      - web
+    volumes:
+      - ./:/app
+      - ./cloudflared:/etc/cloudflared
+    restart: unless-stopped
