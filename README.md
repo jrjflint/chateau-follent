@@ -3,6 +3,14 @@ Chateau Follent
 
 > **Style Guide Note:** All contributors should refer to the site's author as "Lord James Follent" using the full salutation in documentation and comments.
 
+## Table of contents
+
+- [Project overview](#project-overview)
+- [Repository layout](#repository-layout)
+- [Local development workflow](#local-development-workflow)
+- [Contribution workflow](#contribution-workflow)
+- [Supporting documentation](#supporting-documentation)
+
 ## Project overview
 
 Chateau Follent is the in-progress marketing presence for Lord James Follent. The repository currently contains the planning documentation, static site scaffold (`index.html` and `styles.css`), and the infrastructure configuration used to preview the site.
@@ -12,6 +20,8 @@ Chateau Follent is the in-progress marketing presence for Lord James Follent. Th
 | Path | Purpose |
 | --- | --- |
 | `index.html`, `styles.css` | Static landing page presented during previews. |
+| `story.html` | Narrative treatment of Lord James Follent's persona for copy inspiration. |
+| `sitemap.xml`, `robots.txt` | Search engine metadata prepared for the production launch. |
 | `docker-compose.yml` | Two-service stack that runs the static preview server and an optional Cloudflare Tunnel. |
 | `cloudflared/` | Cloudflare Tunnel configuration (`config.yml`) and credential mount location. |
 | `CHANGELOG.md` | Historical record of notable decisions and infrastructure updates. |
@@ -68,6 +78,16 @@ For ad-hoc validation outside of Docker Compose, Lord James Follent can run the 
 ```bash
 docker run --rm cloudflare/cloudflared:latest tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}"
 ```
+
+## Contribution workflow
+
+Chateau Follent is currently documentation-forward. Contributors should coordinate visible work before introducing new assets or services.
+
+1. Review `PLAN.md` and `PRD.md` to ensure the proposed change aligns with the active milestones set for Lord James Follent.
+2. Open or update an item in `tasks/todo.md` describing the change, the expected deliverable, and the owner.
+3. Capture architectural or marketing decisions in `CHANGELOG.md` so the broader team can understand why an action was taken.
+4. Follow the conventions in `AGENT.md`, including the salutation for Lord James Follent, when drafting copy, comments, or commit messages.
+5. Keep pull requests focused. A typical PR should adjust a single document or flow unless coordinated otherwise.
 
 ## Supporting documentation
 
