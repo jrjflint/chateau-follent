@@ -18,9 +18,42 @@
 3. Document account ownership, recovery, and access procedures to ensure continuity.
 
 ### 2. Baseline Page View Tracking
-1. Add the GTM container snippet to `index.html` (and any additional public pages such as `story.html`).
-2. Within GTM, configure a GA4 Configuration tag pointing to the site's Measurement ID and fire it on all pages.
-3. Publish the container and confirm page view data is populating in GA4's real-time dashboard.
+1. Add the GTM container snippet to `index.html` (and any additional public pages such as `story.html`):
+
+   ```html
+   <!-- Google Tag Manager -->
+   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+   })(window,document,'script','dataLayer','GTM-W72PPP7B');</script>
+   <!-- End Google Tag Manager -->
+   ```
+
+   ```html
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W72PPP7B"
+   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   ```
+
+   Place the script block as high in the `<head>` as possible and the `<noscript>` fallback immediately after the opening `<body>` tag to ensure full coverage for Lord James Follent's audience.
+2. Embed the GA4 site tag snippet in the `<head>` of each public page so the Measurement ID `G-LRQH90P786` is initialized prior to GTM-delivered events:
+
+   ```html
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRQH90P786"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-LRQH90P786');
+   </script>
+   ```
+
+3. Within GTM, configure a GA4 Configuration tag pointing to the site's Measurement ID and fire it on all pages.
+4. Publish the container and confirm page view data is populating in GA4's real-time dashboard.
 
 ### 3. Outbound Social Link Click Events
 1. Inventory all social profile links (Instagram, etc.) and ensure they include identifying CSS classes or attributes for targeting.
