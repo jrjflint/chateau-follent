@@ -75,7 +75,12 @@
 
 ### DNS and Hosting Linkage
 - Decide on the hosting flow (e.g., GitHub Pages served through Cloudflare) and ensure the registrar delegates to Cloudflare nameservers.
-- In Cloudflare DNS, add proxied A records for the apex pointing to GitHub Pages IPs (185.199.108.153/154/155/156) and a proxied CNAME for `www` pointing to the GitHub Pages hostname (e.g., `<username>.github.io`).
+- Add the GitHub Pages apex records in Cloudflare:
+  1. In **Cloudflare → DNS**, choose **Add record** and select **A**.
+  2. Enter `chateaufollent.com.au` as the name, paste one of GitHub's anycast IPs (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, or `185.199.111.153`), toggle the proxy **On**, and save.
+  3. Repeat the step for the remaining three IPs so every address is represented by its own proxied A record.
+  4. If Cloudflare suggests flattening, accept the defaults—the GitHub addresses stay public while Cloudflare manages TLS for Lord James Follent.
+- Add a proxied CNAME for `www` pointing to the GitHub Pages hostname (e.g., `<username>.github.io`) so both hosts serve the same static content.
 - Update GitHub Pages settings for the repo to include both custom domains so GitHub issues certificates and handles redirects appropriately.
 
 ### HTTPS and Canonical Routing

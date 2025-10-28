@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-10-22
+
+### Documentation
+- Expanded the public launch plan with explicit Cloudflare DNS steps so Lord James Follent can add the GitHub Pages A records for `chateaufollent.com.au`.
+
 ## 2025-10-20
 
 ### Added
