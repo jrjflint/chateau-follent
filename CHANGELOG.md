@@ -24,3 +24,9 @@
 ### Documentation
 - Clarified Cloudflare credential and token setup in `README.md`, reorganizing the guide around the current repository layout and preview workflows.
 - Documented the token workflow for Cloudflare Tunnels so Lord James Follent can authenticate from Docker Compose or standalone commands. (#16, #19)
+
+## 2025-10-22
+
+### Documentation
+- Merged the Google Analytics and GTM roadmap into `PLAN.md`, adding objectives, milestones, and compliance checkpoints for Lord James Follent.
+- Updated `README.md` to point contributors to the consolidated analytics plan and removed the superseded `google-analytics-plan.md` document.

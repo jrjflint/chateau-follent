@@ -91,7 +91,7 @@ Chateau Follent is currently documentation-forward. Contributors should coordina
 
 ## Supporting documentation
 
-- Review `PRD.md` and `PLAN.md` for product goals and upcoming milestones.
+- Review `PRD.md` and `PLAN.md` for product goals and upcoming milestones, including the analytics rollout roadmap for Lord James Follent.
 - Follow the guardrails and conventions in `AGENT.md` when proposing changes.
 - Record material decisions in `CHANGELOG.md` so Lord James Follent has a historical audit trail.
 - Track actionable follow-up items in `tasks/todo.md`.

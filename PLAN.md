@@ -73,6 +73,46 @@
 - Add a `SECURITY.md` in the repository and a `security.txt` on the deployed site describing how to report vulnerabilities affecting Lord James Follent.
 - Maintain a register of third-party scripts such as the Google Tag Manager container `GTM-W72PPP7B`, and review consent and privacy requirements before any launch.
 
+## Analytics Foundations for Lord James Follent
+
+### Objectives
+- Establish a GA4 property dedicated to Lord James Follent's public presence and govern access, recovery details, and ownership continuity within the shared credential vault.
+- Consolidate all browser-side tracking through a single Google Tag Manager (GTM) web container so instrumentation stays centrally managed.
+- Produce actionable reporting on sessions, users, outbound social engagement, and future mailing list conversions without introducing duplicate scripts in the static site.
+
+### Scope and Assumptions
+- The existing static marketing pages (`index.html`, `story.html`, and any future additions referenced in `sitemap.xml`) load the GTM snippet maintained in this repository.
+- Lord James Follent remains the administrator responsible for GTM previews, QA sign-off, and publishing container versions.
+- Mailing list functionality will ship in a later milestone; the plan below prepares the instrumentation path so analytics tracking is ready when the form is introduced.
+
+### Milestones
+
+#### 1. Container and Property Setup
+1. Create the GA4 property and record the Measurement ID (`G-LRQH90P786`) alongside account recovery steps in the secure vault.
+2. Create the GTM web container (`GTM-W72PPP7B`), enable Preview/Debug access for the administrator account, and capture ownership notes in the same vault entry.
+3. Document support contacts and recovery procedures directly in the vault and summarize them in `README.md` once the property is live so future maintainers understand the escalation path.
+
+#### 2. Baseline Page View Tracking
+1. Embed the GTM snippet at the top of every `<head>` element and the `<noscript>` fallback immediately after each opening `<body>` tag.
+2. Within GTM, configure a GA4 Configuration tag targeting the recorded Measurement ID and set it to fire on all pages.
+3. Publish the container and confirm page view data using GA4 real-time and DebugView dashboards.
+
+#### 3. Outbound Social Link Click Events
+1. Inventory every outbound social URL present in the static pages and note the CSS classes or IDs that can anchor GTM triggers.
+2. Build a GTM Click Trigger scoped to those URLs and attach a GA4 Event tag (proposed name: `social_outbound_click`) capturing parameters such as `link_url`, `link_text`, and `source`.
+3. Validate the event in GTM Preview mode, capture evidence, and archive screenshots for Lord James Follent's records before publishing the container version.
+
+#### 4. Mailing List Conversion Tracking
+1. Select the mailing list provider (e.g., Mailchimp or ConvertKit) and design the embedded signup form when the feature enters implementation.
+2. Emit a GTM trigger on successful submissions (Form Submit trigger, custom event, or explicit `dataLayer.push`) and fire a GA4 Event (`lead_signup`) containing `form_location` and `subscription_type`.
+3. Test the full flow in Preview mode and verify conversions inside GA4 DebugView before moving changes to production.
+
+#### 5. Reporting, QA, and Compliance
+1. Assemble an initial GA4 exploration covering sessions, users, outbound social events, and mailing list conversions so stakeholders have a single status view.
+2. Schedule recurring analytics reviews (monthly or around campaign launches) to evaluate data quality, refresh triggers, and document adjustments in this repository or GTM notes.
+3. Update privacy notices to mention GA4, GTM, and mailing list tracking, and evaluate whether consent management tooling is required for the target jurisdictions (GDPR, Australian Privacy Act).
+4. Configure GA4 data retention and IP anonymization settings in line with compliance expectations, recording the applied values for audit purposes.
+
 ## Public Site Launch Plan
 
 ### Objectives
