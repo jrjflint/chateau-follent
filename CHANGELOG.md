@@ -30,3 +30,10 @@
 ### Documentation
 - Merged the Google Analytics and GTM roadmap into `PLAN.md`, adding objectives, milestones, and compliance checkpoints for Lord James Follent.
 - Updated `README.md` to point contributors to the consolidated analytics plan and removed the superseded `google-analytics-plan.md` document.
+
+## 2025-10-23
+
+### Security
+- Purged previously committed Cloudflared tunnel identifiers, documented the rotation process, and shifted credential management to environment variables so Lord James Follent's preview tunnel stays confidential.
+- Added a security policy and disclosure touchpoints, including the `SECURITY.md` and `security.txt` files, to guide vulnerability reports for Lord James Follent.
+- Expanded repository hygiene with new ignore patterns and a third-party script register to track analytics dependencies and consent requirements.

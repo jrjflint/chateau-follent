@@ -46,3 +46,24 @@
     - Map desired event naming conventions and parameters in coordination with Lord James Follent's reporting needs.
     - Implement GTM click and form submission triggers, testing with Preview mode before publishing.
     - Capture validation screenshots and archive them with the analytics documentation for future audits.
+
+## Security Hardening Actions
+
+- [x] Rotate any previously published Cloudflared tunnel UUIDs, treating them as compromised, and document regeneration steps so contributors never reuse retired identifiers.
+  - Owner: Unassigned
+  - Priority: High
+- [x] Replace live tunnel identifiers and credential filenames in version-controlled files with placeholders, backed by clearly documented sample configurations stored outside the repository.
+  - Owner: Unassigned
+  - Priority: High
+- [x] Reference sensitive Cloudflared assets via environment variables or Compose `env_file` entries so production credential filenames are never committed.
+  - Owner: Unassigned
+  - Priority: Medium
+- [x] Expand `.gitignore` to include common secret formats (e.g., `.pem`, `.crt`, `.log`) alongside Cloudflared credentials to reduce the risk of accidental leaks.
+  - Owner: Unassigned
+  - Priority: Medium
+- [x] Add a `SECURITY.md` in the repository and a `security.txt` on the deployed site outlining the vulnerability disclosure process for Lord James Follent.
+  - Owner: Unassigned
+  - Priority: High
+- [x] Maintain a register of third-party scripts such as the Google Tag Manager container `GTM-W72PPP7B`, pairing it with consent and privacy review notes before any launch.
+  - Owner: Unassigned
+  - Priority: Medium
