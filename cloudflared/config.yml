@@ -3,9 +3,11 @@
 # provided by Cloudflare.
 
 # The UUID of the tunnel created for Lord James Follent's preview environment.
-tunnel: c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08
-# This path must match the name of the credentials file saved in ./cloudflared.
-credentials-file: /etc/cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json
+# Populate this via the CLOUDFLARED_TUNNEL_UUID variable stored in a private env file.
+tunnel: ${CLOUDFLARED_TUNNEL_UUID}
+# This path must match the name of the credentials file saved securely outside the repository
+# and injected via docker-compose environment variable expansion.
+credentials-file: ${CLOUDFLARED_CREDENTIALS_FILE_CONTAINER}
 
 ingress:
   - hostname: dev.chateaufollent.com.au

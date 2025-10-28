@@ -19,7 +19,11 @@ services:
       - web
     volumes:
       - ./cloudflared/config.yml:/etc/cloudflared/config.yml:ro
-      - ./cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:/etc/cloudflared/c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json:ro
+      - ${CLOUDFLARED_CREDENTIALS_FILE_HOST:-./cloudflared/tunnel-credentials.json}:${CLOUDFLARED_CREDENTIALS_FILE_CONTAINER:-/etc/cloudflared/tunnel-credentials.json}:ro
+    env_file:
+      - ./cloudflared/.env
     environment:
       CLOUDFLARED_TUNNEL_TOKEN: ${CLOUDFLARED_TUNNEL_TOKEN:-}
+      CLOUDFLARED_TUNNEL_UUID: ${CLOUDFLARED_TUNNEL_UUID:-}
+      CLOUDFLARED_CREDENTIALS_FILE_CONTAINER: ${CLOUDFLARED_CREDENTIALS_FILE_CONTAINER:-/etc/cloudflared/tunnel-credentials.json}
     restart: unless-stopped

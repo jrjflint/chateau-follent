@@ -50,27 +50,23 @@ The `web` service uses the official `node:lts-bookworm-slim` image and [`http-se
 
 Compose also provisions a `cloudflared` service so Lord James Follent can expose the preview site at `https://dev.chateaufollent.com.au`.
 
-1. Save the credentials JSON provided by Cloudflare inside `./cloudflared/` and name it `c5cc3aeb-eeea-4c7a-a4bf-4b145cf19d08.json`. The path matches the expectation configured in `cloudflared/config.yml`.
-2. Provide the tunnel token securely before starting Compose. Either create a `.env` file (ignored by Git) alongside `docker-compose.yml`:
-
-   ```ini
-   CLOUDFLARED_TUNNEL_TOKEN=run-token-from-secure-vault
-   ```
-
-   or export it in the terminal session:
+1. Copy `cloudflared/.env.example` to `cloudflared/.env` and populate it with the tunnel token, UUID, and the host path to the downloaded credentials JSON stored in a secure location outside the repository.
+2. Alternatively, export the variables manually before running Compose:
 
    ```bash
    export CLOUDFLARED_TUNNEL_TOKEN="$(op read op://ChateauFollent/Cloudflare/dev-tunnel-token)"
+   export CLOUDFLARED_TUNNEL_UUID="$(op read op://ChateauFollent/Cloudflare/dev-tunnel-uuid)"
+   export CLOUDFLARED_CREDENTIALS_FILE_HOST="$HOME/secrets/cloudflared/dev-tunnel.json"
    ```
 
-   Always retrieve the token from an approved secrets manager and avoid storing it in shell history.
+   Always retrieve values from an approved secrets manager and avoid storing them in shell history.
 3. Launch the stack:
 
    ```bash
    docker compose up
    ```
 
-   The `cloudflared` container now executes `tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}"`, authenticating with the token while still honoring the routing rules in `cloudflared/config.yml`.
+   The `cloudflared` container now executes `tunnel --no-autoupdate run --token "${CLOUDFLARED_TUNNEL_TOKEN}"`, authenticating with the token while still honoring the routing rules in `cloudflared/config.yml` and the credential paths injected through environment variables.
 4. Confirm the tunnel by visiting `https://dev.chateaufollent.com.au` once the container logs show a healthy connection. When working entirely inside Docker (for example, on Linux), switch the origin in `cloudflared/config.yml` from `http://host.docker.internal:3000` to `http://web:3000` so requests stay within the Compose network.
 
 For ad-hoc validation outside of Docker Compose, Lord James Follent can run the token-based command directly:
@@ -95,5 +91,7 @@ Chateau Follent is currently documentation-forward. Contributors should coordina
 - Follow the guardrails and conventions in `AGENT.md` when proposing changes.
 - Record material decisions in `CHANGELOG.md` so Lord James Follent has a historical audit trail.
 - Track actionable follow-up items in `tasks/todo.md`.
+- Consult `SECURITY.md` for responsible disclosure guidelines and `.well-known/security.txt` for deployment metadata.
+- Review `third-party-scripts.md` before adding or modifying analytics or marketing tooling so consent requirements remain aligned with Lord James Follent's expectations.
 
 All materials remain the private property of Lord James Follent. Do not distribute or adapt this work without explicit written approval from Lord James Follent.

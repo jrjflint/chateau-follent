@@ -1,0 +1,5 @@
+Contact: mailto:security@chateaufollent.com.au
+Policy: https://chateaufollent.com.au/SECURITY.md
+Preferred-Languages: en
+Expires: 2025-12-31T23:59:59Z
+Encryption: https://chateaufollent.com.au/pgp-key.txt

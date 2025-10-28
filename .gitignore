@@ -1,2 +1,6 @@
 cloudflared/*.json
+cloudflared/.env
 .env
+*.pem
+*.crt
+*.log
