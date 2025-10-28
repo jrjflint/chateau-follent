@@ -25,7 +25,7 @@
        - Confirm `index.html` and `story.html` both lack GTM or GA placeholders so the snippet can be inserted cleanly.
        - Scan `sitemap.xml` for additional public URLs and flag any future microsite entries for the same treatment.
     2. Container ID handling:
-       - Reference `google-analytics-plan.md` to verify the live GTM container ID (`GTM-W72PPP7B`).
+       - Reference the "Analytics Foundations" section in `PLAN.md` to verify the live GTM container ID (`GTM-W72PPP7B`).
        - Log the ID in Lord James Follent's shared credential vault with rotation notes so the snippet does not need repo edits during future swaps.
     3. Snippet placement blueprint:
        - Prepare to paste the GTM `<script>` block at the top of each `<head>` (before other scripts or structured data).
@@ -42,7 +42,7 @@
   - Owner: Lord James Follent
   - Priority: Medium
   - Plan:
-    - Document the CSS selectors or IDs for social links and mailing list forms within the static pages.
+    - Document the CSS selectors or IDs for social links and mailing list forms within the static pages, keeping the inventory aligned with `PLAN.md`.
     - Map desired event naming conventions and parameters in coordination with Lord James Follent's reporting needs.
     - Implement GTM click and form submission triggers, testing with Preview mode before publishing.
     - Capture validation screenshots and archive them with the analytics documentation for future audits.
