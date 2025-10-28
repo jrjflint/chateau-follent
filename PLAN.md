@@ -65,6 +65,14 @@
 - The tunnel stops when the container stops; consider running `docker compose up -d` for persistent previews.
 - Monitor Access logs in the Zero Trust dashboard to audit who connects to the dev environment.
 
+## Security Hardening Actions
+- Rotate any previously published tunnel UUIDs, treat them as compromised, and document the regeneration steps so contributors never reuse retired identifiers.
+- Replace live tunnel identifiers and credential filenames in version-controlled files with placeholders, pairing them with clearly documented sample configs kept outside the main repo.
+- Reference sensitive Cloudflared assets via environment variables or Compose `env_file` entries so the production credential filenames are never committed.
+- Expand `.gitignore` to cover additional secret formats (e.g., `.pem`, `.crt`, `.log`) alongside Cloudflared credentials to reduce the chance of accidental leaks.
+- Add a `SECURITY.md` in the repository and a `security.txt` on the deployed site describing how to report vulnerabilities affecting Lord James Follent.
+- Maintain a register of third-party scripts such as the Google Tag Manager container `GTM-W72PPP7B`, and review consent and privacy requirements before any launch.
+
 ## Public Site Launch Plan
 
 ### Objectives
