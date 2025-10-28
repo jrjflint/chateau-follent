@@ -38,22 +38,8 @@
    ```
 
    Place the script block as high in the `<head>` as possible and the `<noscript>` fallback immediately after the opening `<body>` tag to ensure full coverage for Lord James Follent's audience.
-2. Embed the GA4 site tag snippet in the `<head>` of each public page so the Measurement ID `G-LRQH90P786` is initialized prior to GTM-delivered events:
-
-   ```html
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRQH90P786"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'G-LRQH90P786');
-   </script>
-   ```
-
-3. Within GTM, configure a GA4 Configuration tag pointing to the site's Measurement ID and fire it on all pages.
-4. Publish the container and confirm page view data is populating in GA4's real-time dashboard.
+2. Within GTM, configure a GA4 Configuration tag pointing to the site's Measurement ID and set it to fire on all pages. This keeps GA4 management within the single web container while still initializing the `G-LRQH90P786` property on every load.
+3. Publish the container and confirm page view data is populating in GA4's real-time dashboard.
 
 ### 3. Outbound Social Link Click Events
 1. Inventory all social profile links (Instagram, etc.) and ensure they include identifying CSS classes or attributes for targeting.
@@ -65,7 +51,7 @@
 1. Select or integrate a mailing list provider (e.g., Mailchimp, ConvertKit) that supports client-side event callbacks or hidden field tracking.
 2. Design and deploy the mailing list signup form, ensuring it posts to the chosen provider and confirms submissions without full page reloads when possible.
 3. Implement a GTM trigger for successful form submissions (e.g., using the Form Submit trigger, custom event, or data layer push from the provider).
-4. Fire a GA4 Event (e.g., `lead_signup`) with parameters such as `form_location` and `subscription_type` to support downstream reporting.
+4. Fire a GA4 Event (e.g., `lead_signup`) with parameters such as `form_location` and `subscription_type` to support downstream reporting through the GTM-managed GA4 tags.
 5. Validate end-to-end tracking in Preview mode, then publish the updated container once confirmed.
 
 ### 5. Reporting and QA
@@ -81,4 +67,4 @@
 ## Future Enhancements
 - Expand tracking to capture additional engagement events (e.g., hero CTA clicks, story page scroll depth) as the site content grows.
 - Integrate conversion tracking with advertising platforms once paid campaigns begin.
-- Consider server-side tagging or enhanced measurement once infrastructure allows, while keeping the single-container governance model.
+- Consider server-side tagging or enhanced measurement once infrastructure allows, while keeping the single web-container governance model.
