@@ -21,10 +21,23 @@
   - Owner: Lord James Follent
   - Priority: High
   - Plan:
-    - Inventory all public entry points (`index.html`, `story.html`, and future templates) that require the snippet.
-    - Draft a shared include or snippet block so GTM can be maintained centrally once a templating system exists.
-    - Annotate the dataLayer with page context (title, template identifier) to support future segmentation for Lord James Follent.
-    - Validate the snippet firing order alongside the existing Google Analytics plan to prevent duplicate page view events.
+    1. Inventory required pages:
+       - Confirm `index.html` and `story.html` both lack GTM or GA placeholders so the snippet can be inserted cleanly.
+       - Scan `sitemap.xml` for additional public URLs and flag any future microsite entries for the same treatment.
+    2. Container ID handling:
+       - Reference `google-analytics-plan.md` to verify the live GTM container ID (`GTM-W72PPP7B`).
+       - Log the ID in Lord James Follent's shared credential vault with rotation notes so the snippet does not need repo edits during future swaps.
+    3. Snippet placement blueprint:
+       - Prepare to paste the GTM `<script>` block at the top of each `<head>` (before other scripts or structured data).
+       - Stage the `<noscript>` iframe immediately after each opening `<body>` tag, ensuring no whitespace or comments break the fallback.
+       - Wrap both blocks in a consistent maintenance comment, e.g., `<!-- GTM snippet: maintain parity with GTM-W72PPP7B publish date -->`, to make future includes obvious.
+    4. dataLayer bootstrap definitions:
+       - `index.html`: `pageTitle` = "Chateau Follent | Heritage & Winemaking Vision of Lord James Follent", `pageTemplate` = `marketing_homepage`, `audiencePersona` = `prospective_guests_and_partners`.
+       - `story.html`: `pageTitle` = "The Chateau Follent Story | Lord James Follent's Winemaking Journey", `pageTemplate` = `longform_story`, `audiencePersona` = `media_and_supporters`.
+       - Confirm the bootstrap uses `window.dataLayer = window.dataLayer || [];` before pushing each object so GTM sees consistent keys.
+    5. Duplication and QA guardrails:
+       - Double-check that no legacy GA or analytics `<script>` tags remain once GTM is live, relying on the GA4 Configuration tag inside GTM.
+       - Draft a smoke-test checklist: open each page in private browsing, enter GTM Preview mode, validate `page_view` hits in GA4 real-time, and capture screenshots for Lord James Follent's records.
 - [ ] Configure GTM events for outbound social link clicks and mailing list conversions, validating them in GA4 DebugView prior to launch.
   - Owner: Lord James Follent
   - Priority: Medium
