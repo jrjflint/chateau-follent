@@ -236,12 +236,16 @@ button:active {
   top: 0.75rem;
   right: 0.75rem;
   border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
   line-height: 1;
   background-color: rgba(0, 0, 0, 0.05);
   border: none;
+  padding: 0;
   color: inherit;
 }
 
