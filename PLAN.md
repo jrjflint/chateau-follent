@@ -146,3 +146,110 @@
 - Decide on the deployment workflow (manual GitHub Pages publish vs. automated CI) and document it in the repo for contributors.
 - Record rollback procedures (e.g., revert commits, adjust DNS) so the team can respond quickly to issues.
 - Verify domain ownership through Google Search Console or similar tools and evaluate legal/compliance requirements (privacy policy, cookie notices) based on future site features.
+
+## Join Our Email List (Fillout + Mailchimp)
+
+#### Purpose
+
+Collect subscriber emails on our site and sync them to Mailchimp. Form is hosted on Fillout; embed via `<iframe>`. UTM parameters are captured and passed to hidden fields in Fillout for attribution.
+
+#### Embed (HTML)
+
+```html
+<section id="waitlist" aria-label="Join the Chateau Follent email list">
+  <h2>Join the Chateau Follent Email List</h2>
+  <p>Be first to hear about releases, events, and tastings.</p>
+
+  <!-- Replace with your Fillout form URL -->
+  <iframe
+    id="fillout-form"
+    title="Chateau Follent – Email Sign-up"
+    style="width:100%;max-width:760px;height:680px;border:0;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.08);"
+    src=""    <!-- set by JS below -->
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</section>
+```
+
+#### UTM Capture (JavaScript)
+
+```html
+<script>
+  // Keys we want to propagate to the embedded Fillout form
+  const UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+
+  // 1) Read UTMs from current URL
+  function readUTMsFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const utms = {};
+    UTM_KEYS.forEach(k => { if (params.has(k)) utms[k] = params.get(k); });
+    return utms;
+  }
+
+  // 2) Persist first-touch UTMs in sessionStorage (optional but useful)
+  function getPersistedUTMs() {
+    const out = {};
+    UTM_KEYS.forEach(k => { const v = sessionStorage.getItem(k); if (v) out[k] = v; });
+    return out;
+  }
+  function persistUTMs(utms) {
+    Object.entries(utms).forEach(([k,v]) => { if (v && !sessionStorage.getItem(k)) sessionStorage.setItem(k, v); });
+  }
+
+  // 3) Build Fillout URL with UTMs appended as querystring
+  function buildFilloutURL(base) {
+    const current = readUTMsFromURL();
+    persistUTMs(current);
+    const merged = {...getPersistedUTMs(), ...current}; // prefer current click if present
+    const qs = new URLSearchParams(merged).toString();
+    return qs ? `${base}?${qs}` : base;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('fillout-form');
+    const BASE_URL = 'https://form.fillout.com/t/REPLACE_WITH_YOUR_FORM_ID_OR_PATH'; // <-- Replace
+    iframe.src = buildFilloutURL(BASE_URL);
+  });
+</script>
+```
+
+#### Fillout Form Setup (Hidden Fields)
+
+In the Fillout form editor:
+
+* Add hidden fields named exactly: `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`.
+* Configure each to **Prefill from URL parameter** using the same key name.
+  (This enables Fillout to accept UTMs we append to the iframe URL.)
+  Reference: Fillout supports prefill/hidden fields via URL parameters. ([Fillout Help Center][2])
+
+#### Mailchimp Integration (Native)
+
+In Fillout → **Integrations → Mailchimp**:
+
+1. Connect Mailchimp account.
+2. Choose Audience.
+3. Map fields (email + any merge fields).
+4. (Optional) Add conditional **tags** (e.g., `waitlist`, `chateau-follent`, campaign-specific tags).
+5. Enable “update existing contacts”.
+   Official references confirm native Fillout ↔ Mailchimp. ([Fillout | Forms that do it all][1])
+
+#### Validation & QA
+
+* Visit `/join?utm_source=instagram&utm_medium=social&utm_campaign=vintage2025` and confirm the iframe `src` includes these UTMs.
+* Submit a test email → verify contact appears in Mailchimp Audience with mapped fields/tags.
+* Check attribution fields captured in Fillout submission.
+* Confirm layout is responsive and matches brand (Libre Baskerville).
+
+#### Privacy Note
+
+Don’t pass personally identifiable information (PII) as URL params beyond what’s required for attribution; rely on the form submission for PII. (General guidance on URL-parameter prefill & privacy.) ([Formester][3])
+
+#### Acceptance Criteria
+
+* [ ] `PLAN.md` includes the embed, JS UTM capture, and setup steps.
+* [ ] UTMs persist during the session and appear in Fillout submissions.
+* [ ] New sign-ups sync to the correct Mailchimp Audience with correct tags.
+* [ ] No visual regressions on mobile (≤375px width).
+
+---
