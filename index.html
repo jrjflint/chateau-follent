@@ -245,11 +245,15 @@
         var overlay = document.getElementById("waitlistOverlay");
         var closeButton = document.getElementById("closeWaitlistButton");
         var dialog = overlay ? overlay.querySelector(".waitlist-dialog") : null;
+        var inertTargets = Array.prototype.slice.call(
+          document.querySelectorAll("header, main, footer")
+        );
         if (!waitlistButton || !overlay || !closeButton || !dialog) {
           return;
         }
 
         var previousActiveElement = null;
+        var storedAriaHidden = [];
         var focusableSelectors = [
           'a[href]:not([tabindex="-1"])',
           'button:not([disabled]):not([tabindex="-1"])',
@@ -259,13 +263,63 @@
           '[tabindex]:not([tabindex="-1"])'
         ];
 
+        function applyInertState() {
+          storedAriaHidden = inertTargets.map(function (element) {
+            return {
+              element: element,
+              ariaHidden: element.getAttribute("aria-hidden"),
+            };
+          });
+
+          inertTargets.forEach(function (element) {
+            if (!element) {
+              return;
+            }
+            element.setAttribute("aria-hidden", "true");
+            if ("inert" in element) {
+              element.inert = true;
+            } else {
+              element.setAttribute("inert", "");
+            }
+          });
+        }
+
+        function removeInertState() {
+          storedAriaHidden.forEach(function (record) {
+            if (!record || !record.element) {
+              return;
+            }
+            if (record.ariaHidden === null) {
+              record.element.removeAttribute("aria-hidden");
+            } else {
+              record.element.setAttribute("aria-hidden", record.ariaHidden);
+            }
+            if ("inert" in record.element) {
+              record.element.inert = false;
+            }
+            record.element.removeAttribute("inert");
+          });
+          storedAriaHidden = [];
+        }
+
         function openOverlay() {
           overlay.hidden = false;
           overlay.setAttribute("aria-hidden", "false");
           document.body.classList.add("waitlist-open");
+          applyInertState();
           previousActiveElement = document.activeElement;
           waitlistButton.setAttribute("aria-expanded", "true");
-          dialog.focus({ preventScroll: true });
+          var focusableElements = Array.prototype.slice.call(
+            getFocusableElements()
+          );
+          var focusTarget = focusableElements.length
+            ? focusableElements[0]
+            : dialog;
+          if (focusTarget && typeof focusTarget.focus === "function") {
+            focusTarget.focus({ preventScroll: true });
+          } else {
+            dialog.focus({ preventScroll: true });
+          }
           if (window.dataLayer && typeof window.dataLayer.push === "function") {
             window.dataLayer.push({
               event: "waitlist_cta_click",
@@ -278,6 +332,7 @@
           overlay.hidden = true;
           overlay.setAttribute("aria-hidden", "true");
           document.body.classList.remove("waitlist-open");
+          removeInertState();
           waitlistButton.setAttribute("aria-expanded", "false");
           var focusTarget = previousActiveElement || waitlistButton;
           if (focusTarget && typeof focusTarget.focus === "function") {
