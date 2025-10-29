@@ -291,19 +291,31 @@
         }
 
         function trapFocus(event) {
-          if (event.key !== "Tab") {
+          if (event.key !== "Tab" || overlay.hidden) {
             return;
           }
 
-          var focusableElements = getFocusableElements();
+          var focusableElements = Array.prototype.slice.call(
+            getFocusableElements()
+          );
           if (focusableElements.length === 0) {
             event.preventDefault();
             dialog.focus();
             return;
           }
 
+          var activeElement = document.activeElement;
           var firstElement = focusableElements[0];
           var lastElement = focusableElements[focusableElements.length - 1];
+
+          if (
+            activeElement === dialog ||
+            focusableElements.indexOf(activeElement) === -1
+          ) {
+            event.preventDefault();
+            firstElement.focus();
+            return;
+          }
 
           if (event.shiftKey && document.activeElement === firstElement) {
             event.preventDefault();
@@ -322,6 +334,7 @@
           }
         });
         dialog.addEventListener("keydown", trapFocus);
+        overlay.addEventListener("keydown", trapFocus, true);
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape" && !overlay.hidden) {
             closeOverlay();
