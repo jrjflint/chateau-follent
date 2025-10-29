@@ -112,6 +112,22 @@
     </header>
 
     <main>
+      <section class="waitlist-invite" aria-labelledby="waitlist-invite-heading">
+        <div class="waitlist-copy">
+          <h2 id="waitlist-invite-heading">Become Part of the Next Vintage</h2>
+          <p>
+            Join the waitlist to receive updates from Lord James Follent as the
+            Chateau Follent journey unfolds. Be the first to hear about cellar
+            door milestones, tasting events, and opportunities to collaborate.
+          </p>
+        </div>
+        <div class="waitlist-action">
+          <button type="button" id="joinWaitlistButton" class="cta-button">
+            Join the Waitlist
+          </button>
+        </div>
+      </section>
+
       <section>
         <h2>Our Story</h2>
         <p>
@@ -188,5 +204,66 @@
         </p>
       </div>
     </footer>
+
+    <div class="waitlist-overlay" id="waitlistOverlay" hidden>
+      <div class="waitlist-dialog" role="dialog" aria-modal="true" aria-labelledby="waitlistDialogTitle">
+        <button type="button" class="waitlist-close" id="closeWaitlistButton" aria-label="Close waitlist form">
+          &times;
+        </button>
+        <h2 id="waitlistDialogTitle">Join the Chateau Follent Waitlist</h2>
+        <p>
+          Share your details to accompany Lord James Follent on the unfolding
+          Chateau Follent adventure.
+        </p>
+        <div
+          style="width: 100%; height: 500px"
+          data-fillout-id="mxeUEHDEgQus"
+          data-fillout-embed-type="standard"
+          data-fillout-inherit-parameters
+          data-fillout-dynamic-resize
+        ></div>
+        <script src="https://server.fillout.com/embed/v1/"></script>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var waitlistButton = document.getElementById("joinWaitlistButton");
+        var overlay = document.getElementById("waitlistOverlay");
+        var closeButton = document.getElementById("closeWaitlistButton");
+        if (!waitlistButton || !overlay || !closeButton) {
+          return;
+        }
+
+        function openOverlay() {
+          overlay.hidden = false;
+          document.body.classList.add("waitlist-open");
+          if (window.dataLayer && typeof window.dataLayer.push === "function") {
+            window.dataLayer.push({
+              event: "waitlist_cta_click",
+              component: "homepage_waitlist_cta",
+            });
+          }
+        }
+
+        function closeOverlay() {
+          overlay.hidden = true;
+          document.body.classList.remove("waitlist-open");
+        }
+
+        waitlistButton.addEventListener("click", openOverlay);
+        closeButton.addEventListener("click", closeOverlay);
+        overlay.addEventListener("click", function (event) {
+          if (event.target === overlay) {
+            closeOverlay();
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && !overlay.hidden) {
+            closeOverlay();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
