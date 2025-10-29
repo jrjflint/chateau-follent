@@ -72,6 +72,8 @@ main {
 .waitlist-action {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .cta-button {
