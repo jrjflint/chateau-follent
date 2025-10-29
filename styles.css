@@ -55,6 +55,41 @@ main {
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
+.waitlist-invite {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: clamp(1.5rem, 2vw + 1rem, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-soft);
+  background: linear-gradient(135deg, rgba(145, 115, 88, 0.08), rgba(145, 115, 88, 0));
+}
+
+.waitlist-copy h2 {
+  margin-bottom: 0.75rem;
+}
+
+.waitlist-action {
+  display: flex;
+  align-items: center;
+}
+
+.cta-button {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background-color: #917358;
+  color: #ffffff;
+  border-color: #7a5d44;
+  box-shadow: 0 0.75rem 1.5rem rgba(145, 115, 88, 0.25);
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  background-color: #a98463;
+  border-color: #8c6d51;
+}
+
 .site-footer {
   width: min(100%, 42rem);
   margin-top: 2.5rem;
@@ -167,6 +202,56 @@ button:active {
   transform: translateY(0);
 }
 
+.waitlist-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(12, 12, 12, 0.65);
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+.waitlist-dialog {
+  position: relative;
+  width: min(100%, 48rem);
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+}
+
+.waitlist-dialog p {
+  margin-bottom: 1.5rem;
+}
+
+.waitlist-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: inherit;
+}
+
+.waitlist-close:hover,
+.waitlist-close:focus-visible {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.waitlist-open {
+  overflow: hidden;
+}
+
 /* -------------------------------------------------- */
 /* Responsive Layout Adjustments                      */
 /* -------------------------------------------------- */
@@ -194,6 +279,14 @@ button:active {
     font-size: clamp(0.95rem, 3.5vw, 1.1rem);
     text-align: left;
   }
+
+  .waitlist-invite {
+    padding: 1.25rem;
+  }
+
+  .waitlist-dialog {
+    padding: 1.5rem;
+  }
 }
 
 /* -------------------------------------------------- */
@@ -215,5 +308,32 @@ button:active {
   button:focus-visible {
     background-color: #1f1f1f;
     border-color: #3a3a3a;
+  }
+
+  .cta-button {
+    background-color: #b38f6e;
+    border-color: #9b7756;
+    box-shadow: 0 0.75rem 1.5rem rgba(179, 143, 110, 0.35);
+    color: #1b1b1b;
+  }
+
+  .cta-button:hover,
+  .cta-button:focus-visible {
+    background-color: #c8a07a;
+    border-color: #a88663;
+  }
+
+  .waitlist-dialog {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .waitlist-close {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .waitlist-close:hover,
+  .waitlist-close:focus-visible {
+    background-color: rgba(255, 255, 255, 0.16);
   }
 }
