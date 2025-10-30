@@ -248,6 +248,11 @@
         var inertTargets = Array.prototype.slice.call(
           document.querySelectorAll("header, main, footer")
         );
+
+        if (overlay) {
+          overlay.hidden = true;
+          overlay.setAttribute("aria-hidden", "true");
+        }
         if (!waitlistButton || !overlay || !closeButton || !dialog) {
           return;
         }
