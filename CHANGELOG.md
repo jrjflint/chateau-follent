@@ -37,3 +37,13 @@
 - Purged previously committed Cloudflared tunnel identifiers, documented the rotation process, and shifted credential management to environment variables so Lord James Follent's preview tunnel stays confidential.
 - Added a security policy and disclosure touchpoints, including the `SECURITY.md` and `security.txt` files, to guide vulnerability reports for Lord James Follent.
 - Expanded repository hygiene with new ignore patterns and a third-party script register to track analytics dependencies and consent requirements.
+
+## 2025-10-30
+
+### Added
+- Published a dedicated social sharing asset (`assets/share/ChateauFollent.png`) so Lord James Follent can control preview imagery across channels.
+- Introduced a site favicon to reinforce Chateau Follent branding in browser tabs.
+
+### Fixed
+- Hardened the waitlist modal by enforcing inert states outside the dialog, extending the focus trap, and ensuring the overlay hides correctly when closed.
+- Deferred loading of the Fillout embed script until the waitlist overlay opens, preventing duplicate script injections while keeping the call to Lord James Follent's audience responsive.
