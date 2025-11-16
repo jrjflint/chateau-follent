@@ -17,6 +17,7 @@ Keep every QR code aligned with the Chateau Follent vintages archive by pairing 
 | Rosé | `vintages.html#wine-2025-rose` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-rose#wine-2025-rose` |
 | Shiraz | `vintages.html#wine-2025-shiraz` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-shiraz#wine-2025-shiraz` |
 | Cabernet Sauvignon | `vintages.html#wine-2025-cabernet-sauvignon` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-cabernet-sauvignon#wine-2025-cabernet-sauvignon` |
+| Shiraz Cabernet | `vintages.html#wine-2025-shiraz-cabernet` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-shiraz-cabernet#wine-2025-shiraz-cabernet` |
 | Cabernet Blend | `vintages.html#wine-2025-cabernet-blend` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-cabernet-blend#wine-2025-cabernet-blend` |
 | Merlot Blend | `vintages.html#wine-2025-merlot-blend` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-merlot-blend#wine-2025-merlot-blend` |
 | Fortified Cabernet | `vintages.html#wine-2025-fortified-cabernet` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-fortified-cabernet#wine-2025-fortified-cabernet` |
