@@ -424,3 +424,112 @@ button:active {
     background-color: rgba(255, 255, 255, 0.16);
   }
 }
+
+/* -------------------------------------------------- */
+/* Founding Fellowship Page                           */
+/* -------------------------------------------------- */
+body.fellowship-page main {
+  width: min(100%, 56.25rem);
+  background-color: #fffefc;
+}
+
+body.fellowship-page header {
+  width: min(100%, 56.25rem);
+  margin-bottom: 1rem;
+}
+
+body.fellowship-page .site-footer {
+  width: min(100%, 56.25rem);
+}
+
+body.fellowship-page .fellowship-hero {
+  background: linear-gradient(135deg, rgba(145, 115, 88, 0.12), rgba(255, 255, 255, 0.9));
+  border-radius: var(--radius-soft);
+  padding: clamp(1.5rem, 2vw + 1.5rem, 3rem);
+  text-align: center;
+  box-shadow: 0 1.5rem 3rem var(--color-shadow);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 1.6vw + 0.9rem, 1.5rem);
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.fellowship-divider {
+  border: none;
+  margin: 2.5rem auto;
+  height: 1px;
+  width: 60%;
+  background: linear-gradient(90deg, transparent, rgba(145, 115, 88, 0.4), transparent);
+}
+
+.benefits-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-soft);
+  padding: 1.5rem;
+  background-color: rgba(145, 115, 88, 0.04);
+  box-shadow: 0 1rem 2rem var(--color-shadow);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-soft);
+  border: 1px solid var(--color-border);
+  background-color: rgba(145, 115, 88, 0.03);
+  margin-bottom: 1.5rem;
+}
+
+.fellowship-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.fellowship-table th,
+.fellowship-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.fellowship-table thead {
+  background-color: rgba(145, 115, 88, 0.15);
+}
+
+.fellowship-table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.charter-section {
+  border: 1px solid rgba(145, 115, 88, 0.4);
+  border-radius: var(--radius-soft);
+  padding: 1.75rem;
+  background-color: rgba(145, 115, 88, 0.08);
+  box-shadow: 0 1.25rem 2.5rem var(--color-shadow);
+}
+
+body.fellowship-page blockquote {
+  border-left: 4px solid rgba(145, 115, 88, 0.6);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+body.fellowship-page code {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .benefits-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
