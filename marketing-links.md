@@ -12,8 +12,10 @@ Keep every QR code aligned with the Chateau Follent vintages archive by pairing 
 | Wine | Anchor | Example QR URL |
 | ---- | ------ | -------------- |
 | Moscato | `vintages.html#wine-2025-moscato` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-moscato#wine-2025-moscato` |
+| Moscato Piquette | `vintages.html#wine-2025-moscato-piquette` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-moscato-piquette#wine-2025-moscato-piquette` |
 | Vermentino | `vintages.html#wine-2025-vermentino` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-vermentino#wine-2025-vermentino` |
 | Chardonnay | `vintages.html#wine-2025-chardonnay` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-chardonnay#wine-2025-chardonnay` |
+| Sparkling Chardonnay | `vintages.html#wine-2025-sparkling-chardonnay` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-sparkling-chardonnay#wine-2025-sparkling-chardonnay` |
 | Rosé | `vintages.html#wine-2025-rose` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-rose#wine-2025-rose` |
 | Shiraz | `vintages.html#wine-2025-shiraz` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-shiraz#wine-2025-shiraz` |
 | Cabernet Sauvignon | `vintages.html#wine-2025-cabernet-sauvignon` | `https://chateaufollent.com.au/vintages.html?utm_source=qr&utm_medium=label&utm_campaign=2025-cabernet-sauvignon#wine-2025-cabernet-sauvignon` |
