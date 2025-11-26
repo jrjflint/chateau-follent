@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Winter Shirt Colour Reference</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --text: #0f1115;
+      --muted: #3a3d45;
+      --card-bg: #ffffff;
+      --border: #e4e6ec;
+      --accent: #1b2452;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2.5rem 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -0.01em;
+    }
+
+    p.intro {
+      margin: 0 auto;
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    main {
+      padding: 1rem 1.5rem 2.75rem;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    section.palette {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem 1.5rem;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.02);
+    }
+
+    section.palette header {
+      padding: 0;
+      text-align: left;
+      margin-bottom: 0.35rem;
+    }
+
+    section.palette h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+    }
+
+    section.palette p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .swatch-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .swatch-block {
+      width: 84px;
+      height: 84px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .swatch-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .hex {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .guidance {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.02);
+    }
+
+    .guidance h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+    }
+
+    .guidance p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.25rem 2.5rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .swatch-card {
+        padding: 0.85rem;
+      }
+
+      .swatch-block {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deep Winter Shirt Colour Reference</h1>
+    <p class="intro">Balanced shirt colours for a Deep Winter wardrobe, calibrated around Lord James Follent's hero tailoring tones in Deep Navy and Deep Charcoal. Use these swatches to anchor shirting that flatters cool contrast without drifting into warmth.</p>
+  </header>
+
+  <main>
+    <section aria-label="Whites" class="palette">
+      <header>
+        <h2>Whites</h2>
+        <p>Crisp, optical whites that keep contrast high under deep tailoring.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#FFFFFF;" aria-label="#FFFFFF – True white for formal shirting">
+            <span class="visually-hidden">#FFFFFF — True white for formal shirting</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#FFFFFF</div>
+            <p class="desc">True white for formal shirting</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#F8F9FA;" aria-label="#F8F9FA – Soft optical white with gentle brightness">
+            <span class="visually-hidden">#F8F9FA — Soft optical white with gentle brightness</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#F8F9FA</div>
+            <p class="desc">Soft optical white with gentle brightness</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#F2F5FF;" aria-label="#F2F5FF – Cool alabaster with faint blue cast">
+            <span class="visually-hidden">#F2F5FF — Cool alabaster with faint blue cast</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#F2F5FF</div>
+            <p class="desc">Cool alabaster with faint blue cast</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#EDEFF5;" aria-label="#EDEFF5 – Pale glacier white to soften contrast">
+            <span class="visually-hidden">#EDEFF5 — Pale glacier white to soften contrast</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#EDEFF5</div>
+            <p class="desc">Pale glacier white to soften contrast</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Midnight Navy" class="palette">
+      <header>
+        <h2>Midnight Navy</h2>
+        <p>Anchor navies that echo Deep Navy suiting; ideal for tone-on-tone looks.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#1B2452;" aria-label="#1B2452 – Hero midnight navy reference">
+            <span class="visually-hidden">#1B2452 — Hero midnight navy reference</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#1B2452</div>
+            <p class="desc">Hero midnight navy reference</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#162447;" aria-label="#162447 – Inky navy with steely depth">
+            <span class="visually-hidden">#162447 — Inky navy with steely depth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#162447</div>
+            <p class="desc">Inky navy with steely depth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#0F1A36;" aria-label="#0F1A36 – Deep cool navy for evening shirts">
+            <span class="visually-hidden">#0F1A36 — Deep cool navy for evening shirts</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#0F1A36</div>
+            <p class="desc">Deep cool navy for evening shirts</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#0A1832;" aria-label="#0A1832 – Blue-black navy to pair with black tie">
+            <span class="visually-hidden">#0A1832 — Blue-black navy to pair with black tie</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#0A1832</div>
+            <p class="desc">Blue-black navy to pair with black tie</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Deep Charcoal" class="palette">
+      <header>
+        <h2>Deep Charcoal</h2>
+        <p>Near-black charcoals that harmonise with Lord James Follent's charcoal tailoring.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#232328;" aria-label="#232328 – Core deep charcoal">
+            <span class="visually-hidden">#232328 — Core deep charcoal</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#232328</div>
+            <p class="desc">Core deep charcoal</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#2A2A32;" aria-label="#2A2A32 – Smoke charcoal for relaxed shirts">
+            <span class="visually-hidden">#2A2A32 — Smoke charcoal for relaxed shirts</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#2A2A32</div>
+            <p class="desc">Smoke charcoal for relaxed shirts</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#1C1D21;" aria-label="#1C1D21 – Graphite charcoal with cool depth">
+            <span class="visually-hidden">#1C1D21 — Graphite charcoal with cool depth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#1C1D21</div>
+            <p class="desc">Graphite charcoal with cool depth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#18181C;" aria-label="#18181C – Inky charcoal close to black">
+            <span class="visually-hidden">#18181C — Inky charcoal close to black</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#18181C</div>
+            <p class="desc">Inky charcoal close to black</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Blues" class="palette">
+      <header>
+        <h2>Blues</h2>
+        <p>Frosted blue shirts that sit between white and navy for work rotation.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#DDE8F5;" aria-label="#DDE8F5 – Icy powder blue for crisp business looks">
+            <span class="visually-hidden">#DDE8F5 — Icy powder blue for crisp business looks</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#DDE8F5</div>
+            <p class="desc">Icy powder blue for crisp business looks</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#C7D7EE;" aria-label="#C7D7EE – Light steel blue to soften contrast">
+            <span class="visually-hidden">#C7D7EE — Light steel blue to soften contrast</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#C7D7EE</div>
+            <p class="desc">Light steel blue to soften contrast</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#A9BDD7;" aria-label="#A9BDD7 – Cool periwinkle blue for patterned cloth">
+            <span class="visually-hidden">#A9BDD7 — Cool periwinkle blue for patterned cloth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#A9BDD7</div>
+            <p class="desc">Cool periwinkle blue for patterned cloth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#7A8CA8;" aria-label="#7A8CA8 – Storm blue for casual button-downs">
+            <span class="visually-hidden">#7A8CA8 — Storm blue for casual button-downs</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#7A8CA8</div>
+            <p class="desc">Storm blue for casual button-downs</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Cool Greys" class="palette">
+      <header>
+        <h2>Cool Greys</h2>
+        <p>Neutral greys that pair cleanly with deep navy and charcoal jackets.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#D6D8DC;" aria-label="#D6D8DC – Light granite grey for subtle texture">
+            <span class="visually-hidden">#D6D8DC — Light granite grey for subtle texture</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#D6D8DC</div>
+            <p class="desc">Light granite grey for subtle texture</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#C4C8D0;" aria-label="#C4C8D0 – Cool mist grey for herringbone weaves">
+            <span class="visually-hidden">#C4C8D0 — Cool mist grey for herringbone weaves</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#C4C8D0</div>
+            <p class="desc">Cool mist grey for herringbone weaves</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#B8BCC5;" aria-label="#B8BCC5 – Smoky silver grey for subtle stripe">
+            <span class="visually-hidden">#B8BCC5 — Smoky silver grey for subtle stripe</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#B8BCC5</div>
+            <p class="desc">Smoky silver grey for subtle stripe</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#A7ABB5;" aria-label="#A7ABB5 – Urban slate grey for casual popovers">
+            <span class="visually-hidden">#A7ABB5 — Urban slate grey for casual popovers</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#A7ABB5</div>
+            <p class="desc">Urban slate grey for casual popovers</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Blacks" class="palette">
+      <header>
+        <h2>Blacks</h2>
+        <p>Clean blacks with cool bias to echo Deep Winter contrast.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#0B0C10;" aria-label="#0B0C10 – Carbon black for sharp casual shirts">
+            <span class="visually-hidden">#0B0C10 — Carbon black for sharp casual shirts</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#0B0C10</div>
+            <p class="desc">Carbon black for sharp casual shirts</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#0C0F14;" aria-label="#0C0F14 – Cool ink black with blue lean">
+            <span class="visually-hidden">#0C0F14 — Cool ink black with blue lean</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#0C0F14</div>
+            <p class="desc">Cool ink black with blue lean</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#10131C;" aria-label="#10131C – Night black that matches deep navy suiting">
+            <span class="visually-hidden">#10131C — Night black that matches deep navy suiting</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#10131C</div>
+            <p class="desc">Night black that matches deep navy suiting</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#11151E;" aria-label="#11151E – Graphite black for subtle sheen fabrics">
+            <span class="visually-hidden">#11151E — Graphite black for subtle sheen fabrics</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#11151E</div>
+            <p class="desc">Graphite black for subtle sheen fabrics</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Purples" class="palette">
+      <header>
+        <h2>Purples</h2>
+        <p>Moody violets that add interest while staying cool and saturated.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#5E4B8C;" aria-label="#5E4B8C – Royal violet for statement shirting">
+            <span class="visually-hidden">#5E4B8C — Royal violet for statement shirting</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#5E4B8C</div>
+            <p class="desc">Royal violet for statement shirting</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#483674;" aria-label="#483674 – Deep amethyst with refined depth">
+            <span class="visually-hidden">#483674 — Deep amethyst with refined depth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#483674</div>
+            <p class="desc">Deep amethyst with refined depth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#3A2E5F;" aria-label="#3A2E5F – Inked plum ideal for subtle checks">
+            <span class="visually-hidden">#3A2E5F — Inked plum ideal for subtle checks</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#3A2E5F</div>
+            <p class="desc">Inked plum ideal for subtle checks</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#2B2246;" aria-label="#2B2246 – Midnight violet close to navy">
+            <span class="visually-hidden">#2B2246 — Midnight violet close to navy</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#2B2246</div>
+            <p class="desc">Midnight violet close to navy</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Burgundies" class="palette">
+      <header>
+        <h2>Burgundies</h2>
+        <p>Rich burgundies that read cool and pair with deep charcoal outer layers.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#6A0F1A;" aria-label="#6A0F1A – Cabernet burgundy for bold dress shirts">
+            <span class="visually-hidden">#6A0F1A — Cabernet burgundy for bold dress shirts</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#6A0F1A</div>
+            <p class="desc">Cabernet burgundy for bold dress shirts</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#4A0812;" aria-label="#4A0812 – Dark wine ideal for textured cloth">
+            <span class="visually-hidden">#4A0812 — Dark wine ideal for textured cloth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#4A0812</div>
+            <p class="desc">Dark wine ideal for textured cloth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#3A0A16;" aria-label="#3A0A16 – Oxblood burgundy with shadowed depth">
+            <span class="visually-hidden">#3A0A16 — Oxblood burgundy with shadowed depth</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#3A0A16</div>
+            <p class="desc">Oxblood burgundy with shadowed depth</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#2A0A10;" aria-label="#2A0A10 – Blackened merlot for dramatic looks">
+            <span class="visually-hidden">#2A0A10 — Blackened merlot for dramatic looks</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#2A0A10</div>
+            <p class="desc">Blackened merlot for dramatic looks</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Jewel Greens" class="palette">
+      <header>
+        <h2>Jewel Greens</h2>
+        <p>Cool emeralds that sit comfortably beside midnight navies.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#003B49;" aria-label="#003B49 – Teal-leaning emerald for statement cuffs">
+            <span class="visually-hidden">#003B49 — Teal-leaning emerald for statement cuffs</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#003B49</div>
+            <p class="desc">Teal-leaning emerald for statement cuffs</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#002E3C;" aria-label="#002E3C – Deep teal-green for contrast collars">
+            <span class="visually-hidden">#002E3C — Deep teal-green for contrast collars</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#002E3C</div>
+            <p class="desc">Deep teal-green for contrast collars</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#013035;" aria-label="#013035 – Forest emerald that pairs with charcoal">
+            <span class="visually-hidden">#013035 — Forest emerald that pairs with charcoal</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#013035</div>
+            <p class="desc">Forest emerald that pairs with charcoal</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#012026;" aria-label="#012026 – Nightfall green for subtle tonal checks">
+            <span class="visually-hidden">#012026 — Nightfall green for subtle tonal checks</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#012026</div>
+            <p class="desc">Nightfall green for subtle tonal checks</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Silver Tones" class="palette">
+      <header>
+        <h2>Silver Tones</h2>
+        <p>Metallic-leaning neutrals for twill or sateen shirts under tailored jackets.</p>
+      </header>
+      <div class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#C9CCD1;" aria-label="#C9CCD1 – Frosted silver for dressy twills">
+            <span class="visually-hidden">#C9CCD1 — Frosted silver for dressy twills</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#C9CCD1</div>
+            <p class="desc">Frosted silver for dressy twills</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#9AA0A6;" aria-label="#9AA0A6 – Pewter grey with metallic sheen">
+            <span class="visually-hidden">#9AA0A6 — Pewter grey with metallic sheen</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#9AA0A6</div>
+            <p class="desc">Pewter grey with metallic sheen</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#6F757C;" aria-label="#6F757C – Gunmetal for elevated casual shirts">
+            <span class="visually-hidden">#6F757C — Gunmetal for elevated casual shirts</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#6F757C</div>
+            <p class="desc">Gunmetal for elevated casual shirts</p>
+          </div>
+        </article>
+        <article class="swatch-card">
+          <div class="swatch-block" style="background:#464B53;" aria-label="#464B53 – Dark steel for evening-friendly shirting">
+            <span class="visually-hidden">#464B53 — Dark steel for evening-friendly shirting</span>
+          </div>
+          <div class="swatch-text">
+            <div class="hex">#464B53</div>
+            <p class="desc">Dark steel for evening-friendly shirting</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guidance" aria-label="Usage guidance">
+      <h2>How to Use</h2>
+      <p>Share this page with your shirt maker and specify that each colour must stay cool-toned to harmonise with Lord James Follent's Deep Winter palette anchored by Deep Navy (`#1B2452`) and Deep Charcoal (`#232328`).</p>
+      <p>Ask for high-contrast pairings for formal wear (white, midnight navy, jet black) and subtle texture or twill for mid-tone blues, greys, and silvers to keep the shirts visually refined.</p>
+    </section>
+  </main>
+
+  <footer>Curated Deep Winter shirt colours for Lord James Follent.</footer>
+</body>
+</html>
