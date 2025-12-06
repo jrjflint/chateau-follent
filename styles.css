@@ -5,15 +5,18 @@
 /* Color Variables & Theme Tokens                     */
 /* -------------------------------------------------- */
 :root {
-  color-scheme: light dark;
-  --color-background: #ffffff;
-  --color-surface: #fafafa;
-  --color-text: #171717;
-  --color-muted: #3d3d3d;
-  --color-border: #d9d9d9;
-  --color-link: #1f1f1f;
-  --color-link-hover: #000000;
-  --color-shadow: rgba(0, 0, 0, 0.08);
+  color-scheme: light;
+  --color-background: #f5f7fa; /* Blanc d’Hiver */
+  --color-surface: #ffffff;
+  --color-text: #0a0a0c; /* Noir Follent */
+  --color-muted: #5a6470; /* Steel Reserve */
+  --color-border: #d5dde8; /* Cool-lined border to echo Icy Blue */
+  --color-link: #0e1a3b; /* Midnight Cabernet */
+  --color-link-hover: #5d4aff; /* Amethyst Ice */
+  --color-highlight: #c7e0ff; /* Icy Blue */
+  --color-accent-strong: #4a002e; /* Bordeaux Nocturne */
+  --color-ink-shadow: rgba(14, 26, 59, 0.08);
+  --color-shadow: rgba(10, 10, 12, 0.08);
   --radius-soft: 1.5rem;
   --transition-base: 160ms ease-in-out;
 }
@@ -23,8 +26,8 @@
 /* -------------------------------------------------- */
 html {
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
   background-color: var(--color-background);
 }
 
@@ -34,7 +37,7 @@ body {
   place-items: center;
   min-height: 100vh;
   padding: clamp(1.5rem, 3vw, 3rem);
-  background: linear-gradient(135deg, var(--color-background), var(--color-surface));
+  background: linear-gradient(135deg, var(--color-background), #e8edf4);
   color: var(--color-text);
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   transition: background-color var(--transition-base), color var(--transition-base);
@@ -49,7 +52,7 @@ main {
   padding: clamp(1.5rem, 2vw + 1rem, 3rem);
   background-color: var(--color-surface);
   border-radius: var(--radius-soft);
-  box-shadow: 0 1.5rem 3rem var(--color-shadow);
+  box-shadow: 0 1.5rem 3rem var(--color-ink-shadow);
   text-align: left;
   border: 1px solid var(--color-border);
   transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
@@ -62,7 +65,7 @@ main {
   padding: clamp(1.5rem, 2vw + 1rem, 2rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.08), rgba(145, 115, 88, 0));
+  background: linear-gradient(135deg, rgba(14, 26, 59, 0.06), rgba(199, 224, 255, 0.45));
 }
 
 .waitlist-copy h2 {
@@ -80,16 +83,16 @@ main {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  background-color: #917358;
-  color: #ffffff;
-  border-color: #7a5d44;
-  box-shadow: 0 0.75rem 1.5rem rgba(145, 115, 88, 0.25);
+  background-color: var(--color-link);
+  color: var(--color-surface);
+  border-color: var(--color-link);
+  box-shadow: 0 0.75rem 1.5rem rgba(14, 26, 59, 0.25);
 }
 
 .cta-button:hover,
 .cta-button:focus-visible {
-  background-color: #a98463;
-  border-color: #8c6d51;
+  background-color: var(--color-accent-strong, #4a002e);
+  border-color: var(--color-accent-strong, #4a002e);
 }
 
 .site-footer {
@@ -112,7 +115,7 @@ main {
 
 .footer-heading {
   font-family: 'Libre Baskerville', 'Playfair Display', 'Georgia', serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin: 0;
 }
 
@@ -147,17 +150,29 @@ h5,
 h6 {
   font-family: 'Libre Baskerville', 'Playfair Display', 'Georgia', serif;
   color: var(--color-text);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   margin-top: 0;
 }
 
 h1 {
-  font-size: clamp(2rem, 2.8vw + 1.5rem, 3.5rem);
+  font-size: clamp(2.5rem, 2vw + 2rem, 4rem);
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-size: clamp(2rem, 1.6vw + 1.5rem, 2.75rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 1vw + 1.15rem, 1.85rem);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
 p {
-  font-size: clamp(1rem, 1.2vw + 0.8rem, 1.25rem);
+  font-size: clamp(1.05rem, 1.1vw + 0.95rem, 1.3rem);
   line-height: 1.7;
   color: var(--color-muted);
   margin-top: 0;
@@ -183,7 +198,7 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
   padding: 0.5rem 1rem 1rem;
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.05), rgba(145, 115, 88, 0));
+  background: linear-gradient(135deg, rgba(14, 26, 59, 0.04), rgba(199, 224, 255, 0.4));
   box-shadow: 0 1rem 2rem var(--color-shadow);
 }
 
@@ -254,6 +269,7 @@ a:hover,
 a:focus-visible {
   color: var(--color-link-hover);
   border-color: currentColor;
+  text-decoration: underline;
 }
 
 button {
@@ -261,8 +277,8 @@ button {
   font-size: 1rem;
   padding: 0.75rem 1.75rem;
   border-radius: 999px;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-surface);
+  border: 1px solid var(--color-text);
+  background-color: transparent;
   color: var(--color-text);
   cursor: pointer;
   transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
@@ -270,8 +286,9 @@ button {
 
 button:hover,
 button:focus-visible {
-  background-color: #f0f0f0;
-  border-color: #b5b5b5;
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  border-color: var(--color-text);
   transform: translateY(-1px);
 }
 
@@ -381,33 +398,34 @@ button:active {
 /* -------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0f0f0f;
-    --color-surface: #161616;
-    --color-text: #f5f5f5;
-    --color-muted: #d0d0d0;
-    --color-border: #2a2a2a;
-    --color-link: #f5f5f5;
-    --color-link-hover: #ffffff;
-    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-background: #0a0a0c;
+    --color-surface: #0e1a3b;
+    --color-text: #f5f7fa;
+    --color-muted: #c7d0dc;
+    --color-border: #23304b;
+    --color-link: #c7e0ff;
+    --color-link-hover: #5d4aff;
+    --color-shadow: rgba(0, 0, 0, 0.4);
   }
 
   button:hover,
   button:focus-visible {
-    background-color: #1f1f1f;
-    border-color: #3a3a3a;
+    background-color: var(--color-text);
+    color: #0a0a0c;
+    border-color: var(--color-text);
   }
 
   .cta-button {
-    background-color: #b38f6e;
-    border-color: #9b7756;
-    box-shadow: 0 0.75rem 1.5rem rgba(179, 143, 110, 0.35);
-    color: #1b1b1b;
+    background-color: var(--color-link);
+    border-color: var(--color-link);
+    box-shadow: 0 0.75rem 1.5rem rgba(199, 224, 255, 0.35);
+    color: #0a0a0c;
   }
 
   .cta-button:hover,
   .cta-button:focus-visible {
-    background-color: #c8a07a;
-    border-color: #a88663;
+    background-color: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
   }
 
   .waitlist-dialog {
@@ -430,7 +448,7 @@ button:active {
 /* -------------------------------------------------- */
 body.fellowship-page main {
   width: min(100%, 56.25rem);
-  background-color: #fffefc;
+  background-color: var(--color-surface);
 }
 
 body.fellowship-page header {
@@ -443,7 +461,7 @@ body.fellowship-page .site-footer {
 }
 
 body.fellowship-page .fellowship-hero {
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.12), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(135deg, rgba(14, 26, 59, 0.1), rgba(199, 224, 255, 0.6));
   border-radius: var(--radius-soft);
   padding: clamp(1.5rem, 2vw + 1.5rem, 3rem);
   text-align: center;
@@ -461,7 +479,7 @@ body.fellowship-page .fellowship-hero {
   margin: 2.5rem auto;
   height: 1px;
   width: 60%;
-  background: linear-gradient(90deg, transparent, rgba(145, 115, 88, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(14, 26, 59, 0.45), transparent);
 }
 
 .benefits-section {
@@ -473,7 +491,7 @@ body.fellowship-page .fellowship-hero {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
   padding: 1.5rem;
-  background-color: rgba(145, 115, 88, 0.04);
+  background-color: rgba(14, 26, 59, 0.05);
   box-shadow: 0 1rem 2rem var(--color-shadow);
 }
 
@@ -481,7 +499,7 @@ body.fellowship-page .fellowship-hero {
   overflow-x: auto;
   border-radius: var(--radius-soft);
   border: 1px solid var(--color-border);
-  background-color: rgba(145, 115, 88, 0.03);
+  background-color: rgba(199, 224, 255, 0.25);
   margin-bottom: 1.5rem;
 }
 
@@ -498,23 +516,23 @@ body.fellowship-page .fellowship-hero {
 }
 
 .fellowship-table thead {
-  background-color: rgba(145, 115, 88, 0.15);
+  background-color: rgba(14, 26, 59, 0.12);
 }
 
 .fellowship-table tbody tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(199, 224, 255, 0.18);
 }
 
 .charter-section {
-  border: 1px solid rgba(145, 115, 88, 0.4);
+  border: 1px solid rgba(14, 26, 59, 0.3);
   border-radius: var(--radius-soft);
   padding: 1.75rem;
-  background-color: rgba(145, 115, 88, 0.08);
+  background-color: rgba(199, 224, 255, 0.35);
   box-shadow: 0 1.25rem 2.5rem var(--color-shadow);
 }
 
 body.fellowship-page blockquote {
-  border-left: 4px solid rgba(145, 115, 88, 0.6);
+  border-left: 4px solid rgba(14, 26, 59, 0.6);
   padding-left: 1rem;
   margin: 1.5rem 0;
   color: var(--color-text);
