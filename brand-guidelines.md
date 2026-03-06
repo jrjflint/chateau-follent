@@ -1,81 +1,179 @@
-# Château Follent – Brand Guidelines
+# Chateau Follent Brand Guidelines
 
-## Brand Essence
-- Boutique Australian winery led by Lord James Follent, defined by European refinement and quiet luxury.
-- Visual language: cool-toned, high-contrast Deep Winter palette; minimal, structured, intentional layouts.
-- Personality: assured, composed, exacting; avoids rustic or casual cues.
+This document translates the current Chateau Follent website and supporting project documentation into a practical brand system for Lord James Follent, including a Canva-ready setup checklist.
 
-## Logo & Lockup
-- Primary lockup: “CHÂTEAU FOLLENT” in Libre Baskerville, uppercase, letterspacing +4% for clarity.
-- Clear space: maintain at least the cap-height of the "C" on all sides; never crowd with borders or imagery.
-- Minimum size: print 24 mm width; digital 160 px width to preserve legibility.
-- Acceptable colours: Noir Follent on Blanc d’Hiver; Blanc d’Hiver on Noir Follent; Blanc d’Hiver on Midnight Cabernet.
-- Unacceptable treatments: no drop shadows, bevels, gradients, warping, or stretching; avoid warm backdrops (beige, cream, olive, brown).
+## 1) Brand Foundation
 
-## Colour Palette
-Usage rules:
-- Primary colours: backgrounds, text, core UI, and foundational packaging fields.
-- Secondary colours: labels, headings, seals, and restrained accents.
-- Tertiary colours: sparingly for highlights, special cuvées, callouts, charts.
+### Brand positioning
+- **Brand:** Chateau Follent.
+- **Steward and primary voice:** **Lord James Follent**.
+- **Category:** Boutique Australian wine and hospitality brand with heritage storytelling.
+- **Core expression:** Heritage, craft, patience, refinement, and conservation-minded hospitality.
 
-| Swatch | Name | HEX | Typical Uses |
-| --- | --- | --- | --- |
-| <div style="width:60px;height:20px;background:#0A0A0C;"></div> | Noir Follent (Black) | `#0A0A0C` | Primary text, deep backgrounds, capsule foil |
-| <div style="width:60px;height:20px;background:#F5F7FA;border:1px solid #d0d4dc;"></div> | Blanc d’Hiver (Cool White) | `#F5F7FA` | Primary backgrounds, negative space, label fields |
-| <div style="width:60px;height:20px;background:#4A002E;"></div> | Bordeaux Nocturne (Deep Cool Burgundy) | `#4A002E` | Vintage marks, seals, headers |
-| <div style="width:60px;height:20px;background:#0E1A3B;"></div> | Midnight Cabernet (Inky Navy) | `#0E1A3B` | Secondary backgrounds, navigation bars, embossing |
-| <div style="width:60px;height:20px;background:#5A6470;"></div> | Steel Reserve (Cool Steel Grey) | `#5A6470` | Secondary text, rules, dividers, form frames |
-| <div style="width:60px;height:20px;background:#5D4AFF;"></div> | Amethyst Ice (Violet Accent) | `#5D4AFF` | Highlights, data points, limited foiling |
-| <div style="width:60px;height:20px;background:#004B56;"></div> | Emerald Noir (Deep Cool Green) | `#004B56` | Limited accents on reserve labels, charts |
-| <div style="width:60px;height:20px;background:#C7E0FF;border:1px solid #a6bad8;"></div> | Icy Blue (Frost Highlight) | `#C7E0FF` | Hover states, fine rules, subtle shading |
+### Brand personality
+Use these traits consistently across web copy, print, social, and presentations:
+- Assured
+- Composed
+- Precise
+- Cultured
+- Warm but never casual
 
-## Typography
-- Primary serif: **Libre Baskerville**.
-- Secondary sans: **Montserrat**.
+### Audience
+- Early supporters and waitlist subscribers
+- Prospective guests and tasting-room visitors
+- Trade, media, and partner collaborators
 
-Recommended pairings and scales (desktop first; reduce by ~10–15% on mobile):
-- H1 / hero: Libre Baskerville, 48–64 px, semi-bold (600), line-height 1.1; add 8–16 px letterspacing for uppercase hero lockups.
-- H2 / section: Libre Baskerville, 32–40 px, semi-bold (600), line-height 1.2.
-- H3 / small heading: Libre Baskerville, 22–26 px, semi-bold (600), line-height 1.25.
-- Body: Montserrat, 16–18 px, regular (400), line-height 1.6; prefer 18 px for long-form readability.
-- Captions & footnotes: Montserrat, 13–14 px, medium (500), line-height 1.5.
-- Spacing: Maintain 1.5–2x font-size padding above sections; keep consistent left alignment; use 24–32 px paragraph spacing for airy hierarchy.
-- Numerals: Use Montserrat for tables and technical data; use lining figures for clarity.
+## 2) Voice and Messaging
 
-## Imagery & Photography
-- Palette: cool to neutral colour temperature; avoid orange or golden casts.
-- Lighting: high contrast with defined shadows; avoid hazy or washed-out treatments.
-- Subjects: close-ups of glassware, bottles, labels; vineyard scenes at dawn/dusk/overcast; architectural or cellar geometry with strong lines.
-- Avoid: rustic mason jars, burlap, hay bales; warm midday vineyard shots; casual picnic or beach motifs.
+### Voice principles
+- Use clear, elegant language with short-to-medium sentence length.
+- Prioritise substance over hype.
+- Keep tone premium but approachable.
+- Avoid slang, irony-heavy copy, and trend language.
 
-## Tone of Voice
-- Attributes: confident, calm, precise, understated, educated.
-- Style: short to medium sentences; plain yet elevated language; no slang, excess flourish, or humour.
+### Naming and salutation
+- Always refer to the founder as **Lord James Follent** (full salutation).
+- Keep "Chateau Follent" as the default brand spelling for URL and product contexts.
+- Use “Château Follent” for ceremonial/editorial moments if typography supports accents.
 
-Example messaging:
-- Tasting note (Shiraz): “Heathcote Shiraz 2025 opens with graphite, black cherry, and violets. The palate is linear and cool-fruited, framed by fine tannin and a lingering mineral finish.”
-- Website about excerpt: “Château Follent is an Australian estate guided by Lord James Follent, crafting structured, age-worthy wines with European restraint. Each bottling is made in small volumes and presented with purposeful clarity.”
-- Tagline: “Cool-climate precision. Quietly luxurious.”
+### Core message pillars
+1. **Heritage with intent** — identity rooted in family story and long-term craft.
+2. **Winemaking as discipline** — patience, precision, and small-batch quality.
+3. **Hospitality as belonging** — invitation-led, relationship-focused experiences.
 
-## Applications
+### Suggested boilerplate copy
+- **Short descriptor:**
+  - "A vision of heritage, hospitality, and the art of winemaking."
+- **About sentence:**
+  - "Chateau Follent is the heritage winery vision of Lord James Follent, uniting conservation-led viticulture with boutique hospitality in Australia."
+- **Social bio starter:**
+  - "Heritage winemaking by Lord James Follent. Boutique Australian wines, patient craft, and purposeful hospitality."
 
-### Wine Labels
-- Core palette: Noir Follent and Blanc d’Hiver for maximum contrast and polish.
-- Introduce Bordeaux Nocturne for vintage numerals or a narrow band; use Midnight Cabernet for capsule or foil details.
-- Hierarchy: estate name (Libre Baskerville uppercase), variety and region (Libre Baskerville title case), vintage (Bordeaux Nocturne accent), technical notes (Montserrat small caps optional).
-- Finishes: prefer matte stocks; minimal embossing or debossing; avoid rustic textures.
+## 3) Visual Identity System
 
-### Website & Digital
-- Background/text pairs: Blanc d’Hiver background with Noir Follent text; Midnight Cabernet background with Blanc d’Hiver text for hero or footer; Noir Follent background with Blanc d’Hiver text for immersive sections.
-- Buttons: Montserrat medium, 16 px, 12 px vertical / 20 px horizontal padding; default Noir Follent on Blanc d’Hiver border, hover fill Noir Follent with Blanc d’Hiver text; secondary button Midnight Cabernet fill with Blanc d’Hiver text, hover to Bordeaux Nocturne.
-- Links and hovers: use Icy Blue or Amethyst Ice sparingly; underline on hover only.
-- Accessibility: maintain WCAG AA contrast (minimum 4.5:1 for body); avoid light text on Icy Blue; ensure focus states are clear with a 2 px Icy Blue outline on dark backgrounds.
+### Logo and wordmark usage (current state)
+- Current digital header treatment is a serif, uppercase wordmark presentation: **CHATEAU FOLLENT**.
+- Keep logo/wordmark treatments clean and uncluttered.
+- Do not apply glow effects, bevels, drop shadows, perspective warps, or novelty textures.
 
-### Merchandise & Embroidery
-- Garment colours: Noir Follent (black), Midnight Cabernet (navy), Blanc d’Hiver (optic white).
-- Embroidery threads: on black use Blanc d’Hiver or Icy Blue; on navy use Blanc d’Hiver or Steel Reserve; on white use Noir Follent or Midnight Cabernet.
-- Prohibit warm threads (gold, yellow, tan) and metallic finishes; keep stitch density high for crisp serifs.
+### Typography
+Use this pair consistently (already implemented on the site):
 
-## Do & Don’t Summary
-- Do: keep layouts minimal, structured, and high-contrast; use the Deep Winter palette and Libre Baskerville/Montserrat pairing; prioritise cool-toned imagery and precise language.
-- Don’t: introduce rustic motifs, warm backgrounds, ornate scripts, gradients, or distorted logos; avoid slang, humour, and casual “craft market” cues.
+1. **Primary serif:** `Libre Baskerville`
+   - Use for headings, hero titles, pull quotes, section titles.
+2. **Secondary sans-serif:** `Montserrat`
+   - Use for body copy, captions, metadata, UI labels, buttons.
+
+#### Canva fallback stack
+If Libre Baskerville is unavailable in Canva templates, fallback in this order:
+1. Playfair Display
+2. Georgia
+
+If Montserrat is unavailable, fallback in this order:
+1. Helvetica Neue
+2. Arial
+
+### Type scale (Canva presets)
+- **H1 / Cover title:** Libre Baskerville Bold, 56-72 px, letter spacing +2 to +6.
+- **H2 / Section title:** Libre Baskerville Bold, 34-44 px.
+- **H3 / Subheading:** Libre Baskerville Regular/Bold, 24-30 px.
+- **Body large:** Montserrat Regular, 18-20 px.
+- **Body default:** Montserrat Regular, 14-16 px.
+- **Caption / meta:** Montserrat SemiBold, 11-13 px.
+
+## 4) Colour Palette
+
+The active site design uses a **light-neutral base** with **warm oak accents**. Use this as the primary brand palette for Canva to maintain parity with the live experience.
+
+### Primary neutrals
+- `#FFFFFF` — Background / canvas base
+- `#FAFAFA` — Surface cards
+- `#171717` — Primary text
+- `#3D3D3D` — Secondary text
+- `#D9D9D9` — Borders and dividers
+- `#1F1F1F` — Link text
+- `#000000` — Link hover / high-emphasis black
+
+### Signature accent family (oak/cask-inspired)
+- `#8B6A4D` — Primary CTA fill
+- `#7F5F43` — CTA hover
+- `#75583F` — CTA border
+- `#6D523A` — CTA hover border
+- `rgba(145,115,88,0.08)` — Soft panel tint
+- `rgba(145,115,88,0.25)` — Accent shadow tone
+
+### Supporting accessibility note
+- For long text, prefer `#171717` on `#FFFFFF` or `#FAFAFA`.
+- Use accent browns for buttons, highlights, and callouts—not paragraph text blocks.
+
+## 5) Imagery Direction
+
+### Photography style
+- Natural, refined, and quietly cinematic.
+- Emphasise texture: glass, timber, barrel grain, vineyard rows, cellar details.
+- Prefer soft directional light and controlled contrast.
+
+### Composition cues
+- Structured framing and negative space.
+- Hero images with clear focal subject and room for headline overlays.
+- Avoid clutter, heavy filters, and over-saturation.
+
+### Avoid
+- Rustic clichés (novelty props, kitsch vineyard motifs)
+- Loud social-media trend aesthetics
+- Harsh warm/orange casts that fight the site palette
+
+## 6) Layout Principles
+
+- Use generous whitespace and clear section separation.
+- Prefer rounded cards/panels for key callouts.
+- Keep hierarchy obvious: title → short intro → supporting detail → CTA.
+- Use one clear CTA per section where possible.
+
+## 7) Canva Brand Kit Setup (Implementation Checklist)
+
+### A. Brand colours to add in Canva
+Add these first as the core kit:
+1. `#FFFFFF`
+2. `#FAFAFA`
+3. `#171717`
+4. `#3D3D3D`
+5. `#D9D9D9`
+6. `#8B6A4D`
+7. `#7F5F43`
+8. `#75583F`
+9. `#6D523A`
+
+### B. Brand fonts to add in Canva
+1. **Libre Baskerville** (headings)
+2. **Montserrat** (body/UI)
+
+### C. Template families to build first
+1. Instagram post (square): release announcements, tasting notes, heritage excerpts.
+2. Instagram story (9:16): event teasers, countdowns, cellar moments.
+3. A4 portrait sheet: wine notes, event one-pager, media fact sheet.
+4. Presentation deck (16:9): partnership and investor storytelling.
+5. Email header graphics: waitlist and launch campaigns.
+
+### D. Canva component standards
+- Button style: fill `#8B6A4D`, text `#FFFFFF`, optional border `#75583F`.
+- Card backgrounds: `#FAFAFA` with thin border `#D9D9D9`.
+- Headline text: Libre Baskerville in `#171717`.
+- Body text: Montserrat in `#3D3D3D`.
+
+## 8) QA Checklist Before Publishing Any Asset
+
+- Uses **Lord James Follent** full salutation where the person is referenced.
+- Uses approved font pairing (or defined fallback).
+- Uses approved palette values.
+- Preserves strong readability and clean spacing.
+- Keeps tone refined, confident, and heritage-led.
+- Includes one primary action (if promotional asset).
+
+## 9) Future Enhancement Notes
+
+As Chateau Follent evolves, consider versioning this document (v1, v2, etc.) and adding:
+- Finalised logo lockups and minimum clear-space rules
+- Label-system variants by wine tier
+- Print production specs (CMYK/Pantone equivalents)
+- Motion guidelines for short-form video and reels
