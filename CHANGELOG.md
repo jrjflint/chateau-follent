@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-03-06
+
+### Documentation
+- Refreshed `tasks/todo.md` to mark baseline GTM page-view instrumentation as complete and replaced stale implementation notes with an analytics QA follow-up checklist for Lord James Follent.
+
 ## 2025-10-20
 
 ### Added

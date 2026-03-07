@@ -17,27 +17,19 @@
 - [ ] Stand up a GA4 property and GTM web container for Lord James Follent, documenting ownership and access recovery.
   - Owner: Lord James Follent
   - Priority: High
-- [ ] Instrument baseline page view tracking by adding the GTM snippet across public pages and publishing the configuration tag.
+- [x] Instrument baseline page view tracking by adding the GTM snippet across current public pages and publishing the configuration tag.
+  - Owner: Lord James Follent
+  - Priority: High
+  - Notes:
+    - GTM `GTM-W72PPP7B` and dataLayer bootstrap metadata are now present on `index.html`, `story.html`, `vintages.html`, and `founding-fellowship.html`.
+    - Legacy direct GA snippets remain intentionally absent so analytics is governed through GTM configuration.
+- [ ] Run a post-implementation analytics QA pass for baseline page views and archive evidence for Lord James Follent.
   - Owner: Lord James Follent
   - Priority: High
   - Plan:
-    1. Inventory required pages:
-       - Confirm `index.html` and `story.html` both lack GTM or GA placeholders so the snippet can be inserted cleanly.
-       - Scan `sitemap.xml` for additional public URLs and flag any future microsite entries for the same treatment.
-    2. Container ID handling:
-       - Reference the "Analytics Foundations" section in `PLAN.md` to verify the live GTM container ID (`GTM-W72PPP7B`).
-       - Log the ID in Lord James Follent's shared credential vault with rotation notes so the snippet does not need repo edits during future swaps.
-    3. Snippet placement blueprint:
-       - Prepare to paste the GTM `<script>` block at the top of each `<head>` (before other scripts or structured data).
-       - Stage the `<noscript>` iframe immediately after each opening `<body>` tag, ensuring no whitespace or comments break the fallback.
-       - Wrap both blocks in a consistent maintenance comment, e.g., `<!-- GTM snippet: maintain parity with GTM-W72PPP7B publish date -->`, to make future includes obvious.
-    4. dataLayer bootstrap definitions:
-       - `index.html`: `pageTitle` = "Chateau Follent | Heritage & Winemaking Vision of Lord James Follent", `pageTemplate` = `marketing_homepage`, `audiencePersona` = `prospective_guests_and_partners`.
-       - `story.html`: `pageTitle` = "The Chateau Follent Story | Lord James Follent's Winemaking Journey", `pageTemplate` = `longform_story`, `audiencePersona` = `media_and_supporters`.
-       - Confirm the bootstrap uses `window.dataLayer = window.dataLayer || [];` before pushing each object so GTM sees consistent keys.
-    5. Duplication and QA guardrails:
-       - Double-check that no legacy GA or analytics `<script>` tags remain once GTM is live, relying on the GA4 Configuration tag inside GTM.
-       - Draft a smoke-test checklist: open each page in private browsing, enter GTM Preview mode, validate `page_view` hits in GA4 real-time, and capture screenshots for Lord James Follent's records.
+    1. Enter GTM Preview mode and validate expected page context fields (`pageTitle`, `pageTemplate`, `audiencePersona`) across all public pages.
+    2. Confirm `page_view` events appear in GA4 DebugView and real-time reports without duplication.
+    3. Capture and store validation screenshots with the analytics records to preserve an audit trail.
 - [ ] Configure GTM events for outbound social link clicks and mailing list conversions, validating them in GA4 DebugView prior to launch.
   - Owner: Lord James Follent
   - Priority: Medium
