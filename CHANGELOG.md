@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-09
+
+### Changed
+- Updated `vintages.html` to remove outdated marketing-links copy from the vintages page. (#74)
+
+### Fixed
+- Corrected the rosé yeast listing to `Enoferm Syrah` in `vintages.html`. (#73)
+
+### Documentation
+- Removed the lingering bottling placeholder from the merlot blend entry in `vintages.html`. (#72)
+
 ## 2026-03-06
 
 ### Documentation
