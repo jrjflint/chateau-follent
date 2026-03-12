@@ -16,6 +16,19 @@
   --color-shadow: rgba(0, 0, 0, 0.08);
   --radius-soft: 1.5rem;
   --transition-base: 160ms ease-in-out;
+
+  /* Chateau Follent vertical lockup system (crest anchored) */
+  --lockup-wordmark-block-height-ratio: 0.455; /* 45.5% of crest height */
+  --lockup-gap-ratio: 0.091; /* 9.1% of crest height */
+  --lockup-crest-height-ratio: 2.2; /* 220% of wordmark block height */
+  --lockup-gap-to-wordmark-ratio: 0.2; /* 20% of wordmark block height */
+  --lockup-stacked-wordmark-line-height: 1.1;
+
+  /* Acceptable tolerance ranges (crest anchored) */
+  --lockup-wordmark-block-height-ratio-min: 0.44;
+  --lockup-wordmark-block-height-ratio-max: 0.47;
+  --lockup-gap-ratio-min: 0.08;
+  --lockup-gap-ratio-max: 0.1;
 }
 
 /* -------------------------------------------------- */

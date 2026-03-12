@@ -51,10 +51,32 @@ Use these traits consistently across web copy, print, social, and presentations:
 
 ## 3) Visual Identity System
 
-### Logo and wordmark usage (current state)
-- Current digital header treatment is a serif, uppercase wordmark presentation: **CHATEAU FOLLENT**.
+### Logo and wordmark usage (vertical lockup system)
+- The Chateau Follent vertical lockup uses the **crest as the anchor element**.
+- The stacked two-line wordmark (**CHATEAU** over **FOLLENT**) sits above the crest.
 - Keep logo/wordmark treatments clean and uncluttered.
 - Do not apply glow effects, bevels, drop shadows, perspective warps, or novelty textures.
+
+#### Measurement definitions
+- **Wordmark block height:** Total visual height of the stacked two-line wordmark (**CHATEAU** over **FOLLENT**).
+- **Gap:** Vertical distance from the bottom of the wordmark block to the top of the crest.
+- **Crest height:** Full visible height of the shield.
+
+#### Default proportion rules
+- Wordmark block height = **45.5% of crest height** (`0.455 × crest height`).
+- Gap = **9.1% of crest height** (`0.091 × crest height`).
+- Crest height = **220% of wordmark block height** (`2.2 × wordmark block height`).
+- Gap = **20% of wordmark block height** (`0.2 × wordmark block height`).
+- Stacked wordmark line-height = **1.1**.
+
+#### Tolerance ranges
+- Wordmark block height: **44%–47%** of crest height.
+- Gap: **8%–10%** of crest height.
+
+#### Reference example
+- Wordmark block height: **800px**
+- Crest height: **1760px**
+- Gap: **160px**
 
 ### Typography
 Use this pair consistently (already implemented on the site):
