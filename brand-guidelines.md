@@ -57,6 +57,15 @@ Use these traits consistently across web copy, print, social, and presentations:
 - Keep logo/wordmark treatments clean and uncluttered.
 - Do not apply glow effects, bevels, drop shadows, perspective warps, or novelty textures.
 
+
+#### Alignment and responsive lockup rules
+- Keep the full lockup centred on both desktop and mobile (`text-align: center`, centred container).
+- The crest and wordmark must share the same vertical axis; do not offset either element left or right at any breakpoint.
+- The wordmark must always remain a two-line stack exactly as:
+  - `CHATEAU`
+  - `FOLLENT`
+- Do not collapse the wordmark to one line or split to more than two lines.
+
 #### Measurement definitions
 - **Wordmark block height:** Total visual height of the stacked two-line wordmark (**CHATEAU** over **FOLLENT**).
 - **Gap:** Vertical distance from the bottom of the wordmark block to the top of the crest.
