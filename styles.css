@@ -6,13 +6,19 @@
 /* -------------------------------------------------- */
 :root {
   color-scheme: light dark;
-  --color-background: #ffffff;
-  --color-surface: #fafafa;
-  --color-text: #171717;
-  --color-muted: #3d3d3d;
-  --color-border: #d9d9d9;
-  --color-link: #1f1f1f;
-  --color-link-hover: #000000;
+  --color-background: #f2f0ea;
+  --color-surface: #fcfbf8;
+  --color-text: #0a0a0c;
+  --color-muted: #5a6470;
+  --color-border: #d2cdc4;
+  --color-link: #4a002e;
+  --color-link-hover: #2f001d;
+  --color-accent: #4a002e;
+  --color-accent-hover: #360022;
+  --color-accent-contrast: #f2f0ea;
+  --color-accent-soft: rgba(74, 0, 46, 0.08);
+  --color-accent-soft-strong: rgba(74, 0, 46, 0.14);
+  --color-highlight: #c7e0ff;
   --color-shadow: rgba(0, 0, 0, 0.08);
   --radius-soft: 1.5rem;
   --transition-base: 160ms ease-in-out;
@@ -117,7 +123,7 @@ main {
   padding: clamp(1.5rem, 2vw + 1rem, 2rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.08), rgba(145, 115, 88, 0));
+  background: linear-gradient(135deg, var(--color-accent-soft), rgba(74, 0, 46, 0));
 }
 
 .waitlist-copy h2 {
@@ -135,16 +141,16 @@ main {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  background-color: #8b6a4d;
-  color: #ffffff;
-  border-color: #75583f;
-  box-shadow: 0 0.75rem 1.5rem rgba(145, 115, 88, 0.25);
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-color: var(--color-accent);
+  box-shadow: 0 0.75rem 1.5rem var(--color-accent-soft-strong);
 }
 
 .cta-button:hover,
 .cta-button:focus-visible {
-  background-color: #7f5f43;
-  border-color: #6d523a;
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
 }
 
 .site-footer {
@@ -183,7 +189,7 @@ main {
 }
 
 .social-links a[aria-disabled='true'] {
-  color: #616161;
+  color: var(--color-muted);
   opacity: 1;
   pointer-events: none;
   border-bottom: 1px dashed var(--color-border);
@@ -239,7 +245,7 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
   padding: 0.5rem 1rem 1rem;
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.05), rgba(145, 115, 88, 0));
+  background: linear-gradient(135deg, var(--color-accent-soft), rgba(74, 0, 46, 0));
   box-shadow: 0 1rem 2rem var(--color-shadow);
 }
 
@@ -328,8 +334,8 @@ button {
 
 button:hover,
 button:focus-visible {
-  background-color: #f0f0f0;
-  border-color: #b5b5b5;
+  background-color: #efebe4;
+  border-color: #a8a39a;
   transform: translateY(-1px);
 }
 
@@ -439,33 +445,38 @@ button:active {
 /* -------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0f0f0f;
-    --color-surface: #161616;
-    --color-text: #f5f5f5;
-    --color-muted: #d0d0d0;
-    --color-border: #2a2a2a;
-    --color-link: #f5f5f5;
-    --color-link-hover: #ffffff;
+    --color-background: #0a0a0c;
+    --color-surface: #151922;
+    --color-text: #f2f0ea;
+    --color-muted: #c5ced8;
+    --color-border: #2d3442;
+    --color-link: #c7e0ff;
+    --color-link-hover: #e7f1ff;
+    --color-accent: #5d4aff;
+    --color-accent-hover: #7b6bff;
+    --color-accent-contrast: #0a0a0c;
+    --color-accent-soft: rgba(199, 224, 255, 0.14);
+    --color-accent-soft-strong: rgba(93, 74, 255, 0.35);
     --color-shadow: rgba(0, 0, 0, 0.5);
   }
 
   button:hover,
   button:focus-visible {
-    background-color: #1f1f1f;
-    border-color: #3a3a3a;
+    background-color: #1c2431;
+    border-color: #4b5f7b;
   }
 
   .cta-button {
-    background-color: #b38f6e;
-    border-color: #9b7756;
-    box-shadow: 0 0.75rem 1.5rem rgba(179, 143, 110, 0.35);
-    color: #1b1b1b;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0.75rem 1.5rem var(--color-accent-soft-strong);
+    color: var(--color-accent-contrast);
   }
 
   .cta-button:hover,
   .cta-button:focus-visible {
-    background-color: #c8a07a;
-    border-color: #a88663;
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
   }
 
   .waitlist-dialog {
@@ -483,7 +494,7 @@ button:active {
   }
 
   .social-links a[aria-disabled='true'] {
-    color: #bdbdbd;
+    color: var(--color-muted);
   }
 }
 
@@ -492,7 +503,7 @@ button:active {
 /* -------------------------------------------------- */
 body.fellowship-page main {
   width: min(100%, 56.25rem);
-  background-color: #fffefc;
+  background-color: var(--color-surface);
 }
 
 body.fellowship-page header {
@@ -505,7 +516,7 @@ body.fellowship-page .site-footer {
 }
 
 body.fellowship-page .fellowship-hero {
-  background: linear-gradient(135deg, rgba(145, 115, 88, 0.12), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(135deg, var(--color-accent-soft), rgba(242, 240, 234, 0.92));
   border-radius: var(--radius-soft);
   padding: clamp(1.5rem, 2vw + 1.5rem, 3rem);
   text-align: center;
@@ -523,7 +534,7 @@ body.fellowship-page .fellowship-hero {
   margin: 2.5rem auto;
   height: 1px;
   width: 60%;
-  background: linear-gradient(90deg, transparent, rgba(145, 115, 88, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent-soft-strong), transparent);
 }
 
 .benefits-section {
@@ -535,7 +546,7 @@ body.fellowship-page .fellowship-hero {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
   padding: 1.5rem;
-  background-color: rgba(145, 115, 88, 0.04);
+  background-color: var(--color-accent-soft);
   box-shadow: 0 1rem 2rem var(--color-shadow);
 }
 
@@ -543,7 +554,7 @@ body.fellowship-page .fellowship-hero {
   overflow-x: auto;
   border-radius: var(--radius-soft);
   border: 1px solid var(--color-border);
-  background-color: rgba(145, 115, 88, 0.03);
+  background-color: var(--color-accent-soft);
   margin-bottom: 1.5rem;
 }
 
@@ -560,7 +571,7 @@ body.fellowship-page .fellowship-hero {
 }
 
 .fellowship-table thead {
-  background-color: rgba(145, 115, 88, 0.15);
+  background-color: var(--color-accent-soft-strong);
 }
 
 .fellowship-table tbody tr:nth-child(odd) {
@@ -568,15 +579,15 @@ body.fellowship-page .fellowship-hero {
 }
 
 .charter-section {
-  border: 1px solid rgba(145, 115, 88, 0.4);
+  border: 1px solid var(--color-accent-soft-strong);
   border-radius: var(--radius-soft);
   padding: 1.75rem;
-  background-color: rgba(145, 115, 88, 0.08);
+  background-color: var(--color-accent-soft);
   box-shadow: 0 1.25rem 2.5rem var(--color-shadow);
 }
 
 body.fellowship-page blockquote {
-  border-left: 4px solid rgba(145, 115, 88, 0.6);
+  border-left: 4px solid var(--color-accent);
   padding-left: 1rem;
   margin: 1.5rem 0;
   color: var(--color-text);
