@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Chateau Follent Crest – Canva Editable 3 Colour</title>
+  <desc id="desc">Editable SVG for Canva with separate recolourable outer shield, accent ring, and bend.</desc>
+
+  <g id="outer-shield-outline" fill="#111111" fill-rule="evenodd">
+    <path d="M360 240H1140C1135 620 1050 950 750 1290C450 950 365 620 360 240ZM402 282H1098C1090 625 1008 916 750 1232C492 916 410 625 402 282Z"/>
+  </g>
+
+  <g id="inner-shield-accent" fill="#0057FF" fill-rule="evenodd">
+    <path d="M402 282H1098C1090 625 1008 916 750 1232C492 916 410 625 402 282ZM442 322H1058C1048 626 966 886 750 1176C534 886 452 626 442 322Z"/>
+  </g>
+
+  <g id="bend" fill="#FF6A00">
+    <path d="M500 380H620L900 940H780Z"/>
+  </g>
+
+  <g id="internal-elements"/>
+</svg>
