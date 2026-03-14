@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500">
+  <title>Chateau Follent Crest Master</title>
+  <desc>Master crest SVG with compound filled shield outline, transparent field, and diagonal bend.</desc>
+
+  <!--
+    BRAND COLOURS
+    Follent Noir:      #0A0A0C
+    Bordeaux Nocturne: #4A002E
+
+    STRUCTURE
+    1. outer-shield-outline  = black compound geometry
+    2. inner-shield-accent   = transparent by default, optional accent stroke/fill
+    3. bend                  = black diagonal band clipped to inner field
+    4. negative-space        = transparent because no background object is drawn
+  -->
+
+  <defs>
+    <!-- Inner shield field used as clipping area for bend and accent -->
+    <clipPath id="clip-inner-field">
+      <path d="
+        M 213 132
+        L 1287 132
+        L 1287 762
+        C 1287 951 1184 1126 1018 1218
+        L 750 1366
+        L 482 1218
+        C 316 1126 213 951 213 762
+        Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Transparent negative space -->
+  <g id="negative-space" fill="none"></g>
+
+  <!-- Outer shield outline as compound filled geometry -->
+  <g id="outer-shield-outline" fill="#0A0A0C">
+    <path fill-rule="evenodd" d="
+      M 150 81
+      L 1350 81
+      L 1350 762
+      C 1350 975 1234 1170 1048 1273
+      L 750 1436
+      L 452 1273
+      C 266 1170 150 975 150 762
+      Z
+
+      M 213 132
+      L 1287 132
+      L 1287 762
+      C 1287 951 1184 1126 1018 1218
+      L 750 1366
+      L 482 1218
+      C 316 1126 213 951 213 762
+      Z" />
+  </g>
+
+  <!-- Optional inner accent ring -->
+  <!--
+    Default is transparent.
+    To activate:
+    1. change fill="none" to fill="#4A002E"
+    2. keep fill-rule="evenodd"
+    3. adjust inset geometry if you want a thinner/thicker accent ring
+  -->
+  <g id="inner-shield-accent" fill="none">
+    <path fill-rule="evenodd" d="
+      M 184 99
+      L 1316 99
+      L 1316 762
+      C 1316 962 1207 1146 1031 1243
+      L 750 1399
+      L 469 1243
+      C 293 1146 184 962 184 762
+      Z
+
+      M 213 132
+      L 1287 132
+      L 1287 762
+      C 1287 951 1184 1126 1018 1218
+      L 750 1366
+      L 482 1218
+      C 316 1126 213 951 213 762
+      Z" />
+  </g>
+
+  <!-- Bend -->
+  <g id="bend" fill="#0A0A0C" clip-path="url(#clip-inner-field)">
+    <path d="
+      M 451 132
+      L 1255 936
+      L 1045 1146
+      L 213 314
+      L 213 132
+      Z" />
+  </g>
+
+  <!-- Reserved for future heraldic charges -->
+  <g id="internal-elements" fill="#0A0A0C"></g>
+</svg>
