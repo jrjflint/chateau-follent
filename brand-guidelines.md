@@ -112,30 +112,99 @@ If Montserrat is unavailable, fallback in this order:
 - **Body default:** Montserrat Regular, 14-16 px.
 - **Caption / meta:** Montserrat SemiBold, 11-13 px.
 
-## 4) Colour Palette
+## 4) Brand Colour System
 
-The active site design uses a **light-neutral base** with **warm oak accents**. Use this as the primary brand palette for Canva to maintain parity with the live experience.
+The Château Follent colour system is intentionally minimal to reinforce a luxury European wine aesthetic.
+Most label designs should use no more than three colours on the front label:
+1. **Noir Follent** (primary ink)
+2. **Limestone Ivory** (paper/background)
+3. **Bordeaux Nocturne** (accent)
 
-### Primary neutrals
-- `#FFFFFF` — Background / canvas base
-- `#FAFAFA` — Surface cards
-- `#171717` — Primary text
-- `#3D3D3D` — Secondary text
-- `#D9D9D9` — Borders and dividers
-- `#1F1F1F` — Link text
-- `#000000` — Link hover / high-emphasis black
+Secondary colours are used mainly for digital interfaces, charts, or limited design accents—not primary wine labels.
 
-### Signature accent family (oak/cask-inspired)
-- `#8B6A4D` — Primary CTA fill
-- `#7F5F43` — CTA hover
-- `#75583F` — CTA border
-- `#6D523A` — CTA hover border
-- `rgba(145,115,88,0.08)` — Soft panel tint
-- `rgba(145,115,88,0.25)` — Accent shadow tone
+Colour consistency between digital (HEX) and print (CMYK) must be maintained using the values below. CMYK is required for all print production because commercial printing uses Cyan–Magenta–Yellow–Black ink rather than RGB/HEX screen values.
 
-### Supporting accessibility note
-- For long text, prefer `#171717` on `#FFFFFF` or `#FAFAFA`.
-- Use accent browns for buttons, highlights, and callouts—not paragraph text blocks.
+### Primary Palette
+
+These colours define the core visual identity of Château Follent and should appear on most packaging, labels, and brand materials.
+
+| Name | HEX | CMYK | Usage |
+|------|------|------|------|
+| Noir Follent | `#0A0A0C` | C30 M20 Y20 K100 | Primary text, crest outlines, capsule foil |
+| Limestone Ivory | `#F2F0EA` | C3 M3 Y7 K0 | Premium label background |
+| Steel Reserve | `#5A6470` | C20 M10 Y0 K56 | Secondary text, dividers, technical info |
+| Bordeaux Nocturne | `#4A002E` | C0 M100 Y38 K71 | Vintage numerals, accent text |
+
+### Print Notes
+
+Noir Follent should be printed as a rich black rather than pure black ink.
+Using a mix of CMYK inks produces a deeper black tone than K100 alone.
+
+The preferred Château Follent rich-black build is:
+
+- **Noir Follent:** C30 M20 Y20 K100
+
+This produces a cool-toned luxury black suitable for matte paper wine labels.
+
+### Secondary Palette
+
+Secondary colours are used sparingly for digital environments or limited accents.
+They should not appear on standard wine labels except in rare cases such as reserve bottlings, charts, or digital UI elements.
+
+| Name | HEX | CMYK | Usage |
+|------|------|------|------|
+| Icy Blue | `#C7E0FF` | C22 M12 Y0 K0 | Hover states, highlights |
+| Amethyst Ice | `#5D4AFF` | C63 M71 Y0 K0 | Accent colour, limited-edition cues |
+| Emerald Noir | `#004B56` | C100 M12 Y0 K66 | Reserve label accents |
+
+### Label Colour Rules
+
+#### Standard wine label
+Allowed front-label colours:
+- **Noir Follent**
+- **Limestone Ivory**
+- **Bordeaux Nocturne**
+
+Optional enhancement:
+- Bordeaux foil stamping for vintage details
+
+#### Mead labels
+Mead labels may use the same system but may optionally introduce Bordeaux Nocturne more prominently to distinguish them from wine releases.
+
+Example structure:
+- Title: Noir Follent
+- Background: Limestone Ivory
+- Vintage: Bordeaux Nocturne
+- Technical line: Steel Reserve
+
+### Colour Hierarchy
+
+The system follows a strict hierarchy:
+
+- **Tier 1 — Structural colours** (used everywhere): Noir Follent, Limestone Ivory
+- **Tier 2 — Brand accents** (used sparingly): Bordeaux Nocturne, Steel Reserve
+- **Tier 3 — Digital accents** (used rarely): Icy Blue, Amethyst Ice, Emerald Noir
+
+### Design Philosophy
+
+The Château Follent palette follows a cool-toned Deep Winter colour theory.
+
+Characteristics:
+- High contrast
+- Cool undertones
+- Minimal warm colours
+- Restrained accents
+
+This avoids rustic or craft aesthetics and reinforces a structured European winery identity.
+
+### Implementation Notes for Codex
+
+Design automation systems should enforce these rules:
+1. Default label background = **Limestone Ivory**
+2. Default text colour = **Noir Follent**
+3. Accent colour = **Bordeaux Nocturne**
+4. Maximum colours per front label = **3**
+5. Avoid warm colours (gold, beige, brown)
 
 ## 5) Imagery Direction
 
@@ -165,15 +234,13 @@ The active site design uses a **light-neutral base** with **warm oak accents**. 
 
 ### A. Brand colours to add in Canva
 Add these first as the core kit:
-1. `#FFFFFF`
-2. `#FAFAFA`
-3. `#171717`
-4. `#3D3D3D`
-5. `#D9D9D9`
-6. `#8B6A4D`
-7. `#7F5F43`
-8. `#75583F`
-9. `#6D523A`
+1. **Noir Follent** — `#0A0A0C`
+2. **Limestone Ivory** — `#F2F0EA`
+3. **Steel Reserve** — `#5A6470`
+4. **Bordeaux Nocturne** — `#4A002E`
+5. **Icy Blue** — `#C7E0FF`
+6. **Amethyst Ice** — `#5D4AFF`
+7. **Emerald Noir** — `#004B56`
 
 ### B. Brand fonts to add in Canva
 1. **Libre Baskerville** (headings)
@@ -187,10 +254,10 @@ Add these first as the core kit:
 5. Email header graphics: waitlist and launch campaigns.
 
 ### D. Canva component standards
-- Button style: fill `#8B6A4D`, text `#FFFFFF`, optional border `#75583F`.
-- Card backgrounds: `#FAFAFA` with thin border `#D9D9D9`.
-- Headline text: Libre Baskerville in `#171717`.
-- Body text: Montserrat in `#3D3D3D`.
+- Button style: fill **Bordeaux Nocturne** (`#4A002E`) with text **Limestone Ivory** (`#F2F0EA`).
+- Card backgrounds: **Limestone Ivory** (`#F2F0EA`) with accent elements in **Icy Blue** (`#C7E0FF`).
+- Headline text: Libre Baskerville in **Noir Follent** (`#0A0A0C`).
+- Body text: Montserrat in **Steel Reserve** (`#5A6470`).
 
 ## 8) QA Checklist Before Publishing Any Asset
 
