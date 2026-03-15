@@ -89,7 +89,7 @@
   </g>
 
   <!-- INNER -->
-  <g id="inner" fill="#FFFFFF">
+  <g id="inner" fill="none">
     <path fill-rule="evenodd" d="
       M 250 136
       L 1750 136
