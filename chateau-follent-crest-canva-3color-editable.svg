@@ -1,18 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" role="img" aria-labelledby="title desc">
-  <title id="title">Chateau Follent Crest – Canva Editable 3 Colour</title>
-  <desc id="desc">Editable SVG for Canva with separate recolourable outer shield, accent ring, and bend.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Chateau Follent Crest Master – Filled Structure V3 (Canva 3-Colour)</title>
+  <desc id="desc">
+    Chateau Follent crest with square top corners, 50px outer border,
+    40px inner border, transparent field, and refined diagonal bend.
+    Outer, inner, and bend use distinct colours for Canva recolouring.
+  </desc>
 
-  <g id="outer-shield-outline" fill="#111111" fill-rule="evenodd">
-    <path d="M360 240H1140C1135 620 1050 950 750 1290C450 950 365 620 360 240ZM402 282H1098C1090 625 1008 916 750 1232C492 916 410 625 402 282Z"/>
+  <defs>
+    <path id="shield-outer-shape" d="
+      M 200 86
+      L 1800 86
+      L 1800 1016
+      C 1800 1298 1645 1558 1398 1696
+      L 1010 1910
+      C 1007 1912 1003 1914 1000 1914
+      C 997 1914 993 1912 990 1910
+      L 602 1696
+      C 355 1558 200 1298 200 1016
+      Z" />
+
+    <path id="shield-inner-black-edge" d="
+      M 250 136
+      L 1750 136
+      L 1750 1008
+      C 1750 1270 1609 1511 1378 1657
+      L 1009 1861
+      C 1006 1863 1003 1864 1000 1864
+      C 997 1864 994 1863 991 1861
+      L 622 1657
+      C 391 1511 250 1270 250 1008
+      Z" />
+
+    <path id="shield-field" d="
+      M 290 176
+      L 1710 176
+      L 1710 998
+      C 1710 1248 1578 1476 1362 1612
+      L 1008 1808
+      C 1005 1810 1002 1811 1000 1811
+      C 998 1811 995 1810 992 1808
+      L 638 1612
+      C 422 1476 290 1248 290 998
+      Z" />
+
+    <clipPath id="clip-field">
+      <use href="#shield-field"/>
+    </clipPath>
+  </defs>
+
+  <g id="outer" fill="#0A0A0C">
+    <path fill-rule="evenodd" d="
+      M 200 86
+      L 1800 86
+      L 1800 1016
+      C 1800 1298 1645 1558 1398 1696
+      L 1010 1910
+      C 1007 1912 1003 1914 1000 1914
+      C 997 1914 993 1912 990 1910
+      L 602 1696
+      C 355 1558 200 1298 200 1016
+      Z
+
+      M 250 136
+      L 1750 136
+      L 1750 1008
+      C 1750 1270 1609 1511 1378 1657
+      L 1009 1861
+      C 1006 1863 1003 1864 1000 1864
+      C 997 1864 994 1863 991 1861
+      L 622 1657
+      C 391 1511 250 1270 250 1008
+      Z" />
   </g>
 
-  <g id="inner-shield-accent" fill="#0057FF" fill-rule="evenodd">
-    <path d="M402 282H1098C1090 625 1008 916 750 1232C492 916 410 625 402 282ZM442 322H1058C1048 626 966 886 750 1176C534 886 452 626 442 322Z"/>
+  <g id="inner" fill="#1E90FF">
+    <path fill-rule="evenodd" d="
+      M 250 136
+      L 1750 136
+      L 1750 1008
+      C 1750 1270 1609 1511 1378 1657
+      L 1009 1861
+      C 1006 1863 1003 1864 1000 1864
+      C 997 1864 994 1863 991 1861
+      L 622 1657
+      C 391 1511 250 1270 250 1008
+      Z
+
+      M 290 176
+      L 1710 176
+      L 1710 998
+      C 1710 1248 1578 1476 1362 1612
+      L 1008 1808
+      C 1005 1810 1002 1811 1000 1811
+      C 998 1811 995 1810 992 1808
+      L 638 1612
+      C 422 1476 290 1248 290 998
+      Z" />
   </g>
 
-  <g id="bend" fill="#FF6A00">
-    <path d="M500 380H620L900 940H780Z"/>
+  <g id="bend" fill="#FF6A00" clip-path="url(#clip-field)">
+    <path d="
+      M 290 176
+      L 585 176
+      L 1668 1259
+      C 1622 1372 1548 1477 1440 1567
+      C 1422 1582 1407 1593 1394 1601
+      L 290 497
+      Z" />
   </g>
-
-  <g id="internal-elements"/>
 </svg>
