@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-03-12
+
+### Documentation
+- Recorded today's repository housekeeping by updating `CHANGELOG.md` with the latest work log entry for Lord James Follent.
+
 ## 2026-03-09
 
 ### Changed
