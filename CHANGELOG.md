@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-03-12
+
+### Changed
+- Centered the stacked uppercase Chateau Follent wordmark to improve header alignment consistency across key pages. (#79)
+
+### Documentation
+- Updated this changelog to reflect the most recent site change for Lord James Follent.
+
 ## 2026-03-09
 
 ### Changed
