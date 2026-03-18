@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-03-17
+
+### Changed
+- Refocused `index.html` so the header prioritizes the crest/wordmark lockup and reordered homepage content to place the story section ahead of the waitlist panel. (#89)
+
+## 2026-03-15
+
+### Added
+- Added new crest source files, including `master-crest.svg` and `chateau-follent-crest-canva-3color-editable.svg`, then iterated the Canva export to a filled-structure v3 variant for brand production workflows. (#85, #86, #87)
+
+### Changed
+- Refreshed `styles.css` with an updated light/dark palette tuned for label readability and contrast. (#84)
+- Updated crest assets in `chateau-follent-crest-master.svg`, `chateau-follent-crest-black-no-inner.svg`, and `chateau-follent-crest-white-no-inner.svg` to align exported variants.
+
+### Documentation
+- Refined `brand-guidelines.md` with print-oriented color system guidance and revised lockup sequencing to present the brand heading before crest treatments. (#83, #88)
+- Reordered lockup and brand-heading structure across `index.html`, `story.html`, `vintages.html`, and `founding-fellowship.html` to match the latest documentation direction. (#88)
+
+## 2026-03-12
+
+### Added
+- Added a baseline monochrome crest source at `Chateau Follent Crest B&W.svg` and introduced crest-plus-wordmark header lockups across key pages (`index.html`, `story.html`, `vintages.html`, and `founding-fellowship.html`). (#78)
+
+### Changed
+- Centered stacked uppercase wordmarks and crest lockups in shared page headers by updating `styles.css` and associated templates. (#79, #80)
+
+### Documentation
+- Expanded `brand-guidelines.md` with crest-anchored vertical lockup rules and codified a two-line wordmark standard for consistent placement. (#77, #80)
+
 ## 2026-03-09
 
 ### Changed
