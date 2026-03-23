@@ -55,7 +55,13 @@
         <aside class="card signup-card" aria-label="Waitlist signup form">
           <h2 class="signup-title">Join the Chateau Follent Waitlist</h2>
           <p class="lead">Early access to meaningful developments, before wider public release.</p>
-          <form action="#" method="post" class="waitlist-capture-form">
+          <form
+            id="waitlist-form"
+            action="https://form.fillout.com/t/mxeUEHDEgQus"
+            method="get"
+            class="waitlist-capture-form"
+            target="_blank"
+          >
             <label for="hero-email">Email Address</label>
             <input
               id="hero-email"
@@ -67,15 +73,7 @@
               placeholder="name@email.com"
               inputmode="email"
             />
-            <button
-              type="button"
-              class="cta-button open-waitlist-button"
-              aria-controls="waitlistOverlay"
-              aria-expanded="false"
-              aria-haspopup="dialog"
-            >
-              Join the Waitlist
-            </button>
+            <button type="submit" class="cta-button">Join for Early Access</button>
           </form>
           <p class="microcopy">No noise. Only occasional, relevant updates. Unsubscribe at any time.</p>
         </aside>
@@ -176,7 +174,12 @@
         <div class="card final-cta">
           <h2 id="final-cta-heading">Step In Before the Broader Audience Arrives</h2>
           <p>Join now to receive early access to the Chateau Follent journey and the moments that define it.</p>
-          <form action="#" method="post" class="inline-form waitlist-capture-form">
+          <form
+            action="https://form.fillout.com/t/mxeUEHDEgQus"
+            method="get"
+            class="inline-form waitlist-capture-form"
+            target="_blank"
+          >
             <label for="final-email" class="sr-only">Email Address</label>
             <input
               id="final-email"
@@ -188,15 +191,7 @@
               placeholder="Enter your email"
               inputmode="email"
             />
-            <button
-              type="button"
-              class="cta-button open-waitlist-button"
-              aria-controls="waitlistOverlay"
-              aria-expanded="false"
-              aria-haspopup="dialog"
-            >
-              Join the Waitlist
-            </button>
+            <button type="submit" class="cta-button">Join for Early Access</button>
           </form>
           <p class="microcopy">Early access, meaningful updates, no clutter.</p>
         </div>
@@ -209,267 +204,75 @@
       </div>
     </footer>
 
-    <div class="waitlist-overlay" id="waitlistOverlay" hidden aria-hidden="true">
-      <div
-        class="waitlist-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="waitlistDialogTitle"
-        tabindex="-1"
-      >
-        <button type="button" class="waitlist-close" id="closeWaitlistButton" aria-label="Close waitlist form">
-          &times;
-        </button>
-        <h2 id="waitlistDialogTitle">Join the Chateau Follent Waitlist</h2>
-        <p>
-          Share your details to accompany Lord James Follent on the unfolding Chateau Follent adventure.
-        </p>
-        <div
-          id="filloutEmbedContainer"
-          style="width: 100%; height: 500px"
-          data-fillout-id="mxeUEHDEgQus"
-          data-fillout-embed-type="standard"
-          data-fillout-inherit-parameters
-          data-fillout-dynamic-resize
-        ></div>
-      </div>
-    </div>
-
     <script>
       (function () {
-        var waitlistButtons = Array.prototype.slice.call(
-          document.querySelectorAll(".open-waitlist-button")
-        );
-        var overlay = document.getElementById("waitlistOverlay");
-        var closeButton = document.getElementById("closeWaitlistButton");
-        var dialog = overlay ? overlay.querySelector(".waitlist-dialog") : null;
-        var embedContainer = document.getElementById("filloutEmbedContainer");
-        var inertTargets = Array.prototype.slice.call(
-          document.querySelectorAll("header, main, footer")
-        );
+        var form = document.getElementById("waitlist-form");
+        var emailInput = document.getElementById("hero-email");
+        var ctaText = "Join for Early Access";
+        var POPUP_FEATURES = "popup=yes,width=560,height=760,noopener,noreferrer";
+        // Replace this with your production Fillout URL when it changes.
+        var FILLOUT_BASE_URL = "https://form.fillout.com/t/mxeUEHDEgQus";
 
-        if (overlay) {
-          overlay.hidden = true;
-          overlay.setAttribute("aria-hidden", "true");
-        }
-        if (
-          !waitlistButtons.length ||
-          !overlay ||
-          !closeButton ||
-          !dialog ||
-          !embedContainer
-        ) {
+        if (!form || !emailInput) {
           return;
         }
 
-        var previousActiveElement = null;
-        var storedAriaHidden = [];
-        var focusableSelectors = [
-          'a[href]:not([tabindex="-1"])',
-          'button:not([disabled]):not([tabindex="-1"])',
-          'input:not([disabled]):not([type="hidden"]):not([tabindex="-1"])',
-          'select:not([disabled]):not([tabindex="-1"])',
-          'textarea:not([disabled]):not([tabindex="-1"])',
-          '[tabindex]:not([tabindex="-1"])'
-        ];
-        var knownTrackingParams = [
-          "utm_source",
-          "utm_medium",
-          "utm_campaign",
-          "utm_term",
-          "utm_content",
-          "utm_id",
-          "gclid",
-          "fbclid",
-          "msclkid"
-        ];
-        var filloutLoaded = false;
-
-        function applyInertState() {
-          storedAriaHidden = inertTargets.map(function (element) {
-            return {
-              element: element,
-              ariaHidden: element.getAttribute("aria-hidden"),
-            };
-          });
-
-          inertTargets.forEach(function (element) {
-            if (!element) {
-              return;
-            }
-            element.setAttribute("aria-hidden", "true");
-            if ("inert" in element) {
-              element.inert = true;
-            } else {
-              element.setAttribute("inert", "");
-            }
-          });
+        function trackEvent(name, params) {
+          if (window.gtag) {
+            window.gtag("event", name, params);
+          }
         }
 
-        function removeInertState() {
-          storedAriaHidden.forEach(function (record) {
-            if (!record || !record.element) {
-              return;
-            }
-            if (record.ariaHidden === null) {
-              record.element.removeAttribute("aria-hidden");
-            } else {
-              record.element.setAttribute("aria-hidden", record.ariaHidden);
-            }
-            if ("inert" in record.element) {
-              record.element.inert = false;
-            }
-            record.element.removeAttribute("inert");
-          });
-          storedAriaHidden = [];
+        function buildFilloutUrl(email) {
+          var filloutUrl = new URL(FILLOUT_BASE_URL);
+          filloutUrl.searchParams.set("email", email);
+          return filloutUrl.toString();
         }
 
-        function syncUtmDataAttributes() {
-          var params = new URLSearchParams(window.location.search);
-          knownTrackingParams.forEach(function (param) {
-            if (params.has(param)) {
-              embedContainer.setAttribute("data-" + param, params.get(param));
-            } else {
-              embedContainer.removeAttribute("data-" + param);
-            }
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!emailInput.checkValidity()) {
+            emailInput.reportValidity();
+            return;
+          }
+
+          var email = emailInput.value.trim();
+          var filloutUrl = buildFilloutUrl(email);
+
+          // Interaction metadata only — never include email/PII in analytics payloads.
+          trackEvent("waitlist_cta_click", {
+            location: "hero_signup_card",
+            cta_text: ctaText,
+            page_type: "waitlist",
+            brand: "Chateau Follent",
           });
-        }
 
-        function syncEmailDataAttribute(button) {
-          var form = button ? button.closest("form") : null;
-          var emailInput = form ? form.querySelector(".waitlist-email-input") : null;
-          var emailValue = emailInput ? emailInput.value.trim() : "";
+          // Popup-first UX, with a new-tab fallback if popup mode is unavailable.
+          var popupWindow = window.open(filloutUrl, "filloutWaitlist", POPUP_FEATURES);
+          if (!popupWindow || popupWindow.closed || typeof popupWindow.closed === "undefined") {
+            popupWindow = window.open(filloutUrl, "_blank", "noopener,noreferrer");
+          }
 
-          if (emailValue) {
-            embedContainer.setAttribute("data-email", emailValue);
+          if (popupWindow) {
+            trackEvent("waitlist_fillout_open", {
+              location: "hero_signup_card",
+              form_provider: "fillout",
+              page_type: "waitlist",
+            });
           } else {
-            embedContainer.removeAttribute("data-email");
-          }
-        }
-
-        function ensureFilloutLoaded(callback) {
-          if (filloutLoaded) {
-            if (callback) callback();
-            return;
-          }
-          var existing = document.querySelector('script[data-fillout-script]');
-          if (existing) {
-            if (existing.getAttribute("data-loaded") === "true") {
-              filloutLoaded = true;
-              if (callback) callback();
-            } else {
-              existing.addEventListener("load", function () {
-                existing.setAttribute("data-loaded", "true");
-                filloutLoaded = true;
-                if (callback) callback();
-              });
-            }
-            return;
-          }
-          var script = document.createElement("script");
-          script.src = "https://server.fillout.com/embed/v1/";
-          script.async = true;
-          script.setAttribute("data-fillout-script", "");
-          script.addEventListener("load", function () {
-            script.setAttribute("data-loaded", "true");
-            filloutLoaded = true;
-            if (callback) callback();
-          });
-          document.head.appendChild(script);
-        }
-
-        function getFocusableElements() {
-          return dialog.querySelectorAll(focusableSelectors.join(","));
-        }
-
-        function openOverlay(event) {
-          var triggerButton = event && event.currentTarget ? event.currentTarget : null;
-          syncEmailDataAttribute(triggerButton);
-          syncUtmDataAttributes();
-          overlay.hidden = false;
-          overlay.setAttribute("aria-hidden", "false");
-          document.body.classList.add("waitlist-open");
-          applyInertState();
-          previousActiveElement = document.activeElement;
-          waitlistButtons.forEach(function (button) {
-            button.setAttribute("aria-expanded", "true");
-          });
-          ensureFilloutLoaded();
-
-          var focusableElements = Array.prototype.slice.call(getFocusableElements());
-          var focusTarget = focusableElements.length ? focusableElements[0] : dialog;
-          if (focusTarget && typeof focusTarget.focus === "function") {
-            focusTarget.focus({ preventScroll: true });
-          } else {
-            dialog.focus({ preventScroll: true });
-          }
-        }
-
-        function closeOverlay() {
-          overlay.hidden = true;
-          overlay.setAttribute("aria-hidden", "true");
-          document.body.classList.remove("waitlist-open");
-          removeInertState();
-          waitlistButtons.forEach(function (button) {
-            button.setAttribute("aria-expanded", "false");
-          });
-          var focusTarget = previousActiveElement || waitlistButtons[0];
-          if (focusTarget && typeof focusTarget.focus === "function") {
-            focusTarget.focus();
-          }
-          previousActiveElement = null;
-        }
-
-        function trapFocus(event) {
-          if (event.key !== "Tab" || overlay.hidden) {
-            return;
-          }
-
-          var focusableElements = Array.prototype.slice.call(getFocusableElements());
-          if (focusableElements.length === 0) {
-            event.preventDefault();
-            dialog.focus();
-            return;
-          }
-
-          var activeElement = document.activeElement;
-          var firstElement = focusableElements[0];
-          var lastElement = focusableElements[focusableElements.length - 1];
-
-          if (
-            activeElement === dialog ||
-            focusableElements.indexOf(activeElement) === -1
-          ) {
-            event.preventDefault();
-            firstElement.focus();
-            return;
-          }
-
-          if (event.shiftKey && activeElement === firstElement) {
-            event.preventDefault();
-            lastElement.focus();
-          } else if (!event.shiftKey && activeElement === lastElement) {
-            event.preventDefault();
-            firstElement.focus();
-          }
-        }
-
-        waitlistButtons.forEach(function (button) {
-          button.addEventListener("click", openOverlay);
-        });
-        closeButton.addEventListener("click", closeOverlay);
-        overlay.addEventListener("click", function (event) {
-          if (event.target === overlay) {
-            closeOverlay();
+            // Last-resort fallback in strict browser environments.
+            window.location.assign(filloutUrl);
           }
         });
-        dialog.addEventListener("keydown", trapFocus);
-        overlay.addEventListener("keydown", trapFocus, true);
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape" && !overlay.hidden) {
-            closeOverlay();
-          }
-        });
+
+        // Recommended conversion tracking setup:
+        // On your own-domain thank-you page after Fillout submission, fire:
+        // window.gtag && window.gtag("event", "generate_lead", {
+        //   lead_type: "waitlist",
+        //   form_provider: "fillout",
+        //   page_type: "waitlist"
+        // });
       })();
     </script>
   </body>
