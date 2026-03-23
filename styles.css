@@ -621,6 +621,10 @@ body.waitlist-page .site-footer {
   width: min(100%, 72rem);
 }
 
+body.waitlist-page main {
+  padding: clamp(1.5rem, 2vw + 1rem, 3rem);
+}
+
 body.waitlist-page .site-header {
   margin-bottom: 1.5rem;
 }
@@ -834,10 +838,6 @@ body.waitlist-page .site-footer {
 }
 
 @media (max-width: 900px) {
-  body.waitlist-page main {
-    padding: clamp(1.2rem, 3vw, 1.8rem);
-  }
-
   body.waitlist-page .section {
     padding-block: 1.4rem;
   }
