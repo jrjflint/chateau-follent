@@ -19,7 +19,7 @@
     <link rel="icon" href="favicon.ico" />
     <style>
       :root {
-        color-scheme: light;
+        color-scheme: light dark;
         --bg: #f3f0e8;
         --bg-soft: #f8f6f1;
         --surface: #fffdf9;
@@ -28,10 +28,27 @@
         --line: #ded6ca;
         --accent: #4a002e;
         --accent-hover: #360022;
+        --accent-ink: #fcf8f1;
         --accent-soft: rgba(74, 0, 46, 0.1);
         --radius: 1.1rem;
         --shadow: 0 1.1rem 2.2rem rgba(23, 10, 17, 0.08);
         --max-width: 72rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #100d10;
+          --bg-soft: #171318;
+          --surface: #1d1820;
+          --ink: #f2edf3;
+          --ink-soft: #c5bcc7;
+          --line: #403644;
+          --accent: #e4b8d6;
+          --accent-hover: #f0cde3;
+          --accent-ink: #20121b;
+          --accent-soft: rgba(228, 184, 214, 0.16);
+          --shadow: 0 1.1rem 2.2rem rgba(0, 0, 0, 0.45);
+        }
       }
 
       * {
@@ -89,15 +106,10 @@
         color: inherit;
       }
 
-      .brand-mark {
-        width: 1.9rem;
-        height: 1.9rem;
-        border: 1px solid var(--line);
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        font-size: 0.78rem;
-        font-family: "Libre Baskerville", Georgia, serif;
+      .brand-crest {
+        width: 2rem;
+        height: 2rem;
+        display: block;
       }
 
       .brand-name {
@@ -156,8 +168,8 @@
 
       input[type="email"] {
         width: 100%;
-        border: 1px solid #c7bfb2;
-        background: #fff;
+        border: 1px solid var(--line);
+        background: var(--surface);
         color: var(--ink);
         border-radius: 0.72rem;
         padding: 0.86rem 0.9rem;
@@ -173,7 +185,7 @@
       .button {
         border: 1px solid var(--accent);
         background: var(--accent);
-        color: #fcf8f1;
+        color: var(--accent-ink);
         font: inherit;
         font-weight: 700;
         letter-spacing: 0.02em;
@@ -219,7 +231,7 @@
         padding: 1rem;
         border: 1px solid var(--line);
         border-radius: 0.8rem;
-        background: rgba(255, 255, 255, 0.66);
+        background: color-mix(in srgb, var(--surface) 82%, transparent);
       }
 
       .benefit h3 {
@@ -244,7 +256,7 @@
         padding: 1.1rem;
         border: 1px solid var(--line);
         border-radius: 0.8rem;
-        background: #fff;
+        background: var(--surface);
       }
 
       .panel p:last-child {
@@ -255,7 +267,7 @@
         margin: 0;
         padding: 1.25rem;
         border-left: 3px solid var(--accent);
-        background: linear-gradient(120deg, var(--accent-soft), rgba(255, 255, 255, 0.6));
+        background: linear-gradient(120deg, var(--accent-soft), color-mix(in srgb, var(--surface) 60%, transparent));
         border-radius: 0.5rem;
       }
 
@@ -284,8 +296,8 @@
         padding: 0.85rem 0.9rem;
         border: 1px solid var(--line);
         border-radius: 0.7rem;
-        background: rgba(255, 255, 255, 0.7);
-        color: #3f3740;
+        background: color-mix(in srgb, var(--surface) 84%, transparent);
+        color: var(--ink);
         font-size: 0.94rem;
       }
 
@@ -351,7 +363,19 @@
     <header class="site-header">
       <div class="container">
         <a class="brand" href="index.html" aria-label="Back to Chateau Follent home">
-          <span class="brand-mark" aria-hidden="true">CF</span>
+          <picture>
+            <source
+              srcset="chateau-follent-crest-white-no-inner.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              class="brand-crest"
+              src="chateau-follent-crest-black-no-inner.svg"
+              alt="Chateau Follent crest"
+              width="32"
+              height="32"
+            />
+          </picture>
           <span class="brand-name">Chateau Follent</span>
         </a>
       </div>
