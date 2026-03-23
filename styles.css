@@ -723,6 +723,17 @@ body.waitlist-page .cta-button {
   transform: none;
 }
 
+body.waitlist-page .signup-card .cta-button,
+body.waitlist-page .final-cta .cta-button {
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+body.waitlist-page .signup-card .microcopy,
+body.waitlist-page .final-cta .microcopy {
+  margin-bottom: 0;
+}
+
 body.waitlist-page .section {
   padding-block: clamp(1.5rem, 2.25vw, 2.4rem);
   border-top: 1px solid var(--color-border);
