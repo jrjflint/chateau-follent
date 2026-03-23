@@ -639,8 +639,8 @@ body.waitlist-page .brand-crest {
 
 body.waitlist-page .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 2vw, 2.25rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.25rem, 1.8vw, 1.9rem);
   align-items: start;
 }
 
@@ -664,8 +664,8 @@ body.waitlist-page .microcopy {
 }
 
 body.waitlist-page .hero-subhead {
-  margin-bottom: 0;
-  max-width: 44ch;
+  margin-bottom: 0.35rem;
+  max-width: 58ch;
 }
 
 body.waitlist-page .card {
@@ -677,6 +677,7 @@ body.waitlist-page .card {
 
 body.waitlist-page .signup-card {
   padding: clamp(1.2rem, 1vw + 1rem, 1.75rem);
+  max-width: 36rem;
 }
 
 body.waitlist-page .signup-title {
@@ -719,7 +720,7 @@ body.waitlist-page .cta-button {
 }
 
 body.waitlist-page .section {
-  padding-block: clamp(2rem, 2.5vw, 3rem);
+  padding-block: clamp(1.5rem, 2.25vw, 2.4rem);
   border-top: 1px solid var(--color-border);
 }
 
@@ -736,11 +737,11 @@ body.waitlist-page .reassurance-list {
 
 body.waitlist-page .benefit-grid,
 body.waitlist-page .reassurance-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 body.waitlist-page .split {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   margin-top: 1rem;
 }
 
@@ -753,7 +754,7 @@ body.waitlist-page .reassurance-list li {
 }
 
 body.waitlist-page .benefit {
-  padding: 1rem;
+  padding: 1rem 1.05rem;
 }
 
 body.waitlist-page .benefit h3 {
@@ -767,7 +768,7 @@ body.waitlist-page .panel p {
 }
 
 body.waitlist-page .panel {
-  padding: 1.1rem;
+  padding: 1.05rem;
 }
 
 body.waitlist-page .panel p + p {
@@ -801,13 +802,13 @@ body.waitlist-page .reassurance-list {
 }
 
 body.waitlist-page .reassurance-list li {
-  padding: 0.85rem 0.9rem;
+  padding: 0.85rem 0.95rem;
   font-size: 0.95rem;
   color: var(--color-text);
 }
 
 body.waitlist-page .final-cta {
-  margin-top: 0.25rem;
+  margin-top: 0;
   padding: clamp(1.2rem, 1vw + 1rem, 1.85rem);
 }
 
@@ -833,20 +834,53 @@ body.waitlist-page .site-footer {
 }
 
 @media (max-width: 900px) {
-  body.waitlist-page .hero,
-  body.waitlist-page .benefit-grid,
-  body.waitlist-page .split,
-  body.waitlist-page .reassurance-list {
-    grid-template-columns: 1fr;
+  body.waitlist-page main {
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+  }
+
+  body.waitlist-page .section {
+    padding-block: 1.4rem;
   }
 }
 
 @media (max-width: 560px) {
+  body.waitlist-page {
+    padding-inline: 0.85rem;
+  }
+
+  body.waitlist-page .site-header {
+    margin-bottom: 1.1rem;
+  }
+
+  body.waitlist-page .hero .eyebrow {
+    margin-bottom: 0.65rem;
+  }
+
+  body.waitlist-page .hero h1 {
+    margin-bottom: 0.8rem;
+  }
+
+  body.waitlist-page .hero-subhead,
+  body.waitlist-page .lead,
+  body.waitlist-page .microcopy {
+    margin-bottom: 0.95rem;
+  }
+
+  body.waitlist-page .signup-card,
+  body.waitlist-page .final-cta {
+    padding: 1rem;
+  }
+
   body.waitlist-page .inline-form {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
   body.waitlist-page .cta-button {
     width: 100%;
+  }
+
+  body.waitlist-page .section h2 {
+    margin-bottom: 0.8rem;
   }
 }
