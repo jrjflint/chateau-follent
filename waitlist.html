@@ -20,12 +20,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="waitlist-page">
-    <header class="site-header waitlist-header" aria-label="Chateau Follent wordmark">
-      <p class="brand-wordmark" aria-label="Chateau Follent wordmark">
-        <span>CHATEAU</span>
-        <span>FOLLENT</span>
-      </p>
-    </header>
+    <div class="brand-lockup">
+      <h1 class="brand-wordmark"><span>CHATEAU</span><span>FOLLENT</span></h1>
+      <picture>
+        <source srcset="chateau-follent-crest-white-no-inner.svg" media="(prefers-color-scheme: dark)">
+        <img class="brand-crest" src="chateau-follent-crest-black-no-inner.svg" alt="Chateau Follent crest" width="160" height="160">
+      </picture>
+    </div>
 
     <main>
       <!-- Mobile-first hero keeps the core message and signup above the fold for Instagram traffic. -->
