@@ -5,7 +5,7 @@
 /* Color Variables & Theme Tokens                     */
 /* -------------------------------------------------- */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --color-background: #f2f0ea;
   --color-surface: #fcfbf8;
   --color-text: #0a0a0c;
@@ -441,64 +441,6 @@ button:active {
 }
 
 /* -------------------------------------------------- */
-/* Dark Mode Overrides                                */
-/* -------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #0a0a0c;
-    --color-surface: #151922;
-    --color-text: #f2f0ea;
-    --color-muted: #c5ced8;
-    --color-border: #2d3442;
-    --color-link: #c7e0ff;
-    --color-link-hover: #e7f1ff;
-    --color-accent: #5d4aff;
-    --color-accent-hover: #7b6bff;
-    --color-accent-contrast: #0a0a0c;
-    --color-accent-soft: rgba(199, 224, 255, 0.14);
-    --color-accent-soft-strong: rgba(93, 74, 255, 0.35);
-    --color-shadow: rgba(0, 0, 0, 0.5);
-  }
-
-  button:hover,
-  button:focus-visible {
-    background-color: #1c2431;
-    border-color: #4b5f7b;
-  }
-
-  .cta-button {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    box-shadow: 0 0.75rem 1.5rem var(--color-accent-soft-strong);
-    color: var(--color-accent-contrast);
-  }
-
-  .cta-button:hover,
-  .cta-button:focus-visible {
-    background-color: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
-  }
-
-  .waitlist-dialog {
-    background-color: var(--color-surface);
-    color: var(--color-text);
-  }
-
-  .waitlist-close {
-    background-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .waitlist-close:hover,
-  .waitlist-close:focus-visible {
-    background-color: rgba(255, 255, 255, 0.16);
-  }
-
-  .social-links a[aria-disabled='true'] {
-    color: var(--color-muted);
-  }
-}
-
-/* -------------------------------------------------- */
 /* Founding Fellowship Page                           */
 /* -------------------------------------------------- */
 body.fellowship-page main {
@@ -605,4 +547,195 @@ body.fellowship-page code {
   .benefits-section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* -------------------------------------------------- */
+/* Waitlist Page                                      */
+/* -------------------------------------------------- */
+body.waitlist-page {
+  place-items: start center;
+  min-height: auto;
+  padding: clamp(1rem, 2.8vw, 2rem) clamp(0.9rem, 2.5vw, 1.5rem) clamp(1.8rem, 4vw, 3rem);
+}
+
+body.waitlist-page .site-header,
+body.waitlist-page main,
+body.waitlist-page .site-footer {
+  width: min(100%, 42rem);
+}
+
+body.waitlist-page .waitlist-header {
+  margin-bottom: 0.9rem;
+}
+
+body.waitlist-page .waitlist-header .brand-wordmark {
+  font-size: clamp(1.45rem, 1.4vw + 1rem, 2rem);
+  letter-spacing: 0.08em;
+}
+
+body.waitlist-page main {
+  padding: clamp(1.15rem, 2vw, 1.85rem);
+  border-radius: 1.1rem;
+  box-shadow: 0 1rem 2rem var(--color-shadow);
+}
+
+body.waitlist-page .hero {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.waitlist-page .hero .eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+body.waitlist-page h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5.8vw, 2.55rem);
+  line-height: 1.2;
+}
+
+body.waitlist-page .hero-subhead,
+body.waitlist-page p,
+body.waitlist-page li {
+  font-size: clamp(0.96rem, 1.8vw, 1.06rem);
+  line-height: 1.58;
+  margin-bottom: 0;
+}
+
+body.waitlist-page .hero-subhead {
+  color: var(--color-muted);
+  max-width: 44ch;
+}
+
+/* Framed card treatment keeps the form visually central without loud styling. */
+body.waitlist-page .signup-card {
+  margin-top: 0.35rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.95rem;
+  background: linear-gradient(150deg, var(--color-surface), rgba(74, 0, 46, 0.03));
+  box-shadow: 0 0.7rem 1.4rem rgba(0, 0, 0, 0.06);
+  padding: 0.95rem;
+}
+
+body.waitlist-page .waitlist-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+body.waitlist-page input[type='email'] {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: 0.65rem;
+  padding: 0.78rem 0.82rem;
+  font: inherit;
+}
+
+body.waitlist-page input[type='email']::placeholder {
+  color: color-mix(in srgb, var(--color-muted) 88%, white 12%);
+}
+
+body.waitlist-page .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.65rem;
+  border: 1px solid var(--color-accent);
+  padding: 0.78rem 1rem;
+  text-decoration: none;
+}
+
+body.waitlist-page input[type='email']:focus-visible,
+body.waitlist-page .cta-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+body.waitlist-page .microcopy {
+  margin-top: 0.7rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+body.waitlist-page .section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.2rem;
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+body.waitlist-page .section h2 {
+  font-size: clamp(1.2rem, 3.8vw, 1.5rem);
+  margin: 0;
+}
+
+body.waitlist-page .brand-statement p,
+body.waitlist-page .reassurance p,
+body.waitlist-page .final-cta p {
+  color: var(--color-muted);
+}
+
+body.waitlist-page .expect-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+body.waitlist-page .expect-list li {
+  border: 1px solid var(--color-border);
+  border-radius: 0.7rem;
+  background-color: var(--color-surface);
+  padding: 0.72rem 0.82rem;
+}
+
+body.waitlist-page .final-cta {
+  align-items: start;
+}
+
+body.waitlist-page .site-footer.waitlist-footer {
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: 1rem;
+}
+
+body.waitlist-page .footer-note {
+  font-size: 0.92rem;
+}
+
+@media (min-width: 640px) {
+  body.waitlist-page .waitlist-form {
+    grid-template-columns: 1fr auto;
+  }
+
+  body.waitlist-page .waitlist-form .cta-button {
+    min-width: 9.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  body.waitlist-page .site-footer.waitlist-footer {
+    margin-top: 0.8rem;
+    padding-inline: 1rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
