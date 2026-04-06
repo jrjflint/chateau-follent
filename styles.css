@@ -195,6 +195,17 @@ main {
   border-bottom: 1px dashed var(--color-border);
 }
 
+.footer-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+}
+
+.footer-nav-links a {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .footer-note {
   margin: 0;
   color: var(--color-muted);

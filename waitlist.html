@@ -1,6 +1,28 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- GTM snippet: maintain parity with GTM-W72PPP7B publish date -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        pageTitle: "Chateau Follent Waitlist | A wine brand, in the making",
+        pageTemplate: "waitlist_signup",
+        audiencePersona: "prospective_subscribers",
+      });
+    </script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-W72PPP7B");
+    </script>
+    <!-- /GTM snippet -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chateau Follent Waitlist | A wine brand, in the making</title>
@@ -19,12 +41,12 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="waitlist-page">
-    <header class="site-header waitlist-header" aria-label="Chateau Follent wordmark">
-      <p class="brand-wordmark" aria-label="Chateau Follent wordmark">
-        <span>CHATEAU</span>
-        <span>FOLLENT</span>
-      </p>
+  <body class="waitlist-page"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W72PPP7B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- GTM snippet: maintain parity with GTM-W72PPP7B publish date -->
+    <header class="site-header">
+      <div class="brand-lockup">
+        <h1 class="brand-wordmark"><span>CHATEAU</span><span>FOLLENT</span></h1>
+        <img class="brand-crest" src="chateau-follent-crest-black-no-inner.svg" alt="Chateau Follent crest" width="160" height="160">
+      </div>
     </header>
 
     <main>
@@ -74,16 +96,15 @@
         <p>Just the journey, vintage by vintage.</p>
       </section>
 
-      <!-- Closing CTA reinforces one action without introducing a second form. -->
-      <section class="section final-cta" aria-labelledby="final-cta-heading">
-        <h2 id="final-cta-heading">Join from the beginning.</h2>
-        <p>Stay close to the story as the first chapters take shape.</p>
-        <a href="#waitlist-signup" class="cta-button">Join Early</a>
-      </section>
     </main>
 
     <footer class="site-footer waitlist-footer">
       <div class="footer-inner">
+        <nav class="footer-nav-links" aria-label="Footer links">
+          <a href="index.html">Homepage</a>
+          <a href="vintages.html">Vintages</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </nav>
         <p class="footer-note">&copy; 2026 Chateau Follent. Crafted in Australia.</p>
       </div>
     </footer>
