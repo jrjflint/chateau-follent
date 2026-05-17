@@ -45,10 +45,16 @@
   <body class="podcast-page">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W72PPP7B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- GTM snippet: maintain parity with GTM-W72PPP7B publish date -->
     <header class="site-header podcast-header">
-      <a class="brand-lockup" href="index.html" aria-label="Chateau Follent homepage">
-        <p class="brand-wordmark"><span>CHATEAU</span><span>FOLLENT</span></p>
-        <img class="brand-crest" src="chateau-follent-crest-black-no-inner.svg" alt="Chateau Follent crest" width="160" height="160" />
-      </a>
+      <div class="brand-lockup">
+        <h1 class="brand-wordmark"><span>CHATEAU</span><span>FOLLENT</span></h1>
+        <img
+          class="brand-crest"
+          src="chateau-follent-crest-black-no-inner.svg"
+          alt="Chateau Follent crest"
+          width="160"
+          height="160"
+        />
+      </div>
     </header>
 
     <main class="podcast-main">
@@ -59,7 +65,12 @@
           A conversation about wine, mead, amateur winemaking, community, and the early story of Chateau Follent.
         </p>
         <div class="podcast-cta-group" aria-label="Podcast episode actions">
-          <button class="cta-button cta-button-disabled" type="button" disabled>YouTube coming soon</button>
+          <a
+            class="cta-button"
+            href="https://youtu.be/lmVt5Y3AksM?si=ckYFdqdpnnSHNA5U"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Watch on YouTube</a>
           <a
             class="cta-button cta-button-secondary"
             href="https://open.spotify.com/episode/6TddujoCmogTyAb4AqMaL7?si=T4fEjqBcSyWHIM5mOK-8VA"
@@ -78,10 +89,17 @@
       <section class="podcast-video-section" aria-labelledby="featured-video-heading">
         <div class="section-kicker">Featured episode</div>
         <h2 id="featured-video-heading">Watch the conversation</h2>
-        <div class="video-placeholder" role="img" aria-label="YouTube episode coming soon">
-          <!-- TODO: Replace this placeholder with the YouTube embed iframe once the episode is live -->
-          <!-- TODO: Paste the YouTube embed URL into an iframe src here, for example: https://www.youtube.com/embed/VIDEO_ID -->
-          <span>YouTube episode coming soon</span>
+        <div class="video-embed">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/lmVt5Y3AksM?si=syx7x3BTashwS05F&amp;origin=https%3A%2F%2Fchateaufollent.com.au"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
 
@@ -89,26 +107,21 @@
         <p class="eyebrow">Listen now</p>
         <h2 id="listen-heading">Choose your platform</h2>
         <div class="platform-grid platform-grid-media">
-          <a
-            class="platform-card platform-card-media"
-            href="https://open.spotify.com/episode/6TddujoCmogTyAb4AqMaL7?si=T4fEjqBcSyWHIM5mOK-8VA"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Listen to The Wined Up episode on Spotify"
-          >
-            <span class="platform-art-frame">
-              <img
-                class="spotify-promo-card"
-                src="https://promocards.byspotify.com/api/share/503a9ff1-2c20-4409-8fc7-f5c28a1de92a"
-                alt="Spotify promo card for The Wined Up episode featuring James Follent"
-                width="1080"
-                height="1080"
-                loading="lazy"
-              />
-            </span>
+          <div class="platform-card platform-card-media spotify-embed-card">
+            <iframe
+              data-testid="embed-iframe"
+              class="spotify-episode-embed"
+              src="https://open.spotify.com/embed/episode/6TddujoCmogTyAb4AqMaL7?utm_source=generator&amp;theme=0"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
             <span class="platform-name">Spotify</span>
             <span class="platform-copy">Stream the episode on Spotify.</span>
-          </a>
+          </div>
           <a
             class="platform-card platform-card-media"
             href="https://podcasts.apple.com/au/podcast/the-wined-up/id1689700853?i=1000768145017"
@@ -116,39 +129,22 @@
             rel="noopener noreferrer"
             aria-label="Listen to The Wined Up episode on Apple Podcasts"
           >
-            <span class="platform-art-frame apple-podcast-placeholder" role="img" aria-label="Apple Podcasts square image placeholder, 1080 by 1080 pixels">
-              <span>Apple Podcasts</span>
-              <small>1080 × 1080 image placeholder</small>
+            <span class="platform-art-frame">
+              <img
+                class="apple-podcast-card"
+                src="assets/20260517_WinedUp_Apple_Podcast.PNG"
+                alt="Apple Podcasts artwork for The Wined Up episode featuring James Follent"
+                width="1080"
+                height="1080"
+                loading="lazy"
+              />
             </span>
             <span class="platform-name">Apple Podcasts</span>
             <span class="platform-copy">Listen through Apple Podcasts.</span>
           </a>
-          <div class="platform-card platform-card-disabled" aria-disabled="true">
-            <span class="platform-name">YouTube</span>
-            <span class="platform-copy">Video episode coming soon.</span>
-          </div>
         </div>
       </section>
 
-      <section class="founder-note" aria-labelledby="founder-note-heading">
-        <p class="eyebrow">Founder note</p>
-        <h2 id="founder-note-heading">One vintage at a time</h2>
-        <p>
-          I started Chateau Follent out of curiosity; first as a way to learn more deeply about wine, and then as a small garagiste project shaped by experimentation, community, and craft.
-        </p>
-        <p>
-          This conversation on The Wined Up podcast is part of that story. We talked about making wine and mead, learning through the Sydney Amateur Winemakers Club, and what it means to build something slowly, one vintage at a time.
-        </p>
-      </section>
-
-      <section class="podcast-waitlist-cta" aria-labelledby="waitlist-cta-heading">
-        <p class="eyebrow">Founder updates</p>
-        <h2 id="waitlist-cta-heading">Follow the next vintage</h2>
-        <p>
-          Chateau Follent is still small, experimental, and very much in formation. Join the waitlist for founder updates, vintage notes, and first access when future releases become available.
-        </p>
-        <a class="cta-button" href="./waitlist.html">Join the Waitlist</a>
-      </section>
     </main>
 
     <footer class="site-footer podcast-footer">

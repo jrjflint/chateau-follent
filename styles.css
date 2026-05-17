@@ -818,9 +818,7 @@ body.podcast-page .section-kicker {
 
 body.podcast-page .podcast-hero,
 body.podcast-page .podcast-video-section,
-body.podcast-page .podcast-listen-section,
-body.podcast-page .founder-note,
-body.podcast-page .podcast-waitlist-cta {
+body.podcast-page .podcast-listen-section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-soft);
   background: linear-gradient(135deg, var(--color-accent-soft), rgba(74, 0, 46, 0));
@@ -915,17 +913,13 @@ body.podcast-page .cta-button-disabled:focus-visible {
 }
 
 body.podcast-page .podcast-video-section,
-body.podcast-page .podcast-listen-section,
-body.podcast-page .founder-note,
-body.podcast-page .podcast-waitlist-cta {
+body.podcast-page .podcast-listen-section {
   display: grid;
   gap: 0.85rem;
 }
 
 body.podcast-page .podcast-video-section h2,
-body.podcast-page .podcast-listen-section h2,
-body.podcast-page .founder-note h2,
-body.podcast-page .podcast-waitlist-cta h2 {
+body.podcast-page .podcast-listen-section h2 {
   margin: 0;
   font-size: clamp(1.65rem, 3vw, 2.6rem);
 }
@@ -964,6 +958,24 @@ body.podcast-page .video-placeholder span {
   text-align: center;
 }
 
+body.podcast-page .video-embed {
+  aspect-ratio: 16 / 9;
+  min-height: 15rem;
+  margin-top: 0.4rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-soft) * 0.85);
+  background: var(--color-surface);
+  box-shadow: 0 1rem 2rem var(--color-shadow);
+}
+
+body.podcast-page .video-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 body.podcast-page .platform-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -998,6 +1010,19 @@ body.podcast-page .platform-card-media {
   padding: 0.75rem;
 }
 
+body.podcast-page .spotify-embed-card {
+  padding: 0.75rem;
+}
+
+body.podcast-page .spotify-episode-embed {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 352px;
+  border: 0;
+  border-radius: 12px;
+}
+
 body.podcast-page .platform-art-frame {
   display: grid;
   place-items: center;
@@ -1011,51 +1036,12 @@ body.podcast-page .platform-art-frame {
     var(--color-surface);
 }
 
-body.podcast-page .spotify-promo-card {
+body.podcast-page .spotify-promo-card,
+body.podcast-page .apple-podcast-card {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-body.podcast-page .apple-podcast-placeholder {
-  position: relative;
-  isolation: isolate;
-  padding: 1rem;
-  color: var(--color-accent-contrast);
-  text-align: center;
-  background:
-    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.28), transparent 0 20%, transparent 42%),
-    linear-gradient(135deg, #872ec4 0%, #d84d96 52%, #f6a04d 100%);
-}
-
-body.podcast-page .apple-podcast-placeholder::before {
-  content: "";
-  position: absolute;
-  inset: 14%;
-  z-index: -1;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
-  box-shadow: 0 0 0 1.2rem rgba(255, 255, 255, 0.08);
-}
-
-body.podcast-page .apple-podcast-placeholder span {
-  display: block;
-  font-family: 'Libre Baskerville', 'Playfair Display', 'Georgia', serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-}
-
-body.podcast-page .apple-podcast-placeholder small {
-  display: block;
-  max-width: 11rem;
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  text-transform: uppercase;
 }
 
 body.podcast-page .platform-name {
@@ -1070,28 +1056,6 @@ body.podcast-page .platform-copy {
 
 body.podcast-page .platform-card-disabled {
   opacity: 0.72;
-}
-
-body.podcast-page .founder-note {
-  background:
-    linear-gradient(135deg, rgba(242, 240, 234, 0.92), var(--color-accent-soft)),
-    var(--color-surface);
-}
-
-body.podcast-page .founder-note p:last-child,
-body.podcast-page .podcast-waitlist-cta p {
-  margin-bottom: 0;
-}
-
-body.podcast-page .podcast-waitlist-cta {
-  align-items: start;
-  background:
-    radial-gradient(circle at top right, var(--color-accent-soft-strong), transparent 22rem),
-    linear-gradient(135deg, var(--color-accent-soft), rgba(242, 240, 234, 0.92));
-}
-
-body.podcast-page .podcast-waitlist-cta .cta-button {
-  margin-top: 0.4rem;
 }
 
 body.podcast-page .podcast-footer {
@@ -1119,8 +1083,7 @@ body.podcast-page .footer-nav-links a:focus-visible {
 
 @media (max-width: 520px) {
   body.podcast-page .podcast-cta-group,
-  body.podcast-page .podcast-cta-group .cta-button,
-  body.podcast-page .podcast-waitlist-cta .cta-button {
+  body.podcast-page .podcast-cta-group .cta-button {
     width: 100%;
   }
 }
