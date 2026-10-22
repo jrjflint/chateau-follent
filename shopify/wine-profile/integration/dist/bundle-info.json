@@ -1,0 +1,7 @@
+{
+  "sha256": "16721032af088c1bdba7fd5c9ee91a5ddf26578eb828b1481b9c810a9b52a8b2",
+  "bytes": 91105,
+  "email_requests_enabled": false,
+  "delivery_adapter_configured": false,
+  "state": "closed bootstrap; not deployed"
+}

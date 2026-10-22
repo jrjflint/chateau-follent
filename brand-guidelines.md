@@ -33,8 +33,8 @@ Use these traits consistently across web copy, print, social, and presentations:
 
 ### Naming and salutation
 - Always refer to the founder as **Lord James Follent** (full salutation).
-- Keep "Chateau Follent" as the default brand spelling for URL and product contexts.
-- Use “Château Follent” for ceremonial/editorial moments if typography supports accents.
+- Use "Chateau Follent" consistently in all contexts, including URLs, products, forms, metadata, and ceremonial or editorial copy.
+- Spell Chateau without a circumflex accent.
 
 ### Core message pillars
 1. **Heritage with intent** — identity rooted in family story and long-term craft.
@@ -114,7 +114,7 @@ If Montserrat is unavailable, fallback in this order:
 
 ## 4) Brand Colour System
 
-The Château Follent colour system is intentionally minimal to reinforce a luxury European wine aesthetic.
+The Chateau Follent colour system is intentionally minimal to reinforce a luxury European wine aesthetic.
 Most label designs should use no more than three colours on the front label:
 1. **Noir Follent** (primary ink)
 2. **Limestone Ivory** (paper/background)
@@ -126,7 +126,7 @@ Colour consistency between digital (HEX) and print (CMYK) must be maintained usi
 
 ### Primary Palette
 
-These colours define the core visual identity of Château Follent and should appear on most packaging, labels, and brand materials.
+These colours define the core visual identity of Chateau Follent and should appear on most packaging, labels, and brand materials.
 
 | Name | HEX | CMYK | Usage |
 |------|------|------|------|
@@ -140,7 +140,7 @@ These colours define the core visual identity of Château Follent and should app
 Noir Follent should be printed as a rich black rather than pure black ink.
 Using a mix of CMYK inks produces a deeper black tone than K100 alone.
 
-The preferred Château Follent rich-black build is:
+The preferred Chateau Follent rich-black build is:
 
 - **Noir Follent:** C30 M20 Y20 K100
 
@@ -187,7 +187,7 @@ The system follows a strict hierarchy:
 
 ### Design Philosophy
 
-The Château Follent palette follows a cool-toned Deep Winter colour theory.
+The Chateau Follent palette follows a cool-toned Deep Winter colour theory.
 
 Characteristics:
 - High contrast

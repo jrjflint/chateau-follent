@@ -1,0 +1,873 @@
+{
+  "red": {
+    "answers": {
+      "wine_interests": [
+        "red"
+      ],
+      "flavour_preferences": [
+        "rich",
+        "savoury"
+      ],
+      "body_preference": "full",
+      "sweetness_preference": "dry",
+      "wine_occasions": [
+        "meals"
+      ],
+      "discovery_interest": "adventurous",
+      "education_interest": "journey"
+    },
+    "profile": {
+      "title": "Bold, Savoury & Adventurous",
+      "summary": "Your answers point towards red wine, with an interest in richness and savoury flavours. Your choices around a fuller body and a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. At the table, familiar foods can give you a simple way to notice texture and freshness. This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.",
+      "preferences": [
+        {
+          "label": "Wine categories",
+          "value": "Red wine"
+        },
+        {
+          "label": "Flavour characteristics",
+          "value": "Rich and full-bodied, Dry and savoury"
+        },
+        {
+          "label": "Wine body",
+          "value": "Full-bodied"
+        },
+        {
+          "label": "Sweetness",
+          "value": "Dry"
+        },
+        {
+          "label": "New styles",
+          "value": "I enjoy discovering new varieties and styles"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "shiraz",
+          "name": "Full-bodied Shiraz",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Dark plum fruit with a hint of black pepper."
+        },
+        {
+          "id": "cabernet",
+          "name": "Cabernet Sauvignon",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Blackcurrant aromas and a firm, drying texture."
+        },
+        {
+          "id": "malbec",
+          "name": "Full-bodied Malbec",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Dark-berry aromas with a generous, rounded texture."
+        }
+      ],
+      "exercise": {
+        "title": "Notice the weight of a wine",
+        "text": "If you choose to taste, compare small samples of a lighter and fuller-bodied wine. Notice how each feels in your mouth, rather than how strong its aroma seems. Write one texture word for each; neither needs to be better. Try a bite of your meal and notice whether the impression changes. Tasting is optional; you can smell, read or spit instead."
+      },
+      "journal": {
+        "title": "The first vintage, and the lessons that followed",
+        "detail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+        "href": "vintages.html"
+      },
+      "learningOnly": false
+    },
+    "parts": {
+      "title": "Bold, Savoury & Adventurous",
+      "summary0": "Your answers point towards red wine, with an interest in ",
+      "summary1": "richness and savoury flavours. ",
+      "summary2": "Your choices around a fuller body and ",
+      "summary3": "a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. ",
+      "summary4": "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. ",
+      "summary5": "At the table, familiar foods can give you a simple way to notice texture and freshness. ",
+      "summary6": "This is a starting point based on what you shared, not a measurement of tasting ability. ",
+      "summary7": "Your preferences can change as you learn. ",
+      "preference0": "Red wine",
+      "preference1": "Rich and full-bodied, Dry and savoury",
+      "preference2": "Full-bodied",
+      "preference3": "Dry",
+      "preference4": "I enjoy discovering new varieties and styles",
+      "exerciseTitle": "Notice the weight of a wine",
+      "exercise0": "If you choose to taste, compare small samples of a lighter and fuller-bodied wine. ",
+      "exercise1": "Notice how each feels in your mouth, rather than how strong its aroma seems. ",
+      "exercise2": "Write one texture word for each; neither needs to be better. ",
+      "exercise3": "Try a bite of your meal and notice whether the impression changes. ",
+      "exercise4": "Tasting is optional; you can smell, read or spit instead. ",
+      "exercise5": "",
+      "exercise6": "",
+      "exercise7": "",
+      "journalTitle": "The first vintage, and the lessons that followed",
+      "journalDetail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+      "styleHeading": "Styles worth exploring",
+      "style0": "Full-bodied Shiraz",
+      "sensory0": "Dark plum fruit with a hint of black pepper.",
+      "reason0_0": "You included red wine; this is one expression to learn about. ",
+      "reason0_1": "It offers a starting point for your interest in richness. ",
+      "reason0_2": "Look for a dry example to match your sweetness preference. ",
+      "reason0_3": "",
+      "reason0_4": "",
+      "style1": "Cabernet Sauvignon",
+      "sensory1": "Blackcurrant aromas and a firm, drying texture.",
+      "reason1_0": "You included red wine; this is one expression to learn about. ",
+      "reason1_1": "It offers a starting point for your interest in richness. ",
+      "reason1_2": "Look for a dry example to match your sweetness preference. ",
+      "reason1_3": "",
+      "reason1_4": "",
+      "style2": "Full-bodied Malbec",
+      "sensory2": "Dark-berry aromas with a generous, rounded texture.",
+      "reason2_0": "You included red wine; this is one expression to learn about. ",
+      "reason2_1": "It offers a starting point for your interest in richness. ",
+      "reason2_2": "Look for a dry example to match your sweetness preference. ",
+      "reason2_3": "",
+      "reason2_4": ""
+    },
+    "tags": [
+      "cfwp1_0_0:title:f22cab08e708b6ac",
+      "cfwp1_0_0:summary0:67c730a03ad19d57",
+      "cfwp1_0_0:summary1:e34031cf49bb6752",
+      "cfwp1_0_0:summary2:e262b362cd77bd5d",
+      "cfwp1_0_0:summary3:a932c3e22ab2811f",
+      "cfwp1_0_0:summary4:3b704238000d5310",
+      "cfwp1_0_0:summary5:d89f9eb89526d5be",
+      "cfwp1_0_0:summary6:c4b3d67dc52aad11",
+      "cfwp1_0_0:summary7:d36ab4f13e848cda",
+      "cfwp1_0_0:preference0:fa95335efc80e62a",
+      "cfwp1_0_0:preference1:d0b7555dd627161b",
+      "cfwp1_0_0:preference2:8dfd24fad957ec70",
+      "cfwp1_0_0:preference3:702ec3f256e47f56",
+      "cfwp1_0_0:preference4:1016effe4d5b6e9d",
+      "cfwp1_0_0:exerciseTitle:31eb0799f8ad2d4a",
+      "cfwp1_0_0:exercise0:fc5bd583dc4d2f17",
+      "cfwp1_0_0:exercise1:afe1c07cbf4c72b3",
+      "cfwp1_0_0:exercise2:13ba26f65eb2e798",
+      "cfwp1_0_0:exercise3:f0c2f0a78778290d",
+      "cfwp1_0_0:exercise4:2dd1c290b34af4d0",
+      "cfwp1_0_0:journalTitle:1c4a705d9cab4bde",
+      "cfwp1_0_0:journalDetail:34b82c23948b5eb9",
+      "cfwp1_0_0:styleHeading:a99df1108afdb97b",
+      "cfwp1_0_0:style0:61d95c56b452d8a1",
+      "cfwp1_0_0:sensory0:cffbde2784a06b13",
+      "cfwp1_0_0:reason0_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason0_1:ada6047ef221722a",
+      "cfwp1_0_0:reason0_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style1:ed39d1d766701672",
+      "cfwp1_0_0:sensory1:30729dde109174c4",
+      "cfwp1_0_0:reason1_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason1_1:ada6047ef221722a",
+      "cfwp1_0_0:reason1_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style2:e72d46689029adcf",
+      "cfwp1_0_0:sensory2:59c02e2d7da9a5f8",
+      "cfwp1_0_0:reason2_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason2_1:ada6047ef221722a",
+      "cfwp1_0_0:reason2_2:43f2b670b75f9d22",
+      "cfwp1_0_0:answer:wine_interests=red",
+      "cfwp1_0_0:answer:flavour_preferences=rich",
+      "cfwp1_0_0:answer:flavour_preferences=savoury",
+      "cfwp1_0_0:answer:body_preference=full",
+      "cfwp1_0_0:answer:sweetness_preference=dry",
+      "cfwp1_0_0:answer:wine_occasions=meals",
+      "cfwp1_0_0:answer:discovery_interest=adventurous",
+      "cfwp1_0_0:answer:education_interest=journey",
+      "cfwp1_0_0:recommendation:1=shiraz",
+      "cfwp1_0_0:recommendation:2=cabernet",
+      "cfwp1_0_0:recommendation:3=malbec",
+      "cfwp1_0_0:count:38",
+      "cfwp1_0_0:version:1.0.0"
+    ]
+  },
+  "white": {
+    "answers": {
+      "wine_interests": [
+        "white"
+      ],
+      "flavour_preferences": [
+        "crisp",
+        "delicate"
+      ],
+      "body_preference": "light",
+      "sweetness_preference": "dry",
+      "wine_occasions": [
+        "meals"
+      ],
+      "discovery_interest": "adventurous",
+      "education_interest": "journey"
+    },
+    "profile": {
+      "title": "Fresh & Adventurous",
+      "summary": "Your answers point towards white wine, with an interest in freshness and delicate flavours. Your choices around a lighter body and a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. At the table, familiar foods can give you a simple way to notice texture and freshness. This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.",
+      "preferences": [
+        {
+          "label": "Wine categories",
+          "value": "White wine"
+        },
+        {
+          "label": "Flavour characteristics",
+          "value": "Fresh and crisp, Light and delicate"
+        },
+        {
+          "label": "Wine body",
+          "value": "Light-bodied"
+        },
+        {
+          "label": "Sweetness",
+          "value": "Dry"
+        },
+        {
+          "label": "New styles",
+          "value": "I enjoy discovering new varieties and styles"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "riesling",
+          "name": "Dry Riesling",
+          "reason": "You included white wine; this is one expression to learn about. It offers a starting point for your interest in freshness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Lime-like freshness and a mouth-watering finish."
+        },
+        {
+          "id": "pinot_grigio",
+          "name": "Light, dry Pinot Grigio",
+          "reason": "You included white wine; this is one expression to learn about. It offers a starting point for your interest in freshness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Pear-like aromas in a light, fresh frame."
+        },
+        {
+          "id": "vermentino",
+          "name": "Vermentino",
+          "reason": "You included white wine; this is one expression to learn about. It offers a starting point for your interest in freshness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Citrus peel and a lightly savoury finish."
+        }
+      ],
+      "exercise": {
+        "title": "Notice the weight of a wine",
+        "text": "If you choose to taste, compare small samples of a lighter and fuller-bodied wine. Notice how each feels in your mouth, rather than how strong its aroma seems. Write one texture word for each; neither needs to be better. Try a bite of your meal and notice whether the impression changes. Tasting is optional; you can smell, read or spit instead."
+      },
+      "journal": {
+        "title": "The first vintage, and the lessons that followed",
+        "detail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+        "href": "vintages.html"
+      },
+      "learningOnly": false
+    },
+    "parts": {
+      "title": "Fresh & Adventurous",
+      "summary0": "Your answers point towards white wine, with an interest in ",
+      "summary1": "freshness and delicate flavours. ",
+      "summary2": "Your choices around a lighter body and ",
+      "summary3": "a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. ",
+      "summary4": "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. ",
+      "summary5": "At the table, familiar foods can give you a simple way to notice texture and freshness. ",
+      "summary6": "This is a starting point based on what you shared, not a measurement of tasting ability. ",
+      "summary7": "Your preferences can change as you learn. ",
+      "preference0": "White wine",
+      "preference1": "Fresh and crisp, Light and delicate",
+      "preference2": "Light-bodied",
+      "preference3": "Dry",
+      "preference4": "I enjoy discovering new varieties and styles",
+      "exerciseTitle": "Notice the weight of a wine",
+      "exercise0": "If you choose to taste, compare small samples of a lighter and fuller-bodied wine. ",
+      "exercise1": "Notice how each feels in your mouth, rather than how strong its aroma seems. ",
+      "exercise2": "Write one texture word for each; neither needs to be better. ",
+      "exercise3": "Try a bite of your meal and notice whether the impression changes. ",
+      "exercise4": "Tasting is optional; you can smell, read or spit instead. ",
+      "exercise5": "",
+      "exercise6": "",
+      "exercise7": "",
+      "journalTitle": "The first vintage, and the lessons that followed",
+      "journalDetail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+      "styleHeading": "Styles worth exploring",
+      "style0": "Dry Riesling",
+      "sensory0": "Lime-like freshness and a mouth-watering finish.",
+      "reason0_0": "You included white wine; this is one expression to learn about. ",
+      "reason0_1": "It offers a starting point for your interest in freshness. ",
+      "reason0_2": "Look for a dry example to match your sweetness preference. ",
+      "reason0_3": "",
+      "reason0_4": "",
+      "style1": "Light, dry Pinot Grigio",
+      "sensory1": "Pear-like aromas in a light, fresh frame.",
+      "reason1_0": "You included white wine; this is one expression to learn about. ",
+      "reason1_1": "It offers a starting point for your interest in freshness. ",
+      "reason1_2": "Look for a dry example to match your sweetness preference. ",
+      "reason1_3": "",
+      "reason1_4": "",
+      "style2": "Vermentino",
+      "sensory2": "Citrus peel and a lightly savoury finish.",
+      "reason2_0": "You included white wine; this is one expression to learn about. ",
+      "reason2_1": "It offers a starting point for your interest in freshness. ",
+      "reason2_2": "Look for a dry example to match your sweetness preference. ",
+      "reason2_3": "",
+      "reason2_4": ""
+    },
+    "tags": [
+      "cfwp1_0_0:title:4a75d9eab0c7dc9f",
+      "cfwp1_0_0:summary0:58ec2986eddeffb0",
+      "cfwp1_0_0:summary1:e7e13b353a4e3162",
+      "cfwp1_0_0:summary2:b8cc8232055812c5",
+      "cfwp1_0_0:summary3:a932c3e22ab2811f",
+      "cfwp1_0_0:summary4:3b704238000d5310",
+      "cfwp1_0_0:summary5:d89f9eb89526d5be",
+      "cfwp1_0_0:summary6:c4b3d67dc52aad11",
+      "cfwp1_0_0:summary7:d36ab4f13e848cda",
+      "cfwp1_0_0:preference0:0e17925cc06efcc2",
+      "cfwp1_0_0:preference1:78729324d2fb8a6f",
+      "cfwp1_0_0:preference2:23836e6df4c06af7",
+      "cfwp1_0_0:preference3:702ec3f256e47f56",
+      "cfwp1_0_0:preference4:1016effe4d5b6e9d",
+      "cfwp1_0_0:exerciseTitle:31eb0799f8ad2d4a",
+      "cfwp1_0_0:exercise0:fc5bd583dc4d2f17",
+      "cfwp1_0_0:exercise1:afe1c07cbf4c72b3",
+      "cfwp1_0_0:exercise2:13ba26f65eb2e798",
+      "cfwp1_0_0:exercise3:f0c2f0a78778290d",
+      "cfwp1_0_0:exercise4:2dd1c290b34af4d0",
+      "cfwp1_0_0:journalTitle:1c4a705d9cab4bde",
+      "cfwp1_0_0:journalDetail:34b82c23948b5eb9",
+      "cfwp1_0_0:styleHeading:a99df1108afdb97b",
+      "cfwp1_0_0:style0:387d382466dcfccf",
+      "cfwp1_0_0:sensory0:63592c68c0cf3483",
+      "cfwp1_0_0:reason0_0:df44a243091ef573",
+      "cfwp1_0_0:reason0_1:e103fbf3ff33d5e1",
+      "cfwp1_0_0:reason0_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style1:bbf9ec682ef35d91",
+      "cfwp1_0_0:sensory1:052017b3393f93ea",
+      "cfwp1_0_0:reason1_0:df44a243091ef573",
+      "cfwp1_0_0:reason1_1:e103fbf3ff33d5e1",
+      "cfwp1_0_0:reason1_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style2:020620a3d69adec8",
+      "cfwp1_0_0:sensory2:f4ab63e2e6e1d198",
+      "cfwp1_0_0:reason2_0:df44a243091ef573",
+      "cfwp1_0_0:reason2_1:e103fbf3ff33d5e1",
+      "cfwp1_0_0:reason2_2:43f2b670b75f9d22",
+      "cfwp1_0_0:answer:wine_interests=white",
+      "cfwp1_0_0:answer:flavour_preferences=crisp",
+      "cfwp1_0_0:answer:flavour_preferences=delicate",
+      "cfwp1_0_0:answer:body_preference=light",
+      "cfwp1_0_0:answer:sweetness_preference=dry",
+      "cfwp1_0_0:answer:wine_occasions=meals",
+      "cfwp1_0_0:answer:discovery_interest=adventurous",
+      "cfwp1_0_0:answer:education_interest=journey",
+      "cfwp1_0_0:recommendation:1=riesling",
+      "cfwp1_0_0:recommendation:2=pinot_grigio",
+      "cfwp1_0_0:recommendation:3=vermentino",
+      "cfwp1_0_0:count:38",
+      "cfwp1_0_0:version:1.0.0"
+    ]
+  },
+  "mead": {
+    "answers": {
+      "wine_interests": [
+        "mead"
+      ],
+      "flavour_preferences": [
+        "smooth"
+      ],
+      "body_preference": "full",
+      "sweetness_preference": "sweet",
+      "wine_occasions": [
+        "meals"
+      ],
+      "discovery_interest": "adventurous",
+      "education_interest": "journey"
+    },
+    "profile": {
+      "title": "Bold & Adventurous",
+      "summary": "Your answers point towards mead, with an interest in sweet, smooth flavours. Your choices around a fuller body and a sweet finish help shape the suggestions below, rather than fixing you into a single wine personality. Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. At the table, familiar foods can give you a simple way to notice texture and freshness. This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.",
+      "preferences": [
+        {
+          "label": "Wine categories",
+          "value": "Mead or honey-based wine"
+        },
+        {
+          "label": "Flavour characteristics",
+          "value": "Sweet and smooth"
+        },
+        {
+          "label": "Wine body",
+          "value": "Full-bodied"
+        },
+        {
+          "label": "Sweetness",
+          "value": "Sweet"
+        },
+        {
+          "label": "New styles",
+          "value": "I enjoy discovering new varieties and styles"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "sweet_mead",
+          "name": "Sweet traditional mead",
+          "reason": "You included mead; this is one expression to learn about. It offers a starting point for your interest in sweet, smooth flavours. Look for a sweet example to match your sweetness preference.",
+          "sensory": "Honeyed aromas with a fuller, sweet texture."
+        },
+        {
+          "id": "off_dry_mead",
+          "name": "Off-dry traditional mead",
+          "reason": "You included mead; this is one expression to learn about. It offers a starting point for your interest in sweet, smooth flavours. Its off-dry finish offers a contrast to the sweetness you selected. This medium-bodied expression also offers a contrast to your full-bodied preference.",
+          "sensory": "Floral aromas and a gentle amount of residual sweetness."
+        },
+        {
+          "id": "dry_mead",
+          "name": "Dry traditional mead",
+          "reason": "You included mead; this is one expression to learn about. Its dry finish offers a contrast to the sweetness you selected. This light-bodied expression also offers a contrast to your full-bodied preference.",
+          "sensory": "A floral honey aroma without assuming a sweet finish."
+        }
+      ],
+      "exercise": {
+        "title": "Separate fruitiness from sweetness",
+        "text": "If you choose to taste, compare small samples of a clearly labelled dry and off-dry wine from the same grape. Smell first, then notice sweetness on the palate and mouth-watering acidity. A fruity aroma does not necessarily mean a wine is sweet. Try a bite of your meal and notice whether the impression changes. Tasting is optional; you can smell, read or spit instead."
+      },
+      "journal": {
+        "title": "The first vintage, and the lessons that followed",
+        "detail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+        "href": "vintages.html"
+      },
+      "learningOnly": false
+    },
+    "parts": {
+      "title": "Bold & Adventurous",
+      "summary0": "Your answers point towards mead, with an interest in ",
+      "summary1": "sweet, smooth flavours. ",
+      "summary2": "Your choices around a fuller body and ",
+      "summary3": "a sweet finish help shape the suggestions below, rather than fixing you into a single wine personality. ",
+      "summary4": "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. ",
+      "summary5": "At the table, familiar foods can give you a simple way to notice texture and freshness. ",
+      "summary6": "This is a starting point based on what you shared, not a measurement of tasting ability. ",
+      "summary7": "Your preferences can change as you learn. ",
+      "preference0": "Mead or honey-based wine",
+      "preference1": "Sweet and smooth",
+      "preference2": "Full-bodied",
+      "preference3": "Sweet",
+      "preference4": "I enjoy discovering new varieties and styles",
+      "exerciseTitle": "Separate fruitiness from sweetness",
+      "exercise0": "If you choose to taste, compare small samples of a clearly labelled dry and off-dry wine from the same grape. ",
+      "exercise1": "Smell first, then notice sweetness on the palate and mouth-watering acidity. ",
+      "exercise2": "A fruity aroma does not necessarily mean a wine is sweet. ",
+      "exercise3": "Try a bite of your meal and notice whether the impression changes. ",
+      "exercise4": "Tasting is optional; you can smell, read or spit instead. ",
+      "exercise5": "",
+      "exercise6": "",
+      "exercise7": "",
+      "journalTitle": "The first vintage, and the lessons that followed",
+      "journalDetail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+      "styleHeading": "Styles worth exploring",
+      "style0": "Sweet traditional mead",
+      "sensory0": "Honeyed aromas with a fuller, sweet texture.",
+      "reason0_0": "You included mead; this is one expression to learn about. ",
+      "reason0_1": "It offers a starting point for your interest in sweet, smooth flavours. ",
+      "reason0_2": "Look for a sweet example to match your sweetness preference. ",
+      "reason0_3": "",
+      "reason0_4": "",
+      "style1": "Off-dry traditional mead",
+      "sensory1": "Floral aromas and a gentle amount of residual sweetness.",
+      "reason1_0": "You included mead; this is one expression to learn about. ",
+      "reason1_1": "It offers a starting point for your interest in sweet, smooth flavours. ",
+      "reason1_2": "Its off-dry finish offers a contrast to the sweetness you selected. ",
+      "reason1_3": "This medium-bodied expression also offers a contrast to your full-bodied preference. ",
+      "reason1_4": "",
+      "style2": "Dry traditional mead",
+      "sensory2": "A floral honey aroma without assuming a sweet finish.",
+      "reason2_0": "You included mead; this is one expression to learn about. ",
+      "reason2_1": "Its dry finish offers a contrast to the sweetness you selected. ",
+      "reason2_2": "This light-bodied expression also offers a contrast to your full-bodied preference. ",
+      "reason2_3": "",
+      "reason2_4": ""
+    },
+    "tags": [
+      "cfwp1_0_0:title:86a555b5b86adbb4",
+      "cfwp1_0_0:summary0:4a76baa31c447a7c",
+      "cfwp1_0_0:summary1:4d1d4352bfe7b478",
+      "cfwp1_0_0:summary2:e262b362cd77bd5d",
+      "cfwp1_0_0:summary3:fa1c3a3571a72423",
+      "cfwp1_0_0:summary4:3b704238000d5310",
+      "cfwp1_0_0:summary5:d89f9eb89526d5be",
+      "cfwp1_0_0:summary6:c4b3d67dc52aad11",
+      "cfwp1_0_0:summary7:d36ab4f13e848cda",
+      "cfwp1_0_0:preference0:1a689c2950588fa4",
+      "cfwp1_0_0:preference1:2391a9ca1e8c43ac",
+      "cfwp1_0_0:preference2:8dfd24fad957ec70",
+      "cfwp1_0_0:preference3:01e7c30f7fec479d",
+      "cfwp1_0_0:preference4:1016effe4d5b6e9d",
+      "cfwp1_0_0:exerciseTitle:2f58acc995676bd6",
+      "cfwp1_0_0:exercise0:9ba59b53fbc3e0c1",
+      "cfwp1_0_0:exercise1:3f24ee3ddaa1d7cf",
+      "cfwp1_0_0:exercise2:07987380e0b092ff",
+      "cfwp1_0_0:exercise3:f0c2f0a78778290d",
+      "cfwp1_0_0:exercise4:2dd1c290b34af4d0",
+      "cfwp1_0_0:journalTitle:1c4a705d9cab4bde",
+      "cfwp1_0_0:journalDetail:34b82c23948b5eb9",
+      "cfwp1_0_0:styleHeading:a99df1108afdb97b",
+      "cfwp1_0_0:style0:4d071a05ae9201dd",
+      "cfwp1_0_0:sensory0:82c84b69534ec85f",
+      "cfwp1_0_0:reason0_0:8715c27ca70c9197",
+      "cfwp1_0_0:reason0_1:7f59056a741e1834",
+      "cfwp1_0_0:reason0_2:ac71d2c890a49b41",
+      "cfwp1_0_0:style1:71f30f4da7a3c7f9",
+      "cfwp1_0_0:sensory1:a1931f42677df325",
+      "cfwp1_0_0:reason1_0:8715c27ca70c9197",
+      "cfwp1_0_0:reason1_1:7f59056a741e1834",
+      "cfwp1_0_0:reason1_2:2f37913daf3141ee",
+      "cfwp1_0_0:reason1_3:cf924f7a830d5a0d",
+      "cfwp1_0_0:style2:4056d480e0274fe8",
+      "cfwp1_0_0:sensory2:dd7223b2504e7ced",
+      "cfwp1_0_0:reason2_0:8715c27ca70c9197",
+      "cfwp1_0_0:reason2_1:e24bd7f3d2cb2d12",
+      "cfwp1_0_0:reason2_2:d216670caefc9771",
+      "cfwp1_0_0:answer:wine_interests=mead",
+      "cfwp1_0_0:answer:flavour_preferences=smooth",
+      "cfwp1_0_0:answer:body_preference=full",
+      "cfwp1_0_0:answer:sweetness_preference=sweet",
+      "cfwp1_0_0:answer:wine_occasions=meals",
+      "cfwp1_0_0:answer:discovery_interest=adventurous",
+      "cfwp1_0_0:answer:education_interest=journey",
+      "cfwp1_0_0:recommendation:1=sweet_mead",
+      "cfwp1_0_0:recommendation:2=off_dry_mead",
+      "cfwp1_0_0:recommendation:3=dry_mead",
+      "cfwp1_0_0:count:39",
+      "cfwp1_0_0:version:1.0.0"
+    ]
+  },
+  "exploring": {
+    "answers": {
+      "wine_interests": [
+        "exploring"
+      ],
+      "flavour_preferences": [
+        "unsure"
+      ],
+      "body_preference": "unsure",
+      "sweetness_preference": "unsure",
+      "wine_occasions": [
+        "meals"
+      ],
+      "discovery_interest": "adventurous",
+      "education_interest": "journey"
+    },
+    "profile": {
+      "title": "Discovering Your Wine Preferences",
+      "summary": "Your answers point towards the possibility of finding new favourites, with an interest in room to discover the flavours you enjoy. Your choices around exploring wine body and exploring sweetness help shape the suggestions below, rather than fixing you into a single wine personality. Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. At the table, familiar foods can give you a simple way to notice texture and freshness. This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.",
+      "preferences": [
+        {
+          "label": "Wine categories",
+          "value": "I'm still exploring"
+        },
+        {
+          "label": "Flavour characteristics",
+          "value": "I'm not sure yet"
+        },
+        {
+          "label": "Wine body",
+          "value": "I'm not sure"
+        },
+        {
+          "label": "Sweetness",
+          "value": "I'm not sure"
+        },
+        {
+          "label": "New styles",
+          "value": "I enjoy discovering new varieties and styles"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "pinot_noir",
+          "name": "Light-bodied Pinot Noir",
+          "reason": "An introductory style to help you compare and discover what interests you.",
+          "sensory": "A red-cherry aroma and a gentle, drying finish."
+        },
+        {
+          "id": "riesling",
+          "name": "Dry Riesling",
+          "reason": "An introductory style to help you compare and discover what interests you.",
+          "sensory": "Lime-like freshness and a mouth-watering finish."
+        },
+        {
+          "id": "brut",
+          "name": "Brut sparkling Chardonnay",
+          "reason": "An introductory style to help you compare and discover what interests you.",
+          "sensory": "Fine bubbles and green-apple freshness."
+        }
+      ],
+      "exercise": {
+        "title": "Find three words of your own",
+        "text": "If you choose to taste, focus on one small sample. Smell it before tasting, then note one aroma, one texture and one impression of freshness. Everyday words are enough. Compare your notes with the label afterwards, rather than searching for a correct answer. Try a bite of your meal and notice whether the impression changes. Tasting is optional; you can smell, read or spit instead."
+      },
+      "journal": {
+        "title": "The first vintage, and the lessons that followed",
+        "detail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+        "href": "vintages.html"
+      },
+      "learningOnly": false
+    },
+    "parts": {
+      "title": "Discovering Your Wine Preferences",
+      "summary0": "Your answers point towards the possibility of finding new favourites, with an interest in ",
+      "summary1": "room to discover the flavours you enjoy. ",
+      "summary2": "Your choices around exploring wine body and ",
+      "summary3": "exploring sweetness help shape the suggestions below, rather than fixing you into a single wine personality. ",
+      "summary4": "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. ",
+      "summary5": "At the table, familiar foods can give you a simple way to notice texture and freshness. ",
+      "summary6": "This is a starting point based on what you shared, not a measurement of tasting ability. ",
+      "summary7": "Your preferences can change as you learn. ",
+      "preference0": "I'm still exploring",
+      "preference1": "I'm not sure yet",
+      "preference2": "I'm not sure",
+      "preference3": "I'm not sure",
+      "preference4": "I enjoy discovering new varieties and styles",
+      "exerciseTitle": "Find three words of your own",
+      "exercise0": "If you choose to taste, focus on one small sample. ",
+      "exercise1": "Smell it before tasting, then note one aroma, one texture and one impression of freshness. ",
+      "exercise2": "Everyday words are enough. ",
+      "exercise3": "Compare your notes with the label afterwards, rather than searching for a correct answer. ",
+      "exercise4": "Try a bite of your meal and notice whether the impression changes. ",
+      "exercise5": "Tasting is optional; you can smell, read or spit instead. ",
+      "exercise6": "",
+      "exercise7": "",
+      "journalTitle": "The first vintage, and the lessons that followed",
+      "journalDetail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+      "styleHeading": "Styles worth exploring",
+      "style0": "Light-bodied Pinot Noir",
+      "sensory0": "A red-cherry aroma and a gentle, drying finish.",
+      "reason0_0": "An introductory style to help you compare and discover what interests you. ",
+      "reason0_1": "",
+      "reason0_2": "",
+      "reason0_3": "",
+      "reason0_4": "",
+      "style1": "Dry Riesling",
+      "sensory1": "Lime-like freshness and a mouth-watering finish.",
+      "reason1_0": "An introductory style to help you compare and discover what interests you. ",
+      "reason1_1": "",
+      "reason1_2": "",
+      "reason1_3": "",
+      "reason1_4": "",
+      "style2": "Brut sparkling Chardonnay",
+      "sensory2": "Fine bubbles and green-apple freshness.",
+      "reason2_0": "An introductory style to help you compare and discover what interests you. ",
+      "reason2_1": "",
+      "reason2_2": "",
+      "reason2_3": "",
+      "reason2_4": ""
+    },
+    "tags": [
+      "cfwp1_0_0:title:4c0b8a34ee183802",
+      "cfwp1_0_0:summary0:3ac03fbec1eb225e",
+      "cfwp1_0_0:summary1:9c007456d84824a8",
+      "cfwp1_0_0:summary2:9dce61286eb10473",
+      "cfwp1_0_0:summary3:f4fdbd0fe8a50cb6",
+      "cfwp1_0_0:summary4:3b704238000d5310",
+      "cfwp1_0_0:summary5:d89f9eb89526d5be",
+      "cfwp1_0_0:summary6:c4b3d67dc52aad11",
+      "cfwp1_0_0:summary7:d36ab4f13e848cda",
+      "cfwp1_0_0:preference0:38c4fbc760ab75d8",
+      "cfwp1_0_0:preference1:8a0d84ab393b4c9c",
+      "cfwp1_0_0:preference2:9fdc1d357f42b25e",
+      "cfwp1_0_0:preference3:9fdc1d357f42b25e",
+      "cfwp1_0_0:preference4:1016effe4d5b6e9d",
+      "cfwp1_0_0:exerciseTitle:3365003ba0666d00",
+      "cfwp1_0_0:exercise0:1e7f649b58de51d3",
+      "cfwp1_0_0:exercise1:2eb41dcb038fa0f6",
+      "cfwp1_0_0:exercise2:3f0b2ebda1d495a8",
+      "cfwp1_0_0:exercise3:8c42e3eb1bb6280b",
+      "cfwp1_0_0:exercise4:f0c2f0a78778290d",
+      "cfwp1_0_0:exercise5:2dd1c290b34af4d0",
+      "cfwp1_0_0:journalTitle:1c4a705d9cab4bde",
+      "cfwp1_0_0:journalDetail:34b82c23948b5eb9",
+      "cfwp1_0_0:styleHeading:a99df1108afdb97b",
+      "cfwp1_0_0:style0:05c9e96226da1d17",
+      "cfwp1_0_0:sensory0:b235320ba5daddda",
+      "cfwp1_0_0:reason0_0:271a474aba98b008",
+      "cfwp1_0_0:style1:387d382466dcfccf",
+      "cfwp1_0_0:sensory1:63592c68c0cf3483",
+      "cfwp1_0_0:reason1_0:271a474aba98b008",
+      "cfwp1_0_0:style2:aacc00012aa7e628",
+      "cfwp1_0_0:sensory2:8535b2439ed063e4",
+      "cfwp1_0_0:reason2_0:271a474aba98b008",
+      "cfwp1_0_0:answer:wine_interests=exploring",
+      "cfwp1_0_0:answer:flavour_preferences=unsure",
+      "cfwp1_0_0:answer:body_preference=unsure",
+      "cfwp1_0_0:answer:sweetness_preference=unsure",
+      "cfwp1_0_0:answer:wine_occasions=meals",
+      "cfwp1_0_0:answer:discovery_interest=adventurous",
+      "cfwp1_0_0:answer:education_interest=journey",
+      "cfwp1_0_0:recommendation:1=pinot_noir",
+      "cfwp1_0_0:recommendation:2=riesling",
+      "cfwp1_0_0:recommendation:3=brut",
+      "cfwp1_0_0:count:33",
+      "cfwp1_0_0:version:1.0.0"
+    ]
+  },
+  "nonDrinker": {
+    "answers": {
+      "wine_interests": [
+        "red"
+      ],
+      "flavour_preferences": [
+        "rich",
+        "savoury"
+      ],
+      "body_preference": "full",
+      "sweetness_preference": "dry",
+      "wine_occasions": [
+        "non_drinker"
+      ],
+      "discovery_interest": "adventurous",
+      "education_interest": "journey"
+    },
+    "profile": {
+      "title": "Bold, Savoury & Adventurous",
+      "summary": "Your answers point towards red wine, with an interest in richness and savoury flavours. Your choices around a fuller body and a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. You can explore these ideas through aromas, food and reading, without drinking or purchasing wine. This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.",
+      "preferences": [
+        {
+          "label": "Wine categories",
+          "value": "Red wine"
+        },
+        {
+          "label": "Flavour characteristics",
+          "value": "Rich and full-bodied, Dry and savoury"
+        },
+        {
+          "label": "Wine body",
+          "value": "Full-bodied"
+        },
+        {
+          "label": "Sweetness",
+          "value": "Dry"
+        },
+        {
+          "label": "New styles",
+          "value": "I enjoy discovering new varieties and styles"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "shiraz",
+          "name": "Full-bodied Shiraz",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Dark plum fruit with a hint of black pepper."
+        },
+        {
+          "id": "cabernet",
+          "name": "Cabernet Sauvignon",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Blackcurrant aromas and a firm, drying texture."
+        },
+        {
+          "id": "malbec",
+          "name": "Full-bodied Malbec",
+          "reason": "You included red wine; this is one expression to learn about. It offers a starting point for your interest in richness. Look for a dry example to match your sweetness preference.",
+          "sensory": "Dark-berry aromas with a generous, rounded texture."
+        }
+      ],
+      "exercise": {
+        "title": "Build an aroma vocabulary, without a glass",
+        "text": "Place a piece of citrus peel, a few berries and a small cup of black tea on the table. Smell each separately and write down one word for each aroma. Compare your words with the suggested styles. No alcohol or wine purchase is needed."
+      },
+      "journal": {
+        "title": "The first vintage, and the lessons that followed",
+        "detail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+        "href": "vintages.html"
+      },
+      "learningOnly": true
+    },
+    "parts": {
+      "title": "Bold, Savoury & Adventurous",
+      "summary0": "Your answers point towards red wine, with an interest in ",
+      "summary1": "richness and savoury flavours. ",
+      "summary2": "Your choices around a fuller body and ",
+      "summary3": "a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. ",
+      "summary4": "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. ",
+      "summary5": "You can explore these ideas through aromas, food and reading, without drinking or purchasing wine. ",
+      "summary6": "This is a starting point based on what you shared, not a measurement of tasting ability. ",
+      "summary7": "Your preferences can change as you learn. ",
+      "preference0": "Red wine",
+      "preference1": "Rich and full-bodied, Dry and savoury",
+      "preference2": "Full-bodied",
+      "preference3": "Dry",
+      "preference4": "I enjoy discovering new varieties and styles",
+      "exerciseTitle": "Build an aroma vocabulary, without a glass",
+      "exercise0": "Place a piece of citrus peel, a few berries and a small cup of black tea on the table. ",
+      "exercise1": "Smell each separately and write down one word for each aroma. ",
+      "exercise2": "Compare your words with the suggested styles. ",
+      "exercise3": "No alcohol or wine purchase is needed. ",
+      "exercise4": "",
+      "exercise5": "",
+      "exercise6": "",
+      "exercise7": "",
+      "journalTitle": "The first vintage, and the lessons that followed",
+      "journalDetail": "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.",
+      "styleHeading": "Wine styles to learn about",
+      "style0": "Full-bodied Shiraz",
+      "sensory0": "Dark plum fruit with a hint of black pepper.",
+      "reason0_0": "You included red wine; this is one expression to learn about. ",
+      "reason0_1": "It offers a starting point for your interest in richness. ",
+      "reason0_2": "Look for a dry example to match your sweetness preference. ",
+      "reason0_3": "",
+      "reason0_4": "",
+      "style1": "Cabernet Sauvignon",
+      "sensory1": "Blackcurrant aromas and a firm, drying texture.",
+      "reason1_0": "You included red wine; this is one expression to learn about. ",
+      "reason1_1": "It offers a starting point for your interest in richness. ",
+      "reason1_2": "Look for a dry example to match your sweetness preference. ",
+      "reason1_3": "",
+      "reason1_4": "",
+      "style2": "Full-bodied Malbec",
+      "sensory2": "Dark-berry aromas with a generous, rounded texture.",
+      "reason2_0": "You included red wine; this is one expression to learn about. ",
+      "reason2_1": "It offers a starting point for your interest in richness. ",
+      "reason2_2": "Look for a dry example to match your sweetness preference. ",
+      "reason2_3": "",
+      "reason2_4": ""
+    },
+    "tags": [
+      "cfwp1_0_0:title:f22cab08e708b6ac",
+      "cfwp1_0_0:summary0:67c730a03ad19d57",
+      "cfwp1_0_0:summary1:e34031cf49bb6752",
+      "cfwp1_0_0:summary2:e262b362cd77bd5d",
+      "cfwp1_0_0:summary3:a932c3e22ab2811f",
+      "cfwp1_0_0:summary4:3b704238000d5310",
+      "cfwp1_0_0:summary5:06eb27e0029a9198",
+      "cfwp1_0_0:summary6:c4b3d67dc52aad11",
+      "cfwp1_0_0:summary7:d36ab4f13e848cda",
+      "cfwp1_0_0:preference0:fa95335efc80e62a",
+      "cfwp1_0_0:preference1:d0b7555dd627161b",
+      "cfwp1_0_0:preference2:8dfd24fad957ec70",
+      "cfwp1_0_0:preference3:702ec3f256e47f56",
+      "cfwp1_0_0:preference4:1016effe4d5b6e9d",
+      "cfwp1_0_0:exerciseTitle:c93d17f11f1c2774",
+      "cfwp1_0_0:exercise0:3a6c3029fdc88468",
+      "cfwp1_0_0:exercise1:46f4b1546772c9f0",
+      "cfwp1_0_0:exercise2:5b9543d2d0cea2cd",
+      "cfwp1_0_0:exercise3:46dfa727ab776916",
+      "cfwp1_0_0:journalTitle:1c4a705d9cab4bde",
+      "cfwp1_0_0:journalDetail:34b82c23948b5eb9",
+      "cfwp1_0_0:styleHeading:bcec8cbadb6cd424",
+      "cfwp1_0_0:style0:61d95c56b452d8a1",
+      "cfwp1_0_0:sensory0:cffbde2784a06b13",
+      "cfwp1_0_0:reason0_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason0_1:ada6047ef221722a",
+      "cfwp1_0_0:reason0_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style1:ed39d1d766701672",
+      "cfwp1_0_0:sensory1:30729dde109174c4",
+      "cfwp1_0_0:reason1_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason1_1:ada6047ef221722a",
+      "cfwp1_0_0:reason1_2:43f2b670b75f9d22",
+      "cfwp1_0_0:style2:e72d46689029adcf",
+      "cfwp1_0_0:sensory2:59c02e2d7da9a5f8",
+      "cfwp1_0_0:reason2_0:184a7d53faa15b34",
+      "cfwp1_0_0:reason2_1:ada6047ef221722a",
+      "cfwp1_0_0:reason2_2:43f2b670b75f9d22",
+      "cfwp1_0_0:answer:wine_interests=red",
+      "cfwp1_0_0:answer:flavour_preferences=rich",
+      "cfwp1_0_0:answer:flavour_preferences=savoury",
+      "cfwp1_0_0:answer:body_preference=full",
+      "cfwp1_0_0:answer:sweetness_preference=dry",
+      "cfwp1_0_0:answer:wine_occasions=non_drinker",
+      "cfwp1_0_0:answer:discovery_interest=adventurous",
+      "cfwp1_0_0:answer:education_interest=journey",
+      "cfwp1_0_0:recommendation:1=shiraz",
+      "cfwp1_0_0:recommendation:2=cabernet",
+      "cfwp1_0_0:recommendation:3=malbec",
+      "cfwp1_0_0:count:37",
+      "cfwp1_0_0:version:1.0.0"
+    ]
+  }
+}

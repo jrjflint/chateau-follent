@@ -1,0 +1,42 @@
+{
+  "owner": "Lord James Follent",
+  "quiz_version": "1.0.0",
+  "template_sha256": "208a9ac533f792e3f005308ac45eab95cef0470c47feafa3f0cb68a743357986",
+  "verified_at": "2026-10-21T09:32:07Z",
+  "context": "Synthetic fixture tags injected into an isolated campaign draft; standard customer.first_name rendered as Bob. Production template still reads customer.tags.",
+  "proofs": [
+    {
+      "profile": "white",
+      "subject": "[TEST] Wine Profile proof - white - synthetic data",
+      "received_at": "2026-10-21T09:28:00Z",
+      "received_at_precision": "minute",
+      "mail_client": "Gmail",
+      "source_sha256": "d9e9fe3f62cb0178c64a5ab7048ecab389df211c6cbb1d4b59a5b569b3d352ee",
+      "expected_content_fields": 20,
+      "missing_content_fields": [],
+      "fallback_present": false,
+      "dob_present": false,
+      "screenshot": "../qa/wine-profile-received-white.jpg"
+    },
+    {
+      "profile": "red",
+      "subject": "[TEST] Wine Profile proof - red - synthetic data",
+      "received_at": "2026-10-21T09:30:00Z",
+      "received_at_precision": "minute",
+      "from": "james@chateaufollent.com.au",
+      "signed_by": "chateaufollent.com.au",
+      "mail_client": "Gmail",
+      "source_sha256": "09ca78783d743bb5f980d2cd9c6c7155a1894dc052ed701f85dc526fafa4c9f3",
+      "expected_content_fields": 20,
+      "missing_content_fields": [],
+      "fallback_present": false,
+      "dob_present": false,
+      "screenshot": "../qa/wine-profile-received-red.jpg"
+    }
+  ],
+  "limitations": [
+    "Real authenticated customer-tag mapping and subscriber-only Flow delivery are not tested by these synthetic receipts.",
+    "Native test-send uses a preview unsubscribe destination; the live automation must verify the recipient-specific unsubscribe link.",
+    "Outlook and received mobile email layouts remain unverified."
+  ]
+}

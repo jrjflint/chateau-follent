@@ -1,0 +1,579 @@
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shopify Wine Profile · Local verification</title><style>body{margin:0;background:#f2f0ea}header,footer{text-align:center;padding:1rem;font-family:Georgia,serif}.qa-only{padding:1rem;background:#fff5cd;font:16px/1.5 Arial,sans-serif}@media print{.qa-only{display:none}}/* Isolated additions to the established Chateau Follent brand system. */
+.cf-wine-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 1.25rem 1rem 2.5rem;
+  background: var(--color-background, #f2f0ea);
+}
+.cf-wine-profile *, .cf-wine-profile *::before, .cf-wine-profile *::after { box-sizing: border-box; }
+.cf-wine-profile .site-header, .cf-wine-profile .wp-shell, .cf-wine-profile .site-footer { width: min(100%, 50rem); }
+.cf-wine-profile .site-header { margin: .25rem 0 1.25rem; }
+.cf-wine-profile .brand-lockup { text-decoration: none; gap: .45rem; margin: 0 auto; }
+.cf-wine-profile .brand-wordmark { font: 700 1.4rem/1.1 'Libre Baskerville', Georgia, serif; letter-spacing: .08em; color: var(--color-text); margin: 0; }
+.cf-wine-profile .brand-crest { width: 6.75rem; }
+.cf-wine-profile .wp-shell { padding: clamp(1.25rem, 5vw, 3.25rem); border-radius: .4rem; box-shadow: 0 12px 40px rgba(10,10,12,.035); }
+.cf-wine-profile .wp-masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem; padding-bottom: 1rem; margin-bottom: 1.8rem; border-bottom: 1px solid var(--wp-border); }
+.cf-wine-profile .wp-eyebrow, .cf-wine-profile .wp-edition { font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; }
+.cf-wine-profile .wp-eyebrow { color: var(--color-accent); margin: 0 0 .65rem; }
+.cf-wine-profile .wp-masthead .wp-eyebrow { margin: 0; }
+.cf-wine-profile .wp-edition { color: var(--color-muted); letter-spacing: .04em; }
+.cf-wine-profile h1 { font-size: clamp(2rem, 5.4vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -.025em; }
+.cf-wine-profile h2 { font-size: clamp(1.5rem, 4.5vw, 2.15rem); line-height: 1.4; letter-spacing: -.02em; margin: .9rem 0 1.1rem; }
+.cf-wine-profile h3 { font-size: clamp(1.25rem, 3vw, 1.6rem); line-height: 1.45; margin-bottom: .85rem; }
+.cf-wine-profile h4 { font-size: 1.12rem; line-height: 1.5; margin: 0 0 .65rem; }
+.cf-wine-profile p, .cf-wine-profile li { font-size: 1rem; line-height: 1.75; }
+.cf-wine-profile p { margin-bottom: 1.1rem; }
+.cf-wine-profile .wp-kicker { font: 400 clamp(1.5rem, 4vw, 2rem)/1.5 'Libre Baskerville', Georgia, serif; color: var(--color-text); margin: 1.75rem 0 1.25rem; }
+.cf-wine-profile .wp-kicker em { color: var(--color-accent); }
+.cf-wine-profile .wp-lede { max-width: 53ch; }
+.cf-wine-profile .wp-facts { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding: .4rem 0 1.5rem; color: var(--color-muted); font-size: .78rem; }
+.cf-wine-profile .wp-facts span + span::before { content: '·'; margin-right: .7rem; }
+.cf-wine-profile .wp-primary { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 3.3rem; padding: .9rem 1.25rem; border-radius: .2rem; font-size: .9rem; letter-spacing: .015em; line-height: 1.5; box-shadow: none; }
+.cf-wine-profile button:disabled { cursor: wait; opacity: .65; }
+.cf-wine-profile .wp-welcome > .wp-primary { margin-bottom: 1rem; width: 100%; }
+.cf-wine-profile .wp-note { font-size: .82rem; line-height: 1.7; color: #535962; }
+.cf-wine-profile .wp-welcome-bottom { display: flex; align-items: center; gap: 1.5rem; margin: 2rem 0 1.5rem; }
+.cf-wine-profile .wp-welcome-bottom p { font: 400 .87rem/1.7 'Libre Baskerville', Georgia, serif; margin: 0; color: var(--color-muted); }
+.cf-wine-profile .wp-line { width: 2.5rem; height: 1px; background: var(--color-accent); }
+.cf-wine-profile .wp-prototype { padding: 1rem; border-left: 2px solid var(--color-accent); background: var(--color-accent-soft); font-size: .78rem; line-height: 1.75; margin: 1.25rem 0; color: #42424b; }
+.cf-wine-profile .wp-prototype strong { color: var(--color-accent); }
+.cf-wine-profile .wp-label, .cf-wine-profile legend { display: block; font-size: .9rem; font-weight: 600; color: var(--color-text); margin: 1.25rem 0 .6rem; }
+.cf-wine-profile input:not([type='radio']):not([type='checkbox']), .cf-wine-profile select { width: 100%; min-width: 0; min-height: 3.15rem; border: 1px solid #8a847a; background: var(--color-surface); color: var(--color-text); border-radius: .2rem; padding: .8rem; font: inherit; font-size: 1rem; }
+.cf-wine-profile input::placeholder { color: #62626c; }
+.cf-wine-profile select { text-overflow: ellipsis; padding-right: 1.25rem; }
+.cf-wine-profile fieldset { padding: 0; border: 0; min-width: 0; margin: 0; }
+.cf-wine-profile .wp-date-fields { display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: .75rem; margin-bottom: 1rem; max-width: 27rem; }
+.cf-wine-profile .wp-date-fields label { display: block; font-size: .8rem; color: var(--color-muted); margin-bottom: .4rem; }
+.cf-wine-profile .wp-actions { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-top: 1.5rem; padding-top: .9rem; border-top: 1px solid var(--wp-border); }
+.cf-wine-profile .wp-actions .wp-primary { flex: 0 1 auto; }
+.cf-wine-profile .wp-back { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; border-radius: .2rem; border: 1px solid transparent; padding: .7rem .4rem; font-size: .86rem; background: transparent; white-space: nowrap; }
+.cf-wine-profile .wp-back:hover { background: var(--color-accent-soft); }
+.cf-wine-profile .wp-error { color: #8a1133; font-size: .87rem; font-weight: 600; margin: 1rem 0; }
+.cf-wine-profile .wp-error:empty { margin: 0; }
+.cf-wine-profile [aria-invalid='true'] { border-color: #8a1133!important; }
+.cf-wine-profile .wp-progress-copy { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; font-size: .75rem; color: var(--color-muted); }
+.cf-wine-profile .wp-progress-copy p { margin: 0; }
+.cf-wine-profile .wp-progress { display: block; appearance: none; border: 0; border-radius: 0; width: 100%; height: 3px; margin: .6rem 0 1.8rem; background: var(--wp-border); color: var(--color-accent); }
+.cf-wine-profile .wp-progress::-webkit-progress-bar { background: var(--wp-border); }
+.cf-wine-profile .wp-progress::-webkit-progress-value { background: var(--color-accent); }
+.cf-wine-profile .wp-progress::-moz-progress-bar { background: var(--color-accent); }
+.cf-wine-profile .wp-options { display: grid; gap: .65rem; margin-top: 1.25rem; }
+.cf-wine-profile .wp-option { display: flex; align-items: center; gap: .9rem; min-height: 3.5rem; border: 1px solid var(--wp-border); border-radius: .25rem; padding: .85rem 1rem; font-size: .9rem; line-height: 1.65; cursor: pointer; transition: background-color 120ms ease, border-color 120ms ease; }
+.cf-wine-profile input[type='checkbox'], .cf-wine-profile input[type='radio'] { flex: 0 0 1.2rem; width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--color-accent); cursor: pointer; }
+.cf-wine-profile .wp-option:has(input:checked) { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.cf-wine-profile .wp-option:hover { border-color: var(--color-accent); }
+.cf-wine-profile .wp-option:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.cf-wine-profile .wp-selection-count { margin: .75rem 0 0; }
+.cf-wine-profile .wp-clear-row { border-top: 1px solid var(--wp-border); padding-top: 1rem; margin-top: 1.5rem; }
+.cf-wine-profile .wp-text-button { min-height: 2.75rem; padding: .4rem 0; font-size: .76rem; text-decoration: underline; text-underline-offset: .25em; border: 0; border-radius: 0; background: none; color: var(--color-muted); }
+.cf-wine-profile .wp-result-teaser { border: 1px solid var(--wp-border); padding: 1.25rem; margin: 1.5rem 0; background: linear-gradient(130deg, var(--color-accent-soft), transparent); }
+.cf-wine-profile .wp-result-teaser p:last-child { margin: 0; }
+.cf-wine-profile .wp-optional { font-weight: 400; color: var(--color-muted); font-size: .75rem; display: inline-block; margin-left: .3rem; }
+.cf-wine-profile .wp-consents { margin: .75rem 0 1rem; }
+.cf-wine-profile .wp-check { display: flex; align-items: flex-start; gap: .85rem; font-size: .82rem; line-height: 1.8; cursor: pointer; margin-bottom: .8rem; padding: .6rem 0; }
+.cf-wine-profile .wp-check input { margin-top: .2rem; }
+.cf-wine-profile .wp-submit-note { margin-top: .75rem; }
+.cf-wine-profile .wp-section { border-top: 1px solid var(--wp-border); margin-top: 2rem; padding-top: 1.75rem; }
+.cf-wine-profile .wp-preferences { margin: 0; }
+.cf-wine-profile .wp-preferences div { padding: .8rem 0; border-bottom: 1px solid var(--wp-border); }
+.cf-wine-profile dt { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); margin-bottom: .4rem; }
+.cf-wine-profile dd { margin: 0; font-size: .9rem; line-height: 1.7; }
+.cf-wine-profile .wp-recommendations { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.cf-wine-profile .wp-recommendations li { display: flex; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid var(--wp-border); }
+.cf-wine-profile .wp-number { color: var(--color-accent); font: 400 1.2rem/1.5 'Libre Baskerville', Georgia, serif; padding-top: .1rem; }
+.cf-wine-profile .wp-recommendations p { font-size: .9rem; margin-bottom: .65rem; }
+.cf-wine-profile .wp-recommendations p:last-child { margin-bottom: 0; }
+.cf-wine-profile .wp-sensory { border-left: 2px solid var(--wp-border); padding-left: .8rem; }
+.cf-wine-profile .wp-sensory strong { color: var(--color-accent); display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+.cf-wine-profile .wp-exercise { background: var(--color-accent-soft); padding: 1.5rem; border-top: 2px solid var(--color-accent); }
+.cf-wine-profile .wp-exercise p:last-child { margin-bottom: 0; }
+.cf-wine-profile .wp-result-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.cf-wine-profile details { margin-top: 1rem; }
+.cf-wine-profile summary { cursor: pointer; font-weight: 600; font-size: .9rem; padding: 1rem .75rem; border: 1px solid var(--wp-border); border-radius: .2rem; color: var(--color-accent); }
+.cf-wine-profile iframe { display: block; width: 100%; height: 48rem; border: 1px solid var(--wp-border); margin-top: .75rem; background: var(--color-background, #f2f0ea); }
+.cf-wine-profile .site-footer { padding: 1.4rem 0 0; border: 0; background: none; box-shadow: none; border-radius: 0; margin-top: .75rem; }
+.cf-wine-profile .footer-heading { font-size: .9rem; }
+.cf-wine-profile .footer-nav-links { gap: .6rem 1.4rem; }
+.cf-wine-profile .footer-nav-links a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: .8rem; }
+.cf-wine-profile .footer-note { font-size: .7rem; margin: 0; }
+.cf-wine-profile :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.cf-wine-profile [data-step-heading]:focus, .cf-wine-profile #profile-title:focus { outline: none; }
+.cf-wine-profile [data-step-heading], .cf-wine-profile #profile-title { scroll-margin-top: 1.5rem; }
+.cf-wine-profile .wp-skip { position: absolute; left: 1rem; top: -10rem; background: var(--color-surface); z-index: 10; padding: .75rem; }
+.cf-wine-profile .wp-skip:focus { top: .5rem; }
+.cf-wine-profile:not([data-phase='welcome']) .wp-page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.cf-wine-profile:not([data-phase='welcome']) .site-header { margin-bottom: .9rem; }
+.cf-wine-profile:not([data-phase='welcome']) .brand-wordmark { font-size: 1rem; }
+.cf-wine-profile:not([data-phase='welcome']) .brand-crest { width: 4.85rem; }
+@media (min-width: 640px) {
+  .cf-wine-profile { padding-top: 2rem; }
+  .cf-wine-profile .wp-welcome > .wp-primary { width: auto; }
+  .cf-wine-profile .wp-preferences { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+}
+@media (max-width: 420px) {
+  .cf-wine-profile { padding: 1rem .75rem 2rem; }
+  .cf-wine-profile .wp-shell { padding: 1.2rem; }
+  .cf-wine-profile .wp-edition { display: none; }
+  .cf-wine-profile .wp-actions { gap: .4rem; }
+  .cf-wine-profile .wp-actions .wp-primary { padding-inline: .75rem; font-size: .8rem; }
+  .cf-wine-profile .wp-back { font-size: .78rem; }
+  .cf-wine-profile .wp-option { padding: .8rem .75rem; }
+  .cf-wine-profile .wp-facts { gap: .5rem; }
+  .cf-wine-profile .wp-facts span + span::before { margin-right: .4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-wine-profile *, .cf-wine-profile *::before, .cf-wine-profile *::after { transition: none!important; scroll-behavior: auto!important; }
+}
+@media print {
+  .cf-wine-profile { display: block; background: white; padding: 0; }
+  .cf-wine-profile .site-header, .cf-wine-profile .site-footer, .cf-wine-profile .wp-masthead, .cf-wine-profile .wp-page-title, .cf-wine-profile .wp-prototype, .cf-wine-profile .wp-result-actions, .cf-wine-profile .wp-email-section, .cf-wine-profile .wp-clear-row, .cf-wine-profile .wp-skip { display: none!important; }
+  .cf-wine-profile .wp-shell { width: 100%; padding: 0; margin: 0; box-shadow: none; border: 0; background: white; }
+  .cf-wine-profile h2 { margin-top: 0; }
+  .cf-wine-profile p, .cf-wine-profile li { font-size: 10pt; }
+  .cf-wine-profile .wp-section { margin-top: 14pt; padding-top: 14pt; }
+  .cf-wine-profile .wp-recommendations li, .cf-wine-profile .wp-preferences div, .cf-wine-profile .wp-exercise { break-inside: avoid; }
+  .cf-wine-profile h3, .cf-wine-profile h4 { break-after: avoid; }
+  .cf-wine-profile:not([data-phase='result']) #wp-app { display: none; }
+}
+
+.cf-wine-profile { display:block; box-sizing:border-box; width:100%; --color-surface:var(--color-background,#fcfbf8); --color-text:var(--color-foreground,#0a0a0c); --color-muted:var(--color-foreground-muted,#5a6470); --wp-border:color-mix(in srgb,var(--color-foreground,#0a0a0c) 18%,transparent); --color-accent:var(--color-primary-button-background,#4a002e); --color-accent-soft:color-mix(in srgb,var(--color-primary-button-background,#4a002e) 8%,transparent); color:var(--color-text); font:400 16px/1.5 var(--font-body--family,Arial,Helvetica,sans-serif); }
+.cf-wine-profile .wp-shell { width:min(100%,50rem); margin-inline:auto; background:var(--color-surface); }
+.cf-wine-profile h1,.cf-wine-profile h2,.cf-wine-profile h3,.cf-wine-profile h4,.cf-wine-profile .wp-kicker { font-family:var(--font-heading--family,Georgia,serif); color:var(--color-text); font-weight:var(--font-heading--weight,400); }
+.cf-wine-profile button { font-family:inherit; cursor:pointer; color:var(--color-text); }
+.cf-wine-profile .wp-primary { border:1px solid var(--color-accent); background:var(--color-accent); color:var(--color-primary-button-text,#fcfbf8); text-decoration:none; }
+.cf-wine-profile .wp-primary:hover { background:var(--color-primary-button-hover-background,#360022); color:var(--color-primary-button-hover-text,#fcfbf8); }
+.cf-wine-profile a { color:var(--color-accent); text-decoration:underline; text-underline-offset:.2em; }
+.cf-wine-profile .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media print { body:has(cf-wine-profile[data-phase='result']) * { visibility:hidden; } body:has(cf-wine-profile[data-phase='result']) cf-wine-profile,body:has(cf-wine-profile[data-phase='result']) cf-wine-profile * { visibility:visible; } body:has(cf-wine-profile[data-phase='result']) cf-wine-profile { position:absolute; inset:0; width:100%; padding:0; } .cf-wine-profile:not([data-phase='result']) .wp-shell { display:none; } .cf-wine-profile .wp-note,.cf-wine-profile .wp-email-panel { display:none; } }
+.cf-wine-profile [hidden]{display:none!important}.wp-email-panel{margin-top:2rem}.wp-email-panel button:disabled{opacity:.65;cursor:wait}.wp-email-panel input[type="checkbox"]{width:auto;margin-right:.5rem}.wp-email-panel label{display:block;margin-block:.7rem}</style></head><body><header>CHATEAU FOLLENT · Theme preview</header><cf-wine-profile class="cf-wine-profile" data-privacy-url="/privacy-policy.html" data-journal-url="/vintages.html">
+  <div class="wp-shell">
+    <div class="wp-masthead"><p class="wp-eyebrow">A little curiosity. A personal discovery.</p><span class="wp-edition">The Wine Profile · No. 01</span></div>
+    <h1 class="wp-page-title">Discover Your Wine Profile.</h1>
+    <div data-wp-app><p>Preparing your Wine Profile…</p></div>
+    <noscript><p>This quiz needs JavaScript. Your details have not been collected.</p></noscript>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-wp-status></p>
+  </div>
+  
+</cf-wine-profile><footer>Chateau Follent</footer><script>(()=>{const QUIZ_VERSION = '1.0.0';
+const CONSENT_VERSION = '2026-10-20';
+const options = (items) => items.map(([id, label]) => ({ id, label }));
+const QUESTIONS = [
+  { id: 'wine_interests', title: 'Which types of wine do you enjoy or want to explore?', kind: 'multi', exclusive: 'exploring', options: options([
+    ['red', 'Red wine'], ['white', 'White wine'], ['rose', 'Rosé'], ['sparkling', 'Sparkling wine'], ['mead', 'Mead or honey-based wine'], ['experimental', 'Experimental or small-batch wines'], ['exploring', "I'm still exploring"],
+  ]) },
+  { id: 'flavour_preferences', title: 'Which flavour descriptions appeal to you?', kind: 'multi', max: 3, exclusive: 'unsure', options: options([
+    ['crisp', 'Fresh and crisp'], ['delicate', 'Light and delicate'], ['aromatic', 'Fruity and aromatic'], ['rich', 'Rich and full-bodied'], ['savoury', 'Dry and savoury'], ['smooth', 'Sweet and smooth'], ['unsure', "I'm not sure yet"],
+  ]) },
+  { id: 'body_preference', title: 'What style of wine do you generally prefer?', kind: 'single', options: options([
+    ['light', 'Light-bodied'], ['medium', 'Medium-bodied'], ['full', 'Full-bodied'], ['varied', 'I enjoy different styles'], ['unsure', "I'm not sure"],
+  ]) },
+  { id: 'sweetness_preference', title: 'How sweet do you usually prefer your wine?', kind: 'single', options: options([
+    ['dry', 'Dry'], ['off_dry', 'Slightly sweet / off-dry'], ['sweet', 'Sweet'], ['varied', 'It depends on the wine'], ['unsure', "I'm not sure"],
+  ]) },
+  { id: 'wine_occasions', title: 'When do you typically enjoy or purchase wine?', kind: 'multi', exclusive: 'non_drinker', options: options([
+    ['meals', 'With meals'], ['sharing', 'Sharing with friends or family'], ['celebrations', 'Special celebrations'], ['gifts', 'Giving as gifts'], ['cellaring', 'Collecting or cellaring'], ['tasting', 'Wine tasting and discovery'], ['non_drinker', "I don't currently drink or purchase wine"],
+  ]) },
+  { id: 'discovery_interest', title: 'How interested are you in exploring unfamiliar wines?', kind: 'single', options: options([
+    ['familiar', 'I usually stick with familiar favourites'], ['occasional', 'I occasionally try something different'], ['adventurous', 'I enjoy discovering new varieties and styles'], ['learning', "I'm still learning what I enjoy"],
+  ]) },
+  { id: 'education_interest', title: 'What would you most like to learn about wine?', kind: 'single', options: options([
+    ['grapes', 'Understanding grape varieties'], ['winemaking', 'How wine is made'], ['pairing', 'Food and wine pairing'], ['tasting', 'How to taste and describe wine'], ['regions', 'Wine regions and growing conditions'], ['journey', 'Following the journey of a small winery'],
+  ]) },
+];
+const DISCOVERY_SOURCES = options([
+  ['instagram_james', 'Instagram — James Follent'], ['instagram_chateau', 'Instagram — Chateau Follent'], ['youtube', 'YouTube'], ['facebook', 'Facebook'], ['search', 'Google or another search engine'], ['friends_family', 'Friends or family'], ['wine_event', 'Wine club or wine event'], ['website', 'Another website'], ['other', 'Other'], ['unknown', "I can't remember"],
+]);
+const CONSENT = {
+  marketing: "I'd like to receive Chateau Follent vintage journals, news and occasional updates about future releases and membership.",
+  birthday: "I'd like Chateau Follent to remember my birthday and send me a birthday message.",
+};
+
+// Style descriptions are starting points, not guarantees about every producer or bottle.
+const style = (id, name, categories, flavours, body, sweetness, sensory, unfamiliar = false) => ({ id, name, categories, flavours, body, sweetness, sensory, unfamiliar });
+const STYLES = [
+  style('pinot_noir', 'Light-bodied Pinot Noir', ['red'], ['delicate', 'aromatic', 'savoury'], 'light', 'dry', 'A red-cherry aroma and a gentle, drying finish.'),
+  style('shiraz', 'Full-bodied Shiraz', ['red'], ['rich', 'savoury', 'aromatic'], 'full', 'dry', 'Dark plum fruit with a hint of black pepper.'),
+  style('cabernet', 'Cabernet Sauvignon', ['red'], ['rich', 'savoury'], 'full', 'dry', 'Blackcurrant aromas and a firm, drying texture.'),
+  style('malbec', 'Full-bodied Malbec', ['red'], ['rich', 'aromatic'], 'full', 'dry', 'Dark-berry aromas with a generous, rounded texture.'),
+  style('grenache', 'Medium-bodied Grenache', ['red'], ['aromatic', 'delicate'], 'medium', 'dry', 'Red-berry aromas with a rounded texture.'),
+  style('sweet_red', 'A labelled sweet red blend', ['red'], ['smooth', 'aromatic'], 'medium', 'sweet', 'Ripe berry flavours alongside actual residual sweetness.'),
+  style('riesling', 'Dry Riesling', ['white'], ['crisp', 'delicate', 'aromatic'], 'light', 'dry', 'Lime-like freshness and a mouth-watering finish.'),
+  style('sauvignon_blanc', 'Dry Sauvignon Blanc', ['white'], ['crisp', 'aromatic'], 'light', 'dry', 'Citrus-like acidity and herbaceous aromas.'),
+  style('pinot_grigio', 'Light, dry Pinot Grigio', ['white'], ['crisp', 'delicate'], 'light', 'dry', 'Pear-like aromas in a light, fresh frame.'),
+  style('vermentino', 'Vermentino', ['white', 'experimental'], ['crisp', 'savoury'], 'light', 'dry', 'Citrus peel and a lightly savoury finish.', true),
+  style('chardonnay', 'Full-bodied, oak-influenced Chardonnay', ['white'], ['rich', 'savoury'], 'full', 'dry', 'A rounded texture with a suggestion of toast.'),
+  style('off_dry_riesling', 'Off-dry Riesling', ['white'], ['crisp', 'aromatic', 'smooth'], 'light', 'off_dry', 'A little sweetness balanced by citrus-like acidity.'),
+  style('moscato', 'Sweet Moscato', ['white'], ['aromatic', 'delicate', 'smooth'], 'light', 'sweet', 'Floral and grape-like aromas with a sweet finish.'),
+  style('dry_rose', 'Dry, pale rosé', ['rose'], ['crisp', 'delicate'], 'light', 'dry', 'Delicate red-berry aromas with a fresh finish.'),
+  style('textured_rose', 'Textured, dry Sangiovese rosé', ['rose', 'experimental'], ['savoury', 'rich'], 'medium', 'dry', 'Cherry-like fruit and a little grip on the finish.', true),
+  style('off_dry_rose', 'Off-dry rosé', ['rose'], ['aromatic', 'smooth'], 'light', 'off_dry', 'Strawberry-like fruit with a small cushion of sweetness.'),
+  style('sweet_rose', 'Sweet pink Moscato', ['rose'], ['aromatic', 'smooth', 'delicate'], 'light', 'sweet', 'Rose-petal aromas and sweet red-fruit flavours.'),
+  style('brut', 'Brut sparkling Chardonnay', ['sparkling'], ['crisp', 'delicate'], 'light', 'dry', 'Fine bubbles and green-apple freshness.'),
+  style('traditional_sparkling', 'Traditional-method sparkling wine', ['sparkling'], ['rich', 'savoury'], 'medium', 'dry', 'Bready aromas alongside the texture of bubbles.'),
+  style('demi_sec', 'Demi-sec sparkling wine', ['sparkling'], ['aromatic', 'smooth'], 'medium', 'sweet', 'Noticeable sweetness lifted by bubbles and acidity.'),
+  style('dry_mead', 'Dry traditional mead', ['mead'], ['delicate', 'savoury'], 'light', 'dry', 'A floral honey aroma without assuming a sweet finish.', true),
+  style('off_dry_mead', 'Off-dry traditional mead', ['mead'], ['aromatic', 'smooth'], 'medium', 'off_dry', 'Floral aromas and a gentle amount of residual sweetness.', true),
+  style('sweet_mead', 'Sweet traditional mead', ['mead'], ['smooth', 'rich'], 'full', 'sweet', 'Honeyed aromas with a fuller, sweet texture.', true),
+  style('skin_contact', 'Dry, skin-contact white wine', ['white', 'experimental'], ['savoury', 'rich'], 'medium', 'dry', 'Tea-like grip from time spent on grape skins.', true),
+  style('pet_nat', 'Dry pétillant naturel', ['sparkling', 'experimental'], ['crisp', 'aromatic'], 'light', 'dry', 'Lively bubbles; texture varies with the producer.', true),
+];
+
+const JOURNAL_TOPICS = {
+  grapes: { title: 'One grape, more than one expression', detail: 'A suggested journal topic: how Chardonnay became both still and sparkling wine in one vintage.', href: 'vintages.html#vintage-2025-heading' },
+  winemaking: { title: 'From grape to glass, one small batch at a time', detail: 'A suggested journal topic: fermentation choices and the lessons of the 2025 sparkling Chardonnay.', href: 'vintages.html#vintage-2025-heading' },
+  pairing: { title: 'Why texture matters at the table', detail: 'A suggested journal topic: using the dry 2025 rosé as a starting point for thinking about food and texture.', href: 'vintages.html#vintage-2025-heading' },
+  tasting: { title: 'Finding words for what you notice', detail: 'A suggested journal topic: comparing the described textures of the 2025 rosé and Chardonnay.', href: 'vintages.html#vintage-2025-heading' },
+  regions: { title: 'A vintage begins with a place', detail: 'A suggested journal topic: following the Mudgee and Riverland fruit recorded in the vintage archive.', href: 'vintages.html#vintage-2025-heading' },
+  journey: { title: 'The first vintage, and the lessons that followed', detail: 'A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage.', href: 'vintages.html' },
+};
+
+
+function labelFor(questionId, value) {
+  return QUESTIONS.find((q) => q.id === questionId)?.options.find((o) => o.id === value)?.label ?? '';
+}
+
+function sydneyDate(now = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-AU', { timeZone: 'Australia/Sydney', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
+  const get = (type) => parts.find((p) => p.type === type).value;
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+
+function screenAge(dob, now = new Date()) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dob)) return { eligible: false, error: 'Enter your complete date of birth.' };
+  const [year, month, day] = dob.split('-').map(Number);
+  const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+  const days = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (year < 1 || month < 1 || month > 12 || day < 1 || day > days[month - 1]) return { eligible: false, error: 'Enter a real calendar date.' };
+  const today = sydneyDate(now);
+  if (dob > today) return { eligible: false, error: 'Your date of birth must be in the past.' };
+  const [currentYear, currentMonth, currentDay] = today.split('-').map(Number);
+  // Calendar comparison treats 29 February as reached on 1 March in a non-leap year.
+  const age = currentYear - year - (currentMonth < month || (currentMonth === month && currentDay < day) ? 1 : 0);
+  if (age < 18) return { eligible: false, error: 'This experience is for adults aged 18 and over. No details have been submitted.' };
+  const band = age < 25 ? '18–24' : age < 35 ? '25–34' : age < 45 ? '35–44' : age < 55 ? '45–54' : age < 65 ? '55–64' : '65+';
+  return { eligible: true, age, age_band: band };
+}
+
+function updateSelection(question, current, value, checked = true) {
+  if (!question.options.some((o) => o.id === value)) throw new Error('Unknown response.');
+  if (question.kind === 'single') return { value, error: '' };
+  const previous = Array.isArray(current) ? current : [];
+  let next = !checked ? previous.filter((v) => v !== value) : value === question.exclusive ? [value] : [...new Set([...previous.filter((v) => v !== question.exclusive), value])];
+  if (question.max && next.length > question.max) return { value: previous, error: `Choose up to ${question.max} descriptions. Unselect one before adding another.` };
+  // Canonical option order makes outcomes independent of the order options were clicked.
+  next = question.options.filter((o) => next.includes(o.id)).map((o) => o.id);
+  return { value: next, error: '' };
+}
+
+function validateAnswer(question, value) {
+  if (question.kind === 'single') return question.options.some((o) => o.id === value) ? '' : 'Choose an answer to continue.';
+  if (!Array.isArray(value) || !value.length) return 'Choose at least one answer to continue.';
+  if (new Set(value).size !== value.length || value.some((v) => !question.options.some((o) => o.id === v))) return 'Choose from the available answers.';
+  if (question.max && value.length > question.max) return `Choose up to ${question.max} descriptions.`;
+  if (value.includes(question.exclusive) && value.length !== 1) return 'Choose this answer on its own.';
+  return '';
+}
+
+function validateAnswers(answers) {
+  for (const question of QUESTIONS) {
+    const error = validateAnswer(question, answers[question.id]);
+    if (error) throw new Error(`${question.id}: ${error}`);
+  }
+}
+
+const flavourWords = { crisp: 'freshness', delicate: 'delicate flavours', aromatic: 'expressive aromas', rich: 'richness', savoury: 'savoury flavours', smooth: 'sweet, smooth flavours' };
+const join = (items) => items.length < 2 ? items[0] : `${items.slice(0, -1).join(', ')} and ${items.at(-1)}`;
+const categoryWords = { red: 'red wine', white: 'white wine', rose: 'rosé', sparkling: 'sparkling wine', mead: 'mead', experimental: 'small-batch experiments' };
+
+function recommend(answers) {
+  const categories = answers.wine_interests.filter((v) => v !== 'exploring');
+  const flavours = answers.flavour_preferences.filter((v) => v !== 'unsure');
+  const introductory = !categories.length && !flavours.length && ['unsure', 'varied'].includes(answers.body_preference) && ['unsure', 'varied'].includes(answers.sweetness_preference);
+  const candidates = STYLES.filter((s) => !categories.length || s.categories.some((c) => categories.includes(c)));
+  const ranked = candidates.map((s, index) => ({
+    style: s, index,
+    score: (s.categories.some((c) => categories.includes(c)) ? 6 : 0)
+      + s.flavours.filter((f) => flavours.includes(f)).length * 3
+      + (s.body === answers.body_preference ? 2 : 0)
+      + (s.sweetness === answers.sweetness_preference ? 3 : ['dry', 'off_dry', 'sweet'].includes(answers.sweetness_preference) ? -3 : 0)
+      + (introductory && ['pinot_noir', 'riesling', 'brut'].includes(s.id) ? 2 : 0)
+      + (s.unfamiliar ? answers.discovery_interest === 'adventurous' ? 1 : answers.discovery_interest === 'familiar' ? -2 : 0 : 0),
+  }));
+  const chosen = [];
+  const covered = new Set();
+  while (chosen.length < 3) {
+    const score = (candidate) => candidate.score + (candidate.style.categories.some((c) => categories.includes(c) && !covered.has(c)) ? 4 : 0);
+    ranked.sort((a, b) => score(b) - score(a) || a.index - b.index);
+    const next = ranked.shift();
+    if (!next) throw new Error('The style catalogue needs at least three matching styles.');
+    next.style.categories.forEach((c) => covered.add(c));
+    chosen.push(next.style);
+  }
+  return chosen.map((s) => describeStyle(s, answers));
+}
+
+function describeStyle(s, answers) {
+  const categories = answers.wine_interests.filter((v) => v !== 'exploring');
+  const flavours = answers.flavour_preferences.filter((v) => v !== 'unsure');
+  const category = s.categories.find((c) => categories.includes(c));
+  const matches = s.flavours.filter((f) => flavours.includes(f));
+  let reason = category ? `You included ${categoryWords[category]}; this is one expression to learn about.` : 'An introductory style to help you compare and discover what interests you.';
+  if (matches.length) reason += ` It offers a starting point for your interest in ${flavourWords[matches[0]]}.`;
+  if (s.sweetness === answers.sweetness_preference) reason += ` Look for a ${s.sweetness.replace('_', '-')} example to match your sweetness preference.`;
+  else if (['dry', 'off_dry', 'sweet'].includes(answers.sweetness_preference)) reason += ` Its ${s.sweetness.replace('_', '-')} finish offers a contrast to the sweetness you selected.`;
+  if (['light', 'medium', 'full'].includes(answers.body_preference) && s.body !== answers.body_preference) reason += ` This ${s.body}-bodied expression also offers a contrast to your ${answers.body_preference}-bodied preference.`;
+  return { id: s.id, name: s.name, reason, sensory: s.sensory };
+}
+
+function titleFor(answers) {
+  const flavours = answers.flavour_preferences;
+  if (flavours.includes('unsure') && ['unsure', 'varied'].includes(answers.body_preference)) return 'Discovering Your Wine Preferences';
+  const first = flavours.includes('rich') || answers.body_preference === 'full' ? 'Bold' : flavours.includes('crisp') ? 'Fresh' : flavours.includes('delicate') || answers.body_preference === 'light' ? 'Elegant' : flavours.includes('aromatic') ? 'Aromatic' : flavours.includes('smooth') ? 'Soft' : 'Exploring';
+  const second = flavours.includes('savoury') ? 'Savoury' : flavours.includes('aromatic') && first !== 'Aromatic' ? 'Aromatic' : flavours.includes('crisp') && first !== 'Fresh' ? 'Fresh' : null;
+  const curiosity = { familiar: 'Familiar', occasional: 'Curious', adventurous: 'Adventurous', learning: 'Explorative' }[answers.discovery_interest];
+  return `${first}${second ? `, ${second}` : ''} & ${curiosity}`;
+}
+
+function summaryFor(answers) {
+  const categories = answers.wine_interests.filter((v) => v !== 'exploring');
+  const category = categories.length > 2 ? 'a broad range of wine styles' : categories.length ? join(categories.map((c) => categoryWords[c])) : 'the possibility of finding new favourites';
+  const flavours = answers.flavour_preferences.filter((v) => v !== 'unsure');
+  const flavour = flavours.length ? join(flavours.map((f) => flavourWords[f])) : 'room to discover the flavours you enjoy';
+  const body = { light: 'a lighter body', medium: 'a medium body', full: 'a fuller body', varied: 'different body styles', unsure: 'exploring wine body' }[answers.body_preference];
+  const sweetness = { dry: 'a dry finish', off_dry: 'a little sweetness', sweet: 'a sweet finish', varied: 'varying sweetness', unsure: 'exploring sweetness' }[answers.sweetness_preference];
+  const curiosity = {
+    familiar: 'Familiar styles can be a comfortable starting point, with small comparisons helping you notice differences.',
+    occasional: 'An occasional change of style can offer a gentle way to broaden your own reference points.',
+    adventurous: 'Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine.',
+    learning: 'There is no need to have settled preferences; noticing what interests you is a useful beginning.',
+  }[answers.discovery_interest];
+  const occasion = answers.wine_occasions.includes('non_drinker') ? 'You can explore these ideas through aromas, food and reading, without drinking or purchasing wine.' : answers.wine_occasions.includes('meals') ? 'At the table, familiar foods can give you a simple way to notice texture and freshness.' : answers.wine_occasions.includes('cellaring') ? 'For your interest in cellaring, remember that ageing potential depends on the individual bottle and storage.' : 'Your preferred occasions can guide which styles feel useful to explore at your own pace.';
+  return `Your answers point towards ${category}, with an interest in ${flavour}. Your choices around ${body} and ${sweetness} help shape the suggestions below, rather than fixing you into a single wine personality. ${curiosity} ${occasion} This is a starting point based on what you shared, not a measurement of tasting ability. Your preferences can change as you learn.`;
+}
+
+function exerciseFor(answers) {
+  if (answers.wine_occasions.includes('non_drinker')) return { title: 'Build an aroma vocabulary, without a glass', text: 'Place a piece of citrus peel, a few berries and a small cup of black tea on the table. Smell each separately and write down one word for each aroma. Compare your words with the suggested styles. No alcohol or wine purchase is needed.' };
+  let text;
+  let title;
+  if (['sweet', 'off_dry'].includes(answers.sweetness_preference) || answers.flavour_preferences.includes('smooth')) {
+    title = 'Separate fruitiness from sweetness';
+    text = 'If you choose to taste, compare small samples of a clearly labelled dry and off-dry wine from the same grape. Smell first, then notice sweetness on the palate and mouth-watering acidity. A fruity aroma does not necessarily mean a wine is sweet.';
+  } else if (['light', 'full'].includes(answers.body_preference)) {
+    title = 'Notice the weight of a wine';
+    text = 'If you choose to taste, compare small samples of a lighter and fuller-bodied wine. Notice how each feels in your mouth, rather than how strong its aroma seems. Write one texture word for each; neither needs to be better.';
+  } else {
+    title = 'Find three words of your own';
+    text = 'If you choose to taste, focus on one small sample. Smell it before tasting, then note one aroma, one texture and one impression of freshness. Everyday words are enough. Compare your notes with the label afterwards, rather than searching for a correct answer.';
+  }
+  const occasions = answers.wine_occasions;
+  text += occasions.includes('meals') ? ' Try a bite of your meal and notice whether the impression changes.' : occasions.includes('sharing') ? ' Compare notes with a friend; different impressions are welcome.' : occasions.includes('celebrations') ? ' Save the comparison for a celebration you already have planned.' : occasions.includes('gifts') ? ' Use your notes to explain a style when choosing a gift.' : occasions.includes('cellaring') ? ' Date your notes so you can compare them with a future tasting.' : ' Keep a short note for your next discovery.';
+  return { title, text: `${text} Tasting is optional; you can smell, read or spit instead.` };
+}
+
+function generateProfile(answers) {
+  validateAnswers(answers);
+  return {
+    title: titleFor(answers), summary: summaryFor(answers),
+    preferences: ['wine_interests', 'flavour_preferences', 'body_preference', 'sweetness_preference', 'discovery_interest'].map((id) => ({
+      label: { wine_interests: 'Wine categories', flavour_preferences: 'Flavour characteristics', body_preference: 'Wine body', sweetness_preference: 'Sweetness', discovery_interest: 'New styles' }[id],
+      value: Array.isArray(answers[id]) ? answers[id].map((v) => labelFor(id, v)).join(', ') : labelFor(id, answers[id]),
+    })),
+    recommendations: recommend(answers), exercise: exerciseFor(answers),
+    journal: { ...JOURNAL_TOPICS[answers.education_interest] },
+    learningOnly: answers.wine_occasions.includes('non_drinker'),
+  };
+}
+
+function validEmail(value) {
+  if (typeof value !== 'string' || value.trim().length > 254) return false;
+  const [local, domain, extra] = value.trim().split('@');
+  if (extra !== undefined || !local || !domain || !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/.test(local)) return false;
+  const labels = domain.split('.');
+  return labels.length > 1 && labels.every((part) => /^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$/.test(part));
+}
+
+function captureAttribution(url, referrer = '') {
+  const utm = {};
+  const params = new URL(url).searchParams;
+  for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+    const value = params.get(key);
+    if (value) utm[key] = value.slice(0, 200);
+  }
+  let source = null;
+  try {
+    const parsed = new URL(referrer);
+    if (['http:', 'https:'].includes(parsed.protocol)) source = `${parsed.origin}${parsed.pathname}`;
+  } catch { /* An absent or blocked referrer is expected. */ }
+  return { utm, referrer: source };
+}
+
+function createLead({ identity, contact, answers, attribution }, now = new Date()) {
+  const name = identity.first_name.trim();
+  if (!name || name.length > 80) throw new Error('Enter a first name of up to 80 characters.');
+  const age = screenAge(identity.date_of_birth, now);
+  if (!age.eligible) throw new Error(age.error);
+  if (!validEmail(contact.email)) throw new Error('Enter a valid email address, such as name@example.com.');
+  if (contact.discovery_source && !DISCOVERY_SOURCES.some((o) => o.id === contact.discovery_source)) throw new Error('Choose an available discovery source.');
+  if (typeof contact.marketing_consent !== 'boolean' || typeof contact.birthday_messages_opt_in !== 'boolean') throw new Error('Consent choices must be true or false.');
+  const profile = generateProfile(answers);
+  const timestamp = now.toISOString();
+  return {
+    first_name: name, email: contact.email.trim(), date_of_birth: identity.date_of_birth,
+    age_band: age.age_band, age_screening_method: 'self_declared_date_of_birth',
+    ...Object.fromEntries(QUESTIONS.map((q) => [q.id, Array.isArray(answers[q.id]) ? [...answers[q.id]] : answers[q.id]])),
+    discovery_source: contact.discovery_source || null,
+    wine_profile_title: profile.title, recommended_styles: profile.recommendations.map((s) => ({ ...s })),
+    marketing_consent: contact.marketing_consent, birthday_messages_opt_in: contact.birthday_messages_opt_in,
+    consent_timestamp: timestamp, consent_copy_version: CONSENT_VERSION,
+    quiz_version: QUIZ_VERSION, created_at: timestamp,
+    attribution: structuredClone(attribution ?? { utm: {}, referrer: null }),
+  };
+}
+
+const SITE = 'https://chateaufollent.com.au/';
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+}
+const e = escapeHtml;
+
+function profileMarkup(profile) {
+  return `<div class="wp-profile-content">
+    <section class="wp-result-intro" aria-labelledby="profile-title"><p class="wp-eyebrow">Your Chateau Follent Wine Profile</p><h2 id="profile-title" tabindex="-1">${e(profile.title)}</h2><p>${e(profile.summary)}</p><p class="wp-note">A reflection of your stated preferences, with room to change.</p></section>
+    <section class="wp-section" aria-labelledby="glance-title"><h3 id="glance-title">Preferences at a glance</h3><dl class="wp-preferences">${profile.preferences.map((p) => `<div><dt>${e(p.label)}</dt><dd>${e(p.value)}</dd></div>`).join('')}</dl></section>
+    <section class="wp-section" aria-labelledby="styles-title"><p class="wp-eyebrow">Three paths to explore</p><h3 id="styles-title">${profile.learningOnly ? 'Wine styles to learn about' : 'Styles worth exploring'}</h3><p class="wp-note">Educational suggestions, not wines offered for sale by Chateau Follent. Styles vary by producer, region and vintage.</p><ol class="wp-recommendations">${profile.recommendations.map((s, i) => `<li><span class="wp-number" aria-hidden="true">0${i + 1}</span><div><h4>${e(s.name)}</h4><p>${e(s.reason)}</p><p class="wp-sensory"><strong>Look for</strong> ${e(s.sensory)}</p></div></li>`).join('')}</ol></section>
+    <section class="wp-section wp-exercise" aria-labelledby="exercise-title"><p class="wp-eyebrow">A small discovery of your own</p><h3 id="exercise-title">${e(profile.exercise.title)}</h3><p>${e(profile.exercise.text)}</p></section>
+    <section class="wp-section" aria-labelledby="journal-title"><p class="wp-eyebrow">From the winery</p><h3 id="journal-title">${e(profile.journal.title)}</h3><p>${e(profile.journal.detail)}</p><a href="${e(profile.journal.href)}" target="_blank" rel="noopener noreferrer">Explore the existing vintage archive <span class="sr-only">(opens in a new tab)</span><span aria-hidden="true">↗</span></a><p class="wp-note">A topic inspired by your interests, rather than a newly published journal article.</p></section>
+    <section class="wp-section"><h3>A place in the beginning</h3><p>Chateau Follent is a small Australian wine and mead project led by Lord James Follent. Each vintage is a chance to learn, refine and share the journey towards a vineyard and winery. Thank you for bringing your curiosity to its next chapter.</p></section>
+  </div>`;
+}
+
+
+
+// Each Shopify section owns its state and listeners, including theme-editor reloads.
+function mountWineProfile(root, { restoredAnswers, mountResultAction, privacyNotice, onRestart,
+  restartLabel = 'Restart and clear my details', restartAnnouncement = 'Your entered details have been cleared.',
+  readyAnnouncement = 'Your Wine Profile is ready. Your answers have not been saved or emailed.' } = {}) {
+  const app = root.querySelector('[data-wp-app]');
+  const status = root.querySelector('[data-wp-status]');
+  if (!app || !status) return () => {};
+  const controller = new AbortController();
+  const options = { signal: controller.signal };
+  const fresh = () => ({ view: 'welcome', question: 0, name: '', dob: { day: '', month: '', year: '' }, answers: {}, profile: null });
+  let state = fresh();
+  let restoring = Boolean(restoredAnswers);
+  if (restoring) { state.answers = structuredClone(restoredAnswers); state.view = 'intro'; }
+  let cleanResultAction;
+  const notice = privacyNotice ?? '<p class="wp-note">Your entries stay in this page while you explore. This quiz does not save your answers or send email.</p>';
+  const restart = `<button type="button" class="wp-text-button" data-action="restart">${e(restartLabel)}</button>`;
+  const back = () => '<button type="button" class="wp-back" data-action="back">← Back</button>';
+  const error = '<p class="wp-error" role="alert" data-wp-error></p>';
+  const privacy = root.dataset.privacyUrl || '/policies/privacy-policy';
+  const journal = root.dataset.journalUrl || '/pages/vintages';
+
+  function announce(text) { status.textContent = text; }
+  function showError(text, target) {
+    app.querySelector('[data-wp-error]').textContent = text;
+    if (target) { target.setAttribute('aria-invalid', 'true'); target.focus(); }
+  }
+  function clearError() {
+    const target = app.querySelector('[data-wp-error]');
+    if (target) target.textContent = '';
+    app.querySelectorAll('[aria-invalid]').forEach((input) => input.removeAttribute('aria-invalid'));
+  }
+  function intro() {
+    return `${restoring ? '<p role="status">Your answer choices have been restored. Enter your name and complete adult screening again to return to your results.</p>' : ''}<section aria-labelledby="intro-title"><p class="wp-eyebrow">Before we begin</p><h2 id="intro-title" tabindex="-1" data-step-heading>A proper introduction.</h2><p>What should we call you? First, a little information to keep this an adults-only experience.</p><form data-form="intro" novalidate><label class="wp-label" for="wp-first-name">First name</label><input id="wp-first-name" name="first_name" autocomplete="given-name" maxlength="80" required value="${e(state.name)}"><fieldset class="wp-dob"><legend>Date of birth</legend><div class="wp-date-fields">${[['day', 'Day', 'DD', 2], ['month', 'Month', 'MM', 2], ['year', 'Year', 'YYYY', 4]].map(([key, label, placeholder, length]) => `<div><label for="wp-${key}">${label}</label><input id="wp-${key}" name="${key}" type="text" inputmode="numeric" autocomplete="bday-${key}" maxlength="${length}" placeholder="${placeholder}" required value="${e(state.dob[key])}" aria-describedby="wp-dob-note"></div>`).join('')}</div></fieldset><p class="wp-note" id="wp-dob-note">You must be 18 or older to continue. Your date of birth is used only for adult screening in this page and is not saved. This is self-declared screening, not independent age or identity verification.</p>${notice}<p class="wp-note"><a href="${e(privacy)}" target="_blank" rel="noopener noreferrer">Privacy Policy (opens in a new tab)</a></p>${error}<div class="wp-actions">${back()}<button class="wp-primary" type="submit">Begin my profile →</button></div></form></section>`;
+  }
+  function question() {
+    const q = QUESTIONS[state.question];
+    const selected = state.answers[q.id];
+    const hint = q.kind === 'single' ? 'Choose one answer.' : q.max ? 'Choose up to three. “I’m not sure yet” is an answer on its own.' : q.exclusive === 'non_drinker' ? 'Choose all that apply. Not drinking or purchasing wine is an answer on its own.' : 'Choose all that apply. “I’m still exploring” is an answer on its own.';
+    return `<section aria-labelledby="question-title"><div class="wp-progress-copy"><p class="wp-eyebrow">Question ${state.question + 1} of ${QUESTIONS.length}</p><span>${Math.round((state.question + 1) / QUESTIONS.length * 100)}%</span></div><progress class="wp-progress" value="${state.question + 1}" max="${QUESTIONS.length}" aria-label="Question progress"></progress><h2 id="question-title" tabindex="-1" data-step-heading>${e(q.title)}</h2><p class="wp-note" id="question-help">${hint}</p><form data-form="question" novalidate><fieldset class="wp-options" aria-describedby="question-help"><legend class="sr-only">${e(q.title)}</legend>${q.options.map((item) => `<label class="wp-option"><input type="${q.kind === 'single' ? 'radio' : 'checkbox'}" name="answer" value="${e(item.id)}" ${Array.isArray(selected) ? selected.includes(item.id) ? 'checked' : '' : selected === item.id ? 'checked' : ''}><span>${e(item.label)}</span></label>`).join('')}</fieldset>${q.max ? `<p class="wp-note wp-selection-count" data-wp-count>${Array.isArray(selected) ? selected.length : 0} of 3 selected</p>` : ''}${error}<div class="wp-actions">${back()}<button class="wp-primary" type="submit">${state.question === QUESTIONS.length - 1 ? 'Discover my profile' : 'Continue'} →</button></div></form></section>`;
+  }
+  function result() {
+    const profile = { ...state.profile, journal: { ...state.profile.journal, href: journal } };
+    return `${profileMarkup(profile)}<div class="wp-result-actions"><button class="wp-primary" type="button" data-action="print">Print / save my profile</button><button class="wp-back" type="button" data-action="edit">Edit my answers</button></div>${mountResultAction ? '<div data-wp-result-action></div>' : ''}${notice}`;
+  }
+  function render(focus = true) {
+    cleanResultAction?.(); cleanResultAction = null;
+    root.dataset.phase = state.view;
+    status.textContent = '';
+    app.innerHTML = (state.view === 'welcome' ? `<section class="wp-welcome"><p class="wp-kicker" tabindex="-1" data-step-heading>Every palate has a story.<br><em>Discover yours.</em></p><p class="wp-lede">Answer seven simple questions to discover your personalised Chateau Follent Wine Profile, including wine styles to explore, tasting suggestions and insights from the winery.</p><div class="wp-facts"><span>About two minutes</span><span>Seven simple questions</span><span>For adults 18+</span></div><button class="wp-primary" type="button" data-action="start">Discover My Wine Profile →</button><p class="wp-note">Free to explore. No purchase, account or subscription required.</p>${notice}</section>` : state.view === 'intro' ? intro() : state.view === 'question' ? question() : result()) + (state.view === 'welcome' ? '' : `<div class="wp-clear-row">${restart}</div>`);
+    if (state.view === 'result' && mountResultAction) cleanResultAction = mountResultAction(app.querySelector('[data-wp-result-action]'), structuredClone(state.answers));
+    if (focus) {
+      const heading = app.querySelector('[data-step-heading], #profile-title');
+      heading?.focus({ preventScroll: true });
+      heading?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
+  }
+  function readIdentity(form) {
+    const fields = new FormData(form);
+    state.name = String(fields.get('first_name') ?? '').trim();
+    state.dob = Object.fromEntries(['day', 'month', 'year'].map((key) => [key, String(fields.get(key) ?? '').trim()]));
+  }
+  root.addEventListener('input', (event) => {
+    if (event.target.closest('[data-form="intro"]')) readIdentity(event.target.form);
+    clearError();
+  }, options);
+  root.addEventListener('change', (event) => {
+    if (!event.target.matches('input[name="answer"]')) return;
+    const q = QUESTIONS[state.question];
+    const next = updateSelection(q, state.answers[q.id], event.target.value, event.target.checked);
+    state.answers[q.id] = next.value;
+    state.profile = null;
+    app.querySelectorAll('input[name="answer"]').forEach((input) => { input.checked = Array.isArray(next.value) ? next.value.includes(input.value) : next.value === input.value; });
+    if (q.max) { app.querySelector('[data-wp-count]').textContent = `${next.value.length} of 3 selected`; announce(`${next.value.length} of 3 selected`); }
+    if (next.error) showError(next.error); else clearError();
+  }, options);
+  root.addEventListener('submit', (event) => {
+    const form = event.target;
+    if (!form.matches('[data-form]')) return;
+    event.preventDefault();
+    clearError();
+    if (form.dataset.form === 'intro') {
+      readIdentity(form);
+      if (!state.name || state.name.length > 80) return showError('Enter your first name (up to 80 characters).', form.elements.first_name);
+      if (!/^\d{1,2}$/.test(state.dob.day) || !/^\d{1,2}$/.test(state.dob.month) || !/^\d{4}$/.test(state.dob.year)) return showError('Enter your complete date of birth as day, month and four-digit year.', form.elements.day);
+      const age = screenAge(`${state.dob.year}-${state.dob.month.padStart(2, '0')}-${state.dob.day.padStart(2, '0')}`);
+      if (!age.eligible) return showError(age.error, form.elements.day);
+      if (restoring) { state.profile = generateProfile(state.answers); state.view = 'result'; restoring = false; }
+      else { state.question = 0; state.view = 'question'; }
+    } else {
+      const q = QUESTIONS[state.question];
+      const message = validateAnswer(q, state.answers[q.id]);
+      if (message) return showError(message, form.querySelector('input'));
+      if (state.question === QUESTIONS.length - 1) { state.profile = generateProfile(state.answers); state.view = 'result'; }
+      else state.question += 1;
+    }
+    render();
+    if (state.view === 'result') announce(readyAnnouncement);
+  }, options);
+  root.addEventListener('click', (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (!action) return;
+    if (action === 'print') return window.print();
+    if (action === 'restart') { onRestart?.(); state = fresh(); restoring = false; render(); announce(restartAnnouncement); return; }
+    if (action === 'start') state.view = 'intro';
+    if (action === 'edit') { state.view = 'question'; state.question = 0; state.profile = null; }
+    if (action === 'back') {
+      if (state.view === 'intro') state.view = 'welcome';
+      else if (state.question > 0) state.question -= 1;
+      else state.view = 'intro';
+    }
+    render();
+  }, options);
+  window.addEventListener('pagehide', () => { cleanResultAction?.(); cleanResultAction = null; restoring = false; state = fresh(); app.replaceChildren(); status.textContent = ''; }, options);
+  window.addEventListener('pageshow', (event) => { if (event.persisted) render(false); }, options);
+  render(false);
+  return () => { controller.abort(); cleanResultAction?.(); state = fresh(); app.replaceChildren(); status.textContent = ''; };
+}
+
+if (typeof customElements !== 'undefined' && !customElements.get('cf-wine-profile')) {
+  customElements.define('cf-wine-profile', class extends HTMLElement {
+    connectedCallback() { this.cleanup ??= mountWineProfile(this); }
+    disconnectedCallback() { this.cleanup?.(); this.cleanup = null; }
+  });
+}
+})();</script></body></html>

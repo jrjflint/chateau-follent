@@ -1,0 +1,22 @@
+{
+  "owner": "Lord James Follent",
+  "checked_on": "2026-10-22",
+  "api": "admin",
+  "requested_version": "2026-10",
+  "resolved_version": "2026-10",
+  "validator": "Shopify skill GraphQL schema validator",
+  "telemetry_opted_out": true,
+  "shopify_admin_source_sha256": "1297b6c7fcd20db2d8dfd401cbfef87fd12afa59e6c4de37ca48090a5c2ff70e",
+  "definitions_source_sha256": "0aa72bc2440af1b0fffcccd187b7fab379fd2454782cf5ce43c21ebf012dc3e8",
+  "passed": [
+    "Exact customer query captured from ShopifyAdmin.customer using a synthetic fetcher",
+    "Exact tagsAdd mutation captured from ShopifyAdmin.tags",
+    "Exact tagsRemove mutation captured from ShopifyAdmin.tags",
+    "Exact metafieldsSet mutation captured from ShopifyAdmin.metafields",
+    "WineProfileDefinitions inspection query",
+    "CreateWineProfileDefinitions mutation validated separately"
+  ],
+  "store_requests_made": 0,
+  "definitions_created": false,
+  "limitations": "Schema validation establishes operation shape only. Installed app scopes, protected customer data access, definition compatibility and actual mutations remain unverified. Provisioning operations were not executed."
+}

@@ -1,0 +1,24 @@
+name = "chateau-wine-profile"
+account_id = "b82b5b551029835ac4aa706bfd8ae3ff"
+main = "dist/worker.js"
+no_bundle = true
+compatibility_date = "2026-07-30"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+send_metrics = false
+
+[vars]
+SHOPIFY_SHOP = "tvump1-7j.myshopify.com"
+EMAIL_REQUESTS_ENABLED = "false"
+WINE_PROFILE_REVIEWER_IDS = ""
+
+[[durable_objects.bindings]]
+name = "PROFILE_REQUESTS"
+class_name = "WineProfileRequests"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["WineProfileRequests"]
+
+[observability]
+enabled = false

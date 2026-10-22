@@ -1,0 +1,17 @@
+{
+  "email_sending_enabled": false,
+  "messaging_proof_passed": true,
+  "received_proofs": [
+    {
+      "profile": "white",
+      "received_at": "2026-10-21T09:28:00Z",
+      "mail_client": "Gmail"
+    },
+    {
+      "profile": "red",
+      "received_at": "2026-10-21T09:30:00Z",
+      "mail_client": "Gmail"
+    }
+  ],
+  "reason": "Received synthetic Messaging proofs passed. Authenticated integration, plan-compatible Flow routing and release tests remain incomplete."
+}

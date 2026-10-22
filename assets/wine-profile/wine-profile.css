@@ -1,0 +1,140 @@
+/* Isolated additions to the established Chateau Follent brand system. */
+body.wine-profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 1.25rem 1rem 2.5rem;
+  background: var(--color-background);
+}
+.wine-profile-page *, .wine-profile-page *::before, .wine-profile-page *::after { box-sizing: border-box; }
+.wine-profile-page .site-header, .wine-profile-page main, .wine-profile-page .site-footer { width: min(100%, 50rem); }
+.wine-profile-page .site-header { margin: .25rem 0 1.25rem; }
+.wine-profile-page .brand-lockup { text-decoration: none; gap: .45rem; margin: 0 auto; }
+.wine-profile-page .brand-wordmark { font: 700 1.4rem/1.1 'Libre Baskerville', Georgia, serif; letter-spacing: .08em; color: var(--color-text); margin: 0; }
+.wine-profile-page .brand-crest { width: 6.75rem; }
+.wine-profile-page main { padding: clamp(1.25rem, 5vw, 3.25rem); border-radius: .4rem; box-shadow: 0 12px 40px rgba(10,10,12,.035); }
+.wine-profile-page .wp-masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem; padding-bottom: 1rem; margin-bottom: 1.8rem; border-bottom: 1px solid var(--color-border); }
+.wine-profile-page .wp-eyebrow, .wine-profile-page .wp-edition { font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.6; }
+.wine-profile-page .wp-eyebrow { color: var(--color-accent); margin: 0 0 .65rem; }
+.wine-profile-page .wp-masthead .wp-eyebrow { margin: 0; }
+.wine-profile-page .wp-edition { color: var(--color-muted); letter-spacing: .04em; }
+.wine-profile-page h1 { font-size: clamp(2rem, 5.4vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -.025em; }
+.wine-profile-page h2 { font-size: clamp(1.5rem, 4.5vw, 2.15rem); line-height: 1.4; letter-spacing: -.02em; margin: .9rem 0 1.1rem; }
+.wine-profile-page h3 { font-size: clamp(1.25rem, 3vw, 1.6rem); line-height: 1.45; margin-bottom: .85rem; }
+.wine-profile-page h4 { font-size: 1.12rem; line-height: 1.5; margin: 0 0 .65rem; }
+.wine-profile-page p, .wine-profile-page li { font-size: 1rem; line-height: 1.75; }
+.wine-profile-page p { margin-bottom: 1.1rem; }
+.wine-profile-page .wp-kicker { font: 400 clamp(1.5rem, 4vw, 2rem)/1.5 'Libre Baskerville', Georgia, serif; color: var(--color-text); margin: 1.75rem 0 1.25rem; }
+.wine-profile-page .wp-kicker em { color: var(--color-accent); }
+.wine-profile-page .wp-lede { max-width: 53ch; }
+.wine-profile-page .wp-facts { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding: .4rem 0 1.5rem; color: var(--color-muted); font-size: .78rem; }
+.wine-profile-page .wp-facts span + span::before { content: '·'; margin-right: .7rem; }
+.wine-profile-page .wp-primary { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 3.3rem; padding: .9rem 1.25rem; border-radius: .2rem; font-size: .9rem; letter-spacing: .015em; line-height: 1.5; box-shadow: none; }
+.wine-profile-page button:disabled { cursor: wait; opacity: .65; }
+.wine-profile-page .wp-welcome > .wp-primary { margin-bottom: 1rem; width: 100%; }
+.wine-profile-page .wp-note { font-size: .82rem; line-height: 1.7; color: #535962; }
+.wine-profile-page .wp-welcome-bottom { display: flex; align-items: center; gap: 1.5rem; margin: 2rem 0 1.5rem; }
+.wine-profile-page .wp-welcome-bottom p { font: 400 .87rem/1.7 'Libre Baskerville', Georgia, serif; margin: 0; color: var(--color-muted); }
+.wine-profile-page .wp-line { width: 2.5rem; height: 1px; background: var(--color-accent); }
+.wine-profile-page .wp-prototype { padding: 1rem; border-left: 2px solid var(--color-accent); background: var(--color-accent-soft); font-size: .78rem; line-height: 1.75; margin: 1.25rem 0; color: #42424b; }
+.wine-profile-page .wp-prototype strong { color: var(--color-accent); }
+.wine-profile-page .wp-label, .wine-profile-page legend { display: block; font-size: .9rem; font-weight: 600; color: var(--color-text); margin: 1.25rem 0 .6rem; }
+.wine-profile-page input:not([type='radio']):not([type='checkbox']), .wine-profile-page select { width: 100%; min-width: 0; min-height: 3.15rem; border: 1px solid #8a847a; background: var(--color-surface); color: var(--color-text); border-radius: .2rem; padding: .8rem; font: inherit; font-size: 1rem; }
+.wine-profile-page input::placeholder { color: #62626c; }
+.wine-profile-page select { text-overflow: ellipsis; padding-right: 1.25rem; }
+.wine-profile-page fieldset { padding: 0; border: 0; min-width: 0; margin: 0; }
+.wine-profile-page .wp-date-fields { display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: .75rem; margin-bottom: 1rem; max-width: 27rem; }
+.wine-profile-page .wp-date-fields label { display: block; font-size: .8rem; color: var(--color-muted); margin-bottom: .4rem; }
+.wine-profile-page .wp-actions { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-top: 1.5rem; padding-top: .9rem; border-top: 1px solid var(--color-border); }
+.wine-profile-page .wp-actions .wp-primary { flex: 0 1 auto; }
+.wine-profile-page .wp-back { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; border-radius: .2rem; border: 1px solid transparent; padding: .7rem .4rem; font-size: .86rem; background: transparent; white-space: nowrap; }
+.wine-profile-page .wp-back:hover { background: var(--color-accent-soft); }
+.wine-profile-page .wp-error { color: #8a1133; font-size: .87rem; font-weight: 600; margin: 1rem 0; }
+.wine-profile-page .wp-error:empty { margin: 0; }
+.wine-profile-page [aria-invalid='true'] { border-color: #8a1133!important; }
+.wine-profile-page .wp-progress-copy { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; font-size: .75rem; color: var(--color-muted); }
+.wine-profile-page .wp-progress-copy p { margin: 0; }
+.wine-profile-page .wp-progress { display: block; appearance: none; border: 0; border-radius: 0; width: 100%; height: 3px; margin: .6rem 0 1.8rem; background: var(--color-border); color: var(--color-accent); }
+.wine-profile-page .wp-progress::-webkit-progress-bar { background: var(--color-border); }
+.wine-profile-page .wp-progress::-webkit-progress-value { background: var(--color-accent); }
+.wine-profile-page .wp-progress::-moz-progress-bar { background: var(--color-accent); }
+.wine-profile-page .wp-options { display: grid; gap: .65rem; margin-top: 1.25rem; }
+.wine-profile-page .wp-option { display: flex; align-items: center; gap: .9rem; min-height: 3.5rem; border: 1px solid var(--color-border); border-radius: .25rem; padding: .85rem 1rem; font-size: .9rem; line-height: 1.65; cursor: pointer; transition: background-color 120ms ease, border-color 120ms ease; }
+.wine-profile-page input[type='checkbox'], .wine-profile-page input[type='radio'] { flex: 0 0 1.2rem; width: 1.2rem; height: 1.2rem; margin: 0; accent-color: var(--color-accent); cursor: pointer; }
+.wine-profile-page .wp-option:has(input:checked) { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.wine-profile-page .wp-option:hover { border-color: var(--color-accent); }
+.wine-profile-page .wp-option:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.wine-profile-page .wp-selection-count { margin: .75rem 0 0; }
+.wine-profile-page .wp-clear-row { border-top: 1px solid var(--color-border); padding-top: 1rem; margin-top: 1.5rem; }
+.wine-profile-page .wp-text-button { min-height: 2.75rem; padding: .4rem 0; font-size: .76rem; text-decoration: underline; text-underline-offset: .25em; border: 0; border-radius: 0; background: none; color: var(--color-muted); }
+.wine-profile-page .wp-result-teaser { border: 1px solid var(--color-border); padding: 1.25rem; margin: 1.5rem 0; background: linear-gradient(130deg, var(--color-accent-soft), transparent); }
+.wine-profile-page .wp-result-teaser p:last-child { margin: 0; }
+.wine-profile-page .wp-optional { font-weight: 400; color: var(--color-muted); font-size: .75rem; display: inline-block; margin-left: .3rem; }
+.wine-profile-page .wp-consents { margin: .75rem 0 1rem; }
+.wine-profile-page .wp-check { display: flex; align-items: flex-start; gap: .85rem; font-size: .82rem; line-height: 1.8; cursor: pointer; margin-bottom: .8rem; padding: .6rem 0; }
+.wine-profile-page .wp-check input { margin-top: .2rem; }
+.wine-profile-page .wp-submit-note { margin-top: .75rem; }
+.wine-profile-page .wp-section { border-top: 1px solid var(--color-border); margin-top: 2rem; padding-top: 1.75rem; }
+.wine-profile-page .wp-preferences { margin: 0; }
+.wine-profile-page .wp-preferences div { padding: .8rem 0; border-bottom: 1px solid var(--color-border); }
+.wine-profile-page dt { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--color-accent); margin-bottom: .4rem; }
+.wine-profile-page dd { margin: 0; font-size: .9rem; line-height: 1.7; }
+.wine-profile-page .wp-recommendations { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.wine-profile-page .wp-recommendations li { display: flex; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid var(--color-border); }
+.wine-profile-page .wp-number { color: var(--color-accent); font: 400 1.2rem/1.5 'Libre Baskerville', Georgia, serif; padding-top: .1rem; }
+.wine-profile-page .wp-recommendations p { font-size: .9rem; margin-bottom: .65rem; }
+.wine-profile-page .wp-recommendations p:last-child { margin-bottom: 0; }
+.wine-profile-page .wp-sensory { border-left: 2px solid var(--color-border); padding-left: .8rem; }
+.wine-profile-page .wp-sensory strong { color: var(--color-accent); display: block; font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+.wine-profile-page .wp-exercise { background: var(--color-accent-soft); padding: 1.5rem; border-top: 2px solid var(--color-accent); }
+.wine-profile-page .wp-exercise p:last-child { margin-bottom: 0; }
+.wine-profile-page .wp-result-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.wine-profile-page details { margin-top: 1rem; }
+.wine-profile-page summary { cursor: pointer; font-weight: 600; font-size: .9rem; padding: 1rem .75rem; border: 1px solid var(--color-border); border-radius: .2rem; color: var(--color-accent); }
+.wine-profile-page iframe { display: block; width: 100%; height: 48rem; border: 1px solid var(--color-border); margin-top: .75rem; background: var(--color-background); }
+.wine-profile-page .site-footer { padding: 1.4rem 0 0; border: 0; background: none; box-shadow: none; border-radius: 0; margin-top: .75rem; }
+.wine-profile-page .footer-heading { font-size: .9rem; }
+.wine-profile-page .footer-nav-links { gap: .6rem 1.4rem; }
+.wine-profile-page .footer-nav-links a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: .8rem; }
+.wine-profile-page .footer-note { font-size: .7rem; margin: 0; }
+.wine-profile-page :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.wine-profile-page [data-step-heading]:focus, .wine-profile-page #profile-title:focus { outline: none; }
+.wine-profile-page [data-step-heading], .wine-profile-page #profile-title { scroll-margin-top: 1.5rem; }
+.wine-profile-page .wp-skip { position: absolute; left: 1rem; top: -10rem; background: var(--color-surface); z-index: 10; padding: .75rem; }
+.wine-profile-page .wp-skip:focus { top: .5rem; }
+.wine-profile-page:not([data-phase='welcome']) .wp-page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.wine-profile-page:not([data-phase='welcome']) .site-header { margin-bottom: .9rem; }
+.wine-profile-page:not([data-phase='welcome']) .brand-wordmark { font-size: 1rem; }
+.wine-profile-page:not([data-phase='welcome']) .brand-crest { width: 4.85rem; }
+@media (min-width: 640px) {
+  body.wine-profile-page { padding-top: 2rem; }
+  .wine-profile-page .wp-welcome > .wp-primary { width: auto; }
+  .wine-profile-page .wp-preferences { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+}
+@media (max-width: 420px) {
+  body.wine-profile-page { padding: 1rem .75rem 2rem; }
+  .wine-profile-page main { padding: 1.2rem; }
+  .wine-profile-page .wp-edition { display: none; }
+  .wine-profile-page .wp-actions { gap: .4rem; }
+  .wine-profile-page .wp-actions .wp-primary { padding-inline: .75rem; font-size: .8rem; }
+  .wine-profile-page .wp-back { font-size: .78rem; }
+  .wine-profile-page .wp-option { padding: .8rem .75rem; }
+  .wine-profile-page .wp-facts { gap: .5rem; }
+  .wine-profile-page .wp-facts span + span::before { margin-right: .4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wine-profile-page *, .wine-profile-page *::before, .wine-profile-page *::after { transition: none!important; scroll-behavior: auto!important; }
+}
+@media print {
+  body.wine-profile-page { display: block; background: white; padding: 0; }
+  .wine-profile-page .site-header, .wine-profile-page .site-footer, .wine-profile-page .wp-masthead, .wine-profile-page .wp-page-title, .wine-profile-page .wp-prototype, .wine-profile-page .wp-result-actions, .wine-profile-page .wp-email-section, .wine-profile-page .wp-clear-row, .wine-profile-page .wp-skip { display: none!important; }
+  .wine-profile-page main { width: 100%; padding: 0; margin: 0; box-shadow: none; border: 0; background: white; }
+  .wine-profile-page h2 { margin-top: 0; }
+  .wine-profile-page p, .wine-profile-page li { font-size: 10pt; }
+  .wine-profile-page .wp-section { margin-top: 14pt; padding-top: 14pt; }
+  .wine-profile-page .wp-recommendations li, .wine-profile-page .wp-preferences div, .wine-profile-page .wp-exercise { break-inside: avoid; }
+  .wine-profile-page h3, .wine-profile-page h4 { break-after: avoid; }
+  .wine-profile-page:not([data-phase='result']) #wp-app { display: none; }
+}

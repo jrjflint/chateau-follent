@@ -1,0 +1,494 @@
+{%- assign wp_title = '' -%}
+{%- assign wp_summary0 = '' -%}
+{%- assign wp_summary1 = '' -%}
+{%- assign wp_summary2 = '' -%}
+{%- assign wp_summary3 = '' -%}
+{%- assign wp_summary4 = '' -%}
+{%- assign wp_summary5 = '' -%}
+{%- assign wp_summary6 = '' -%}
+{%- assign wp_summary7 = '' -%}
+{%- assign wp_preference0 = '' -%}
+{%- assign wp_preference1 = '' -%}
+{%- assign wp_preference2 = '' -%}
+{%- assign wp_preference3 = '' -%}
+{%- assign wp_preference4 = '' -%}
+{%- assign wp_exerciseTitle = '' -%}
+{%- assign wp_exercise0 = '' -%}
+{%- assign wp_exercise1 = '' -%}
+{%- assign wp_exercise2 = '' -%}
+{%- assign wp_exercise3 = '' -%}
+{%- assign wp_exercise4 = '' -%}
+{%- assign wp_exercise5 = '' -%}
+{%- assign wp_exercise6 = '' -%}
+{%- assign wp_exercise7 = '' -%}
+{%- assign wp_journalTitle = '' -%}
+{%- assign wp_journalDetail = '' -%}
+{%- assign wp_styleHeading = '' -%}
+{%- assign wp_style0 = '' -%}
+{%- assign wp_sensory0 = '' -%}
+{%- assign wp_reason0_0 = '' -%}
+{%- assign wp_reason0_1 = '' -%}
+{%- assign wp_reason0_2 = '' -%}
+{%- assign wp_reason0_3 = '' -%}
+{%- assign wp_reason0_4 = '' -%}
+{%- assign wp_style1 = '' -%}
+{%- assign wp_sensory1 = '' -%}
+{%- assign wp_reason1_0 = '' -%}
+{%- assign wp_reason1_1 = '' -%}
+{%- assign wp_reason1_2 = '' -%}
+{%- assign wp_reason1_3 = '' -%}
+{%- assign wp_reason1_4 = '' -%}
+{%- assign wp_style2 = '' -%}
+{%- assign wp_sensory2 = '' -%}
+{%- assign wp_reason2_0 = '' -%}
+{%- assign wp_reason2_1 = '' -%}
+{%- assign wp_reason2_2 = '' -%}
+{%- assign wp_reason2_3 = '' -%}
+{%- assign wp_reason2_4 = '' -%}
+{%- assign wp_expected = 0 -%}
+{%- assign wp_resolved = 0 -%}
+{%- for wp_page in (0..4) -%}
+{%- assign wp_offset = wp_page | times: 50 -%}
+{%- for wp_tag in customer.tags limit: 50 offset: wp_offset -%}
+{%- assign wp_fields = wp_tag | split: ':' -%}
+{%- if wp_fields[0] == 'cfwp1_0_0' -%}
+{%- if wp_fields[1] == 'count' -%}{%- assign wp_expected = wp_fields[2] | plus: 0 -%}{%- endif -%}
+{%- assign wp_text = '' -%}
+{%- case wp_fields[2] -%}
+{%- when 'f22cab08e708b6ac' -%}{%- assign wp_text = "Bold, Savoury &amp; Adventurous" -%}
+{%- when '67c730a03ad19d57' -%}{%- assign wp_text = "Your answers point towards red wine, with an interest in " -%}
+{%- when 'e34031cf49bb6752' -%}{%- assign wp_text = "richness and savoury flavours. " -%}
+{%- when 'e262b362cd77bd5d' -%}{%- assign wp_text = "Your choices around a fuller body and " -%}
+{%- when 'a932c3e22ab2811f' -%}{%- assign wp_text = "a dry finish help shape the suggestions below, rather than fixing you into a single wine personality. " -%}
+{%- when '3b704238000d5310' -%}{%- assign wp_text = "Your curiosity about unfamiliar styles leaves space to explore different grapes and ways of making wine. " -%}
+{%- when 'd89f9eb89526d5be' -%}{%- assign wp_text = "At the table, familiar foods can give you a simple way to notice texture and freshness. " -%}
+{%- when 'c4b3d67dc52aad11' -%}{%- assign wp_text = "This is a starting point based on what you shared, not a measurement of tasting ability. " -%}
+{%- when 'd36ab4f13e848cda' -%}{%- assign wp_text = "Your preferences can change as you learn. " -%}
+{%- when 'fa95335efc80e62a' -%}{%- assign wp_text = "Red wine" -%}
+{%- when 'd0b7555dd627161b' -%}{%- assign wp_text = "Rich and full-bodied, Dry and savoury" -%}
+{%- when '8dfd24fad957ec70' -%}{%- assign wp_text = "Full-bodied" -%}
+{%- when '702ec3f256e47f56' -%}{%- assign wp_text = "Dry" -%}
+{%- when '1016effe4d5b6e9d' -%}{%- assign wp_text = "I enjoy discovering new varieties and styles" -%}
+{%- when '31eb0799f8ad2d4a' -%}{%- assign wp_text = "Notice the weight of a wine" -%}
+{%- when 'fc5bd583dc4d2f17' -%}{%- assign wp_text = "If you choose to taste, compare small samples of a lighter and fuller-bodied wine. " -%}
+{%- when 'afe1c07cbf4c72b3' -%}{%- assign wp_text = "Notice how each feels in your mouth, rather than how strong its aroma seems. " -%}
+{%- when '13ba26f65eb2e798' -%}{%- assign wp_text = "Write one texture word for each; neither needs to be better. " -%}
+{%- when 'f0c2f0a78778290d' -%}{%- assign wp_text = "Try a bite of your meal and notice whether the impression changes. " -%}
+{%- when '2dd1c290b34af4d0' -%}{%- assign wp_text = "Tasting is optional; you can smell, read or spit instead. " -%}
+{%- when '1c4a705d9cab4bde' -%}{%- assign wp_text = "The first vintage, and the lessons that followed" -%}
+{%- when '34b82c23948b5eb9' -%}{%- assign wp_text = "A suggested journal topic: the small experiments that shape a growing winery, beginning with the 2024 vintage." -%}
+{%- when 'a99df1108afdb97b' -%}{%- assign wp_text = "Styles worth exploring" -%}
+{%- when '61d95c56b452d8a1' -%}{%- assign wp_text = "Full-bodied Shiraz" -%}
+{%- when 'cffbde2784a06b13' -%}{%- assign wp_text = "Dark plum fruit with a hint of black pepper." -%}
+{%- when '184a7d53faa15b34' -%}{%- assign wp_text = "You included red wine; this is one expression to learn about. " -%}
+{%- when 'ada6047ef221722a' -%}{%- assign wp_text = "It offers a starting point for your interest in richness. " -%}
+{%- when '43f2b670b75f9d22' -%}{%- assign wp_text = "Look for a dry example to match your sweetness preference. " -%}
+{%- when 'ed39d1d766701672' -%}{%- assign wp_text = "Cabernet Sauvignon" -%}
+{%- when '30729dde109174c4' -%}{%- assign wp_text = "Blackcurrant aromas and a firm, drying texture." -%}
+{%- when 'e72d46689029adcf' -%}{%- assign wp_text = "Full-bodied Malbec" -%}
+{%- when '59c02e2d7da9a5f8' -%}{%- assign wp_text = "Dark-berry aromas with a generous, rounded texture." -%}
+{%- when '3ac03fbec1eb225e' -%}{%- assign wp_text = "Your answers point towards the possibility of finding new favourites, with an interest in " -%}
+{%- when '38c4fbc760ab75d8' -%}{%- assign wp_text = "I&#39;m still exploring" -%}
+{%- when '271a474aba98b008' -%}{%- assign wp_text = "An introductory style to help you compare and discover what interests you. " -%}
+{%- when '7a74863662abec31' -%}{%- assign wp_text = "Full-bodied, oak-influenced Chardonnay" -%}
+{%- when 'afab79a31cac5a9d' -%}{%- assign wp_text = "A rounded texture with a suggestion of toast." -%}
+{%- when '58ec2986eddeffb0' -%}{%- assign wp_text = "Your answers point towards white wine, with an interest in " -%}
+{%- when '0e17925cc06efcc2' -%}{%- assign wp_text = "White wine" -%}
+{%- when 'df44a243091ef573' -%}{%- assign wp_text = "You included white wine; this is one expression to learn about. " -%}
+{%- when '59b16015715b891a' -%}{%- assign wp_text = "Dry, skin-contact white wine" -%}
+{%- when '7b6ca9dfc57cfdfc' -%}{%- assign wp_text = "Tea-like grip from time spent on grape skins." -%}
+{%- when '38c846ead3aef7a1' -%}{%- assign wp_text = "It offers a starting point for your interest in savoury flavours. " -%}
+{%- when 'cf924f7a830d5a0d' -%}{%- assign wp_text = "This medium-bodied expression also offers a contrast to your full-bodied preference. " -%}
+{%- when '020620a3d69adec8' -%}{%- assign wp_text = "Vermentino" -%}
+{%- when 'f4ab63e2e6e1d198' -%}{%- assign wp_text = "Citrus peel and a lightly savoury finish." -%}
+{%- when 'd216670caefc9771' -%}{%- assign wp_text = "This light-bodied expression also offers a contrast to your full-bodied preference. " -%}
+{%- when '4d66781d49669677' -%}{%- assign wp_text = "Your answers point towards red wine and white wine, with an interest in " -%}
+{%- when '945e2bd1bf4fb08d' -%}{%- assign wp_text = "Red wine, White wine" -%}
+{%- when '36f59e8037998f1c' -%}{%- assign wp_text = "Your answers point towards rosé, with an interest in " -%}
+{%- when '532381b220813d55' -%}{%- assign wp_text = "Rosé" -%}
+{%- when 'e796dbdc5caaf83c' -%}{%- assign wp_text = "Textured, dry Sangiovese rosé" -%}
+{%- when '3b009b5425b01272' -%}{%- assign wp_text = "Cherry-like fruit and a little grip on the finish." -%}
+{%- when '0acd39f155c47f7b' -%}{%- assign wp_text = "You included rosé; this is one expression to learn about. " -%}
+{%- when '6f7a278e8afa63b8' -%}{%- assign wp_text = "Dry, pale rosé" -%}
+{%- when '27d88631ed96382f' -%}{%- assign wp_text = "Delicate red-berry aromas with a fresh finish." -%}
+{%- when 'b4284dcd9ef8e2be' -%}{%- assign wp_text = "Off-dry rosé" -%}
+{%- when '2e10c892bcdcf0ec' -%}{%- assign wp_text = "Strawberry-like fruit with a small cushion of sweetness." -%}
+{%- when '2f37913daf3141ee' -%}{%- assign wp_text = "Its off-dry finish offers a contrast to the sweetness you selected. " -%}
+{%- when '6f35cd3c79350cb6' -%}{%- assign wp_text = "Your answers point towards red wine and rosé, with an interest in " -%}
+{%- when 'b46657d9933cf976' -%}{%- assign wp_text = "Red wine, Rosé" -%}
+{%- when '9727a08f0e279f8f' -%}{%- assign wp_text = "Your answers point towards white wine and rosé, with an interest in " -%}
+{%- when '4a22b8fee57cc9c0' -%}{%- assign wp_text = "White wine, Rosé" -%}
+{%- when 'e6db5abd7112c77b' -%}{%- assign wp_text = "Your answers point towards a broad range of wine styles, with an interest in " -%}
+{%- when '5b63c8d9b45bd4cc' -%}{%- assign wp_text = "Red wine, White wine, Rosé" -%}
+{%- when 'e14433dc21e9be8f' -%}{%- assign wp_text = "Your answers point towards sparkling wine, with an interest in " -%}
+{%- when 'fe4f312ea05c9093' -%}{%- assign wp_text = "Sparkling wine" -%}
+{%- when '9eaa1b08a915d156' -%}{%- assign wp_text = "Traditional-method sparkling wine" -%}
+{%- when '411d0a97d2874fa5' -%}{%- assign wp_text = "Bready aromas alongside the texture of bubbles." -%}
+{%- when 'aea1ad5e29f98214' -%}{%- assign wp_text = "You included sparkling wine; this is one expression to learn about. " -%}
+{%- when '6441faf37fef5e0c' -%}{%- assign wp_text = "Dry pétillant naturel" -%}
+{%- when '1449d8d9ff94bcc5' -%}{%- assign wp_text = "Lively bubbles; texture varies with the producer." -%}
+{%- when 'aacc00012aa7e628' -%}{%- assign wp_text = "Brut sparkling Chardonnay" -%}
+{%- when '8535b2439ed063e4' -%}{%- assign wp_text = "Fine bubbles and green-apple freshness." -%}
+{%- when '78cbad5d2b4fae7c' -%}{%- assign wp_text = "Your answers point towards red wine and sparkling wine, with an interest in " -%}
+{%- when '7fa7aeff4e714dcf' -%}{%- assign wp_text = "Red wine, Sparkling wine" -%}
+{%- when 'af7c46ae1f6d6788' -%}{%- assign wp_text = "Your answers point towards white wine and sparkling wine, with an interest in " -%}
+{%- when '2da2e3a3286a74fd' -%}{%- assign wp_text = "White wine, Sparkling wine" -%}
+{%- when '4f9b73d9914fdffe' -%}{%- assign wp_text = "Red wine, White wine, Sparkling wine" -%}
+{%- when 'f572d4283738d8cd' -%}{%- assign wp_text = "Your answers point towards rosé and sparkling wine, with an interest in " -%}
+{%- when '0c7ffa8dfa2c4ece' -%}{%- assign wp_text = "Rosé, Sparkling wine" -%}
+{%- when 'fbfcef4f67668411' -%}{%- assign wp_text = "Red wine, Rosé, Sparkling wine" -%}
+{%- when '9a03a3f7460818af' -%}{%- assign wp_text = "White wine, Rosé, Sparkling wine" -%}
+{%- when '71e3437b0cd1a4e3' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Sparkling wine" -%}
+{%- when '4a76baa31c447a7c' -%}{%- assign wp_text = "Your answers point towards mead, with an interest in " -%}
+{%- when '1a689c2950588fa4' -%}{%- assign wp_text = "Mead or honey-based wine" -%}
+{%- when '4056d480e0274fe8' -%}{%- assign wp_text = "Dry traditional mead" -%}
+{%- when 'dd7223b2504e7ced' -%}{%- assign wp_text = "A floral honey aroma without assuming a sweet finish." -%}
+{%- when '8715c27ca70c9197' -%}{%- assign wp_text = "You included mead; this is one expression to learn about. " -%}
+{%- when '4d071a05ae9201dd' -%}{%- assign wp_text = "Sweet traditional mead" -%}
+{%- when '82c84b69534ec85f' -%}{%- assign wp_text = "Honeyed aromas with a fuller, sweet texture." -%}
+{%- when 'c73626cf2435208a' -%}{%- assign wp_text = "Its sweet finish offers a contrast to the sweetness you selected. " -%}
+{%- when '71f30f4da7a3c7f9' -%}{%- assign wp_text = "Off-dry traditional mead" -%}
+{%- when 'a1931f42677df325' -%}{%- assign wp_text = "Floral aromas and a gentle amount of residual sweetness." -%}
+{%- when '02fdd8ee32e6579d' -%}{%- assign wp_text = "Your answers point towards red wine and mead, with an interest in " -%}
+{%- when '144cdf8acf682c4e' -%}{%- assign wp_text = "Red wine, Mead or honey-based wine" -%}
+{%- when '48729620cb2bc42f' -%}{%- assign wp_text = "Your answers point towards white wine and mead, with an interest in " -%}
+{%- when 'f518ae2a160b8ace' -%}{%- assign wp_text = "White wine, Mead or honey-based wine" -%}
+{%- when 'f3cc461626801745' -%}{%- assign wp_text = "Red wine, White wine, Mead or honey-based wine" -%}
+{%- when '9d8ae66935743cb3' -%}{%- assign wp_text = "Your answers point towards rosé and mead, with an interest in " -%}
+{%- when '3d416e07a761f54c' -%}{%- assign wp_text = "Rosé, Mead or honey-based wine" -%}
+{%- when '8b5187886b240ab1' -%}{%- assign wp_text = "Red wine, Rosé, Mead or honey-based wine" -%}
+{%- when '2548e6621c283184' -%}{%- assign wp_text = "White wine, Rosé, Mead or honey-based wine" -%}
+{%- when 'c8508ac736364946' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Mead or honey-based wine" -%}
+{%- when '54a695dc0b93cd1a' -%}{%- assign wp_text = "Your answers point towards sparkling wine and mead, with an interest in " -%}
+{%- when '05986a08c16928d5' -%}{%- assign wp_text = "Sparkling wine, Mead or honey-based wine" -%}
+{%- when '3d182e587a3a39fa' -%}{%- assign wp_text = "Red wine, Sparkling wine, Mead or honey-based wine" -%}
+{%- when '93da546ed9b770a6' -%}{%- assign wp_text = "White wine, Sparkling wine, Mead or honey-based wine" -%}
+{%- when '24d6550e5a91ba15' -%}{%- assign wp_text = "Red wine, White wine, Sparkling wine, Mead or honey-based wine" -%}
+{%- when '290d7a9121ce69b5' -%}{%- assign wp_text = "Rosé, Sparkling wine, Mead or honey-based wine" -%}
+{%- when 'ee4160d5280bea87' -%}{%- assign wp_text = "Red wine, Rosé, Sparkling wine, Mead or honey-based wine" -%}
+{%- when '38a00aa0aa32ba33' -%}{%- assign wp_text = "White wine, Rosé, Sparkling wine, Mead or honey-based wine" -%}
+{%- when '3075b01e1a1a93c8' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Sparkling wine, Mead or honey-based wine" -%}
+{%- when 'ac1f4b9ab361e3b6' -%}{%- assign wp_text = "Your answers point towards small-batch experiments, with an interest in " -%}
+{%- when 'ca89e2a86747ff0d' -%}{%- assign wp_text = "Experimental or small-batch wines" -%}
+{%- when 'acb3c575455ea9cb' -%}{%- assign wp_text = "You included small-batch experiments; this is one expression to learn about. " -%}
+{%- when '2f9babfdc52e7f0b' -%}{%- assign wp_text = "Your answers point towards red wine and small-batch experiments, with an interest in " -%}
+{%- when '20d1bf7aaff84d0b' -%}{%- assign wp_text = "Red wine, Experimental or small-batch wines" -%}
+{%- when 'db5c0e6e080ec826' -%}{%- assign wp_text = "Your answers point towards white wine and small-batch experiments, with an interest in " -%}
+{%- when 'a02840d23026d27b' -%}{%- assign wp_text = "White wine, Experimental or small-batch wines" -%}
+{%- when 'def4fa4878b5486a' -%}{%- assign wp_text = "Red wine, White wine, Experimental or small-batch wines" -%}
+{%- when 'bcb7aac22ab3ef9b' -%}{%- assign wp_text = "Your answers point towards rosé and small-batch experiments, with an interest in " -%}
+{%- when '444219039062bf2e' -%}{%- assign wp_text = "Rosé, Experimental or small-batch wines" -%}
+{%- when '837ac448255e98d8' -%}{%- assign wp_text = "Red wine, Rosé, Experimental or small-batch wines" -%}
+{%- when '5daac80074048f6c' -%}{%- assign wp_text = "White wine, Rosé, Experimental or small-batch wines" -%}
+{%- when '73b6d8a4b9f30312' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Experimental or small-batch wines" -%}
+{%- when '1624fc735daf6740' -%}{%- assign wp_text = "Your answers point towards sparkling wine and small-batch experiments, with an interest in " -%}
+{%- when 'b86163219925e345' -%}{%- assign wp_text = "Sparkling wine, Experimental or small-batch wines" -%}
+{%- when 'fe62a7c79fa0f192' -%}{%- assign wp_text = "Red wine, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '7d1c54d3aa70ced9' -%}{%- assign wp_text = "White wine, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '460dadb79ef533d2' -%}{%- assign wp_text = "Red wine, White wine, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '3fff63a7ea71af3d' -%}{%- assign wp_text = "Rosé, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '0dc8cf3466bf9e2b' -%}{%- assign wp_text = "Red wine, Rosé, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '14ee539a79f56a79' -%}{%- assign wp_text = "White wine, Rosé, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when 'b18d717e8db9fd4e' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Sparkling wine, Experimental or small-batch wines" -%}
+{%- when '0d474668bdd3f098' -%}{%- assign wp_text = "Your answers point towards mead and small-batch experiments, with an interest in " -%}
+{%- when '50977b63d885f29e' -%}{%- assign wp_text = "Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'e29f9632f97f6525' -%}{%- assign wp_text = "Red wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'bc046f63c61a79be' -%}{%- assign wp_text = "White wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '0a042530befa6e61' -%}{%- assign wp_text = "Red wine, White wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '66e5ae7a43786d79' -%}{%- assign wp_text = "Rosé, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'df5ce9b84a7e2f7d' -%}{%- assign wp_text = "Red wine, Rosé, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '82dac55d24774f1a' -%}{%- assign wp_text = "White wine, Rosé, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '2e2a2f949f88bc8f' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'b3fd3b95e744fcd7' -%}{%- assign wp_text = "Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '08c3a8fcf8cc0f30' -%}{%- assign wp_text = "Red wine, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '1353e617c3feda84' -%}{%- assign wp_text = "White wine, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '4a3760605e871eac' -%}{%- assign wp_text = "Red wine, White wine, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '8c2603fd12235a04' -%}{%- assign wp_text = "Rosé, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'cabf2da0207fe22a' -%}{%- assign wp_text = "Red wine, Rosé, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when 'a7b345756f063909' -%}{%- assign wp_text = "White wine, Rosé, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '337a55bed0121ca2' -%}{%- assign wp_text = "Red wine, White wine, Rosé, Sparkling wine, Mead or honey-based wine, Experimental or small-batch wines" -%}
+{%- when '86a555b5b86adbb4' -%}{%- assign wp_text = "Bold &amp; Adventurous" -%}
+{%- when '9c007456d84824a8' -%}{%- assign wp_text = "room to discover the flavours you enjoy. " -%}
+{%- when '8a0d84ab393b4c9c' -%}{%- assign wp_text = "I&#39;m not sure yet" -%}
+{%- when 'f31eb9d83239865e' -%}{%- assign wp_text = "Bold, Fresh &amp; Adventurous" -%}
+{%- when '6fdef2e9d1784bb5' -%}{%- assign wp_text = "freshness. " -%}
+{%- when 'fa3b1dcec32d2db0' -%}{%- assign wp_text = "Fresh and crisp" -%}
+{%- when 'f51c400babaa0640' -%}{%- assign wp_text = "delicate flavours. " -%}
+{%- when '69badc31e2afd317' -%}{%- assign wp_text = "Light and delicate" -%}
+{%- when '05c9e96226da1d17' -%}{%- assign wp_text = "Light-bodied Pinot Noir" -%}
+{%- when 'b235320ba5daddda' -%}{%- assign wp_text = "A red-cherry aroma and a gentle, drying finish." -%}
+{%- when '51ac7ab29ff8f675' -%}{%- assign wp_text = "It offers a starting point for your interest in delicate flavours. " -%}
+{%- when '54f773cf5bf97f7d' -%}{%- assign wp_text = "Medium-bodied Grenache" -%}
+{%- when '0cfbf80f3c98ba5a' -%}{%- assign wp_text = "Red-berry aromas with a rounded texture." -%}
+{%- when 'e7e13b353a4e3162' -%}{%- assign wp_text = "freshness and delicate flavours. " -%}
+{%- when '78729324d2fb8a6f' -%}{%- assign wp_text = "Fresh and crisp, Light and delicate" -%}
+{%- when 'cb4294c1d1847818' -%}{%- assign wp_text = "Bold, Aromatic &amp; Adventurous" -%}
+{%- when '94274c523949e4c2' -%}{%- assign wp_text = "expressive aromas. " -%}
+{%- when 'ce32b13bcffa3e11' -%}{%- assign wp_text = "Fruity and aromatic" -%}
+{%- when '1ec59c99befb155b' -%}{%- assign wp_text = "It offers a starting point for your interest in expressive aromas. " -%}
+{%- when '395241b531bcafd3' -%}{%- assign wp_text = "freshness and expressive aromas. " -%}
+{%- when 'c82d209ed855755b' -%}{%- assign wp_text = "Fresh and crisp, Fruity and aromatic" -%}
+{%- when '9ce931ad45144869' -%}{%- assign wp_text = "delicate flavours and expressive aromas. " -%}
+{%- when 'fc388e1fb5ee7c2e' -%}{%- assign wp_text = "Light and delicate, Fruity and aromatic" -%}
+{%- when 'ff89710cf5ec05a8' -%}{%- assign wp_text = "freshness, delicate flavours and expressive aromas. " -%}
+{%- when '2ab766ad33ce6640' -%}{%- assign wp_text = "Fresh and crisp, Light and delicate, Fruity and aromatic" -%}
+{%- when 'd4672891db85f2c0' -%}{%- assign wp_text = "richness. " -%}
+{%- when '37202af5d51afda2' -%}{%- assign wp_text = "Rich and full-bodied" -%}
+{%- when 'f5097f575f6891ec' -%}{%- assign wp_text = "freshness and richness. " -%}
+{%- when '6d494c3563d78103' -%}{%- assign wp_text = "Fresh and crisp, Rich and full-bodied" -%}
+{%- when '3e0d790e271bbe44' -%}{%- assign wp_text = "delicate flavours and richness. " -%}
+{%- when 'e27296d6b2f3b299' -%}{%- assign wp_text = "Light and delicate, Rich and full-bodied" -%}
+{%- when '060dd1463d46755e' -%}{%- assign wp_text = "freshness, delicate flavours and richness. " -%}
+{%- when '9d80cf7a9d99b414' -%}{%- assign wp_text = "Fresh and crisp, Light and delicate, Rich and full-bodied" -%}
+{%- when '6f3e57ce309b64c0' -%}{%- assign wp_text = "expressive aromas and richness. " -%}
+{%- when 'b16c89bb8c25c32c' -%}{%- assign wp_text = "Fruity and aromatic, Rich and full-bodied" -%}
+{%- when '20b25d05dffe0459' -%}{%- assign wp_text = "freshness, expressive aromas and richness. " -%}
+{%- when '6d51814532dd8c07' -%}{%- assign wp_text = "Fresh and crisp, Fruity and aromatic, Rich and full-bodied" -%}
+{%- when '2121e6520830b1f3' -%}{%- assign wp_text = "delicate flavours, expressive aromas and richness. " -%}
+{%- when '56ab0015e0a44ca0' -%}{%- assign wp_text = "Light and delicate, Fruity and aromatic, Rich and full-bodied" -%}
+{%- when '70cf652864b4bc90' -%}{%- assign wp_text = "savoury flavours. " -%}
+{%- when 'de7b62c04ee7bf8b' -%}{%- assign wp_text = "Dry and savoury" -%}
+{%- when '11c14b18d93030e5' -%}{%- assign wp_text = "freshness and savoury flavours. " -%}
+{%- when 'c493ce70ea82fe03' -%}{%- assign wp_text = "Fresh and crisp, Dry and savoury" -%}
+{%- when 'b13cb6a81df04da0' -%}{%- assign wp_text = "delicate flavours and savoury flavours. " -%}
+{%- when 'e6a82246790d9500' -%}{%- assign wp_text = "Light and delicate, Dry and savoury" -%}
+{%- when '9b06d42232d37588' -%}{%- assign wp_text = "freshness, delicate flavours and savoury flavours. " -%}
+{%- when 'e5fa57611640ac98' -%}{%- assign wp_text = "Fresh and crisp, Light and delicate, Dry and savoury" -%}
+{%- when 'a2b1e5a9f8cd7355' -%}{%- assign wp_text = "expressive aromas and savoury flavours. " -%}
+{%- when 'c424f3c82992fa92' -%}{%- assign wp_text = "Fruity and aromatic, Dry and savoury" -%}
+{%- when 'b0c994126dfad9b0' -%}{%- assign wp_text = "freshness, expressive aromas and savoury flavours. " -%}
+{%- when '406ce1cf74c497b0' -%}{%- assign wp_text = "Fresh and crisp, Fruity and aromatic, Dry and savoury" -%}
+{%- when '2895db042b6901b1' -%}{%- assign wp_text = "delicate flavours, expressive aromas and savoury flavours. " -%}
+{%- when '66b03973bbee09ce' -%}{%- assign wp_text = "Light and delicate, Fruity and aromatic, Dry and savoury" -%}
+{%- when '203ef36800acee08' -%}{%- assign wp_text = "freshness, richness and savoury flavours. " -%}
+{%- when 'a26978375b2f4d74' -%}{%- assign wp_text = "Fresh and crisp, Rich and full-bodied, Dry and savoury" -%}
+{%- when '1b8287731e5064b9' -%}{%- assign wp_text = "delicate flavours, richness and savoury flavours. " -%}
+{%- when '24402816b4f77e13' -%}{%- assign wp_text = "Light and delicate, Rich and full-bodied, Dry and savoury" -%}
+{%- when 'aa52b9ec40ff47d2' -%}{%- assign wp_text = "expressive aromas, richness and savoury flavours. " -%}
+{%- when 'c91feab9fb74a13a' -%}{%- assign wp_text = "Fruity and aromatic, Rich and full-bodied, Dry and savoury" -%}
+{%- when '4d1d4352bfe7b478' -%}{%- assign wp_text = "sweet, smooth flavours. " -%}
+{%- when '2391a9ca1e8c43ac' -%}{%- assign wp_text = "Sweet and smooth" -%}
+{%- when '2f58acc995676bd6' -%}{%- assign wp_text = "Separate fruitiness from sweetness" -%}
+{%- when '9ba59b53fbc3e0c1' -%}{%- assign wp_text = "If you choose to taste, compare small samples of a clearly labelled dry and off-dry wine from the same grape. " -%}
+{%- when '3f24ee3ddaa1d7cf' -%}{%- assign wp_text = "Smell first, then notice sweetness on the palate and mouth-watering acidity. " -%}
+{%- when '07987380e0b092ff' -%}{%- assign wp_text = "A fruity aroma does not necessarily mean a wine is sweet. " -%}
+{%- when 'ef1196ed59cad211' -%}{%- assign wp_text = "freshness and sweet, smooth flavours. " -%}
+{%- when '355eeee29f590fd1' -%}{%- assign wp_text = "Fresh and crisp, Sweet and smooth" -%}
+{%- when 'e17834cc60898ab8' -%}{%- assign wp_text = "delicate flavours and sweet, smooth flavours. " -%}
+{%- when '0a062a1f67ec2ab2' -%}{%- assign wp_text = "Light and delicate, Sweet and smooth" -%}
+{%- when 'ddfcf32d12bbc9d4' -%}{%- assign wp_text = "freshness, delicate flavours and sweet, smooth flavours. " -%}
+{%- when 'b9b6bcbd00c1176d' -%}{%- assign wp_text = "Fresh and crisp, Light and delicate, Sweet and smooth" -%}
+{%- when '9ab4897491065c71' -%}{%- assign wp_text = "expressive aromas and sweet, smooth flavours. " -%}
+{%- when '6b93f4d8c5631a29' -%}{%- assign wp_text = "Fruity and aromatic, Sweet and smooth" -%}
+{%- when '1349fa3a1a1d0273' -%}{%- assign wp_text = "freshness, expressive aromas and sweet, smooth flavours. " -%}
+{%- when '09778cc1a3d7b0cc' -%}{%- assign wp_text = "Fresh and crisp, Fruity and aromatic, Sweet and smooth" -%}
+{%- when '2582c460d3c7b55a' -%}{%- assign wp_text = "delicate flavours, expressive aromas and sweet, smooth flavours. " -%}
+{%- when 'a3bc3d3a13066ba5' -%}{%- assign wp_text = "Light and delicate, Fruity and aromatic, Sweet and smooth" -%}
+{%- when 'a810705651818f45' -%}{%- assign wp_text = "richness and sweet, smooth flavours. " -%}
+{%- when '1c972af19168c6f4' -%}{%- assign wp_text = "Rich and full-bodied, Sweet and smooth" -%}
+{%- when '48305cec8034a058' -%}{%- assign wp_text = "freshness, richness and sweet, smooth flavours. " -%}
+{%- when '96c0ec345abdda32' -%}{%- assign wp_text = "Fresh and crisp, Rich and full-bodied, Sweet and smooth" -%}
+{%- when 'a0d445ee8388bb09' -%}{%- assign wp_text = "delicate flavours, richness and sweet, smooth flavours. " -%}
+{%- when 'd94adfd9edc0dfdb' -%}{%- assign wp_text = "Light and delicate, Rich and full-bodied, Sweet and smooth" -%}
+{%- when 'e299dadbd118e5f3' -%}{%- assign wp_text = "expressive aromas, richness and sweet, smooth flavours. " -%}
+{%- when 'd9f15f814ec17b2b' -%}{%- assign wp_text = "Fruity and aromatic, Rich and full-bodied, Sweet and smooth" -%}
+{%- when 'f9c5aa28a88cf72e' -%}{%- assign wp_text = "savoury flavours and sweet, smooth flavours. " -%}
+{%- when '4112785a0ba0b86a' -%}{%- assign wp_text = "Dry and savoury, Sweet and smooth" -%}
+{%- when 'a36276cc9ae0eb34' -%}{%- assign wp_text = "freshness, savoury flavours and sweet, smooth flavours. " -%}
+{%- when '3bfc187de79729e4' -%}{%- assign wp_text = "Fresh and crisp, Dry and savoury, Sweet and smooth" -%}
+{%- when '7952d4b238685537' -%}{%- assign wp_text = "delicate flavours, savoury flavours and sweet, smooth flavours. " -%}
+{%- when 'e8ec08cab1845514' -%}{%- assign wp_text = "Light and delicate, Dry and savoury, Sweet and smooth" -%}
+{%- when 'c82db8de0d424921' -%}{%- assign wp_text = "expressive aromas, savoury flavours and sweet, smooth flavours. " -%}
+{%- when '2e4d321ea7c13a45' -%}{%- assign wp_text = "Fruity and aromatic, Dry and savoury, Sweet and smooth" -%}
+{%- when '3f4907582555362c' -%}{%- assign wp_text = "richness, savoury flavours and sweet, smooth flavours. " -%}
+{%- when 'b34b9958f9d76fcf' -%}{%- assign wp_text = "Rich and full-bodied, Dry and savoury, Sweet and smooth" -%}
+{%- when 'b8cc8232055812c5' -%}{%- assign wp_text = "Your choices around a lighter body and " -%}
+{%- when '23836e6df4c06af7' -%}{%- assign wp_text = "Light-bodied" -%}
+{%- when '80082c8c69491cc1' -%}{%- assign wp_text = "This full-bodied expression also offers a contrast to your light-bodied preference. " -%}
+{%- when '57ad67c465bd1e78' -%}{%- assign wp_text = "Your choices around a medium body and " -%}
+{%- when '6ac4a5201a596eec' -%}{%- assign wp_text = "Medium-bodied" -%}
+{%- when '3365003ba0666d00' -%}{%- assign wp_text = "Find three words of your own" -%}
+{%- when '1e7f649b58de51d3' -%}{%- assign wp_text = "If you choose to taste, focus on one small sample. " -%}
+{%- when '2eb41dcb038fa0f6' -%}{%- assign wp_text = "Smell it before tasting, then note one aroma, one texture and one impression of freshness. " -%}
+{%- when '3f0b2ebda1d495a8' -%}{%- assign wp_text = "Everyday words are enough. " -%}
+{%- when '8c42e3eb1bb6280b' -%}{%- assign wp_text = "Compare your notes with the label afterwards, rather than searching for a correct answer. " -%}
+{%- when '9419fa63e83fd0da' -%}{%- assign wp_text = "This full-bodied expression also offers a contrast to your medium-bodied preference. " -%}
+{%- when 'a1336a650bff1acc' -%}{%- assign wp_text = "This light-bodied expression also offers a contrast to your medium-bodied preference. " -%}
+{%- when '49a321c62bafc44b' -%}{%- assign wp_text = "Your choices around different body styles and " -%}
+{%- when 'f0e3de9ace9763cf' -%}{%- assign wp_text = "I enjoy different styles" -%}
+{%- when '9dce61286eb10473' -%}{%- assign wp_text = "Your choices around exploring wine body and " -%}
+{%- when '9fdc1d357f42b25e' -%}{%- assign wp_text = "I&#39;m not sure" -%}
+{%- when '4711dc901ae5b0d3' -%}{%- assign wp_text = "a little sweetness help shape the suggestions below, rather than fixing you into a single wine personality. " -%}
+{%- when '8f90d0264a285cd2' -%}{%- assign wp_text = "Slightly sweet / off-dry" -%}
+{%- when 'e24bd7f3d2cb2d12' -%}{%- assign wp_text = "Its dry finish offers a contrast to the sweetness you selected. " -%}
+{%- when 'fa1c3a3571a72423' -%}{%- assign wp_text = "a sweet finish help shape the suggestions below, rather than fixing you into a single wine personality. " -%}
+{%- when '01e7c30f7fec479d' -%}{%- assign wp_text = "Sweet" -%}
+{%- when '6dedbf6d86a36e71' -%}{%- assign wp_text = "A labelled sweet red blend" -%}
+{%- when 'c74c7a8775e15d78' -%}{%- assign wp_text = "Ripe berry flavours alongside actual residual sweetness." -%}
+{%- when 'ac71d2c890a49b41' -%}{%- assign wp_text = "Look for a sweet example to match your sweetness preference. " -%}
+{%- when '33bc20d66d2770a8' -%}{%- assign wp_text = "varying sweetness help shape the suggestions below, rather than fixing you into a single wine personality. " -%}
+{%- when 'a492244b25114f10' -%}{%- assign wp_text = "It depends on the wine" -%}
+{%- when 'f4fdbd0fe8a50cb6' -%}{%- assign wp_text = "exploring sweetness help shape the suggestions below, rather than fixing you into a single wine personality. " -%}
+{%- when '06eb27e0029a9198' -%}{%- assign wp_text = "You can explore these ideas through aromas, food and reading, without drinking or purchasing wine. " -%}
+{%- when 'c93d17f11f1c2774' -%}{%- assign wp_text = "Build an aroma vocabulary, without a glass" -%}
+{%- when '3a6c3029fdc88468' -%}{%- assign wp_text = "Place a piece of citrus peel, a few berries and a small cup of black tea on the table. " -%}
+{%- when '46f4b1546772c9f0' -%}{%- assign wp_text = "Smell each separately and write down one word for each aroma. " -%}
+{%- when '5b9543d2d0cea2cd' -%}{%- assign wp_text = "Compare your words with the suggested styles. " -%}
+{%- when '46dfa727ab776916' -%}{%- assign wp_text = "No alcohol or wine purchase is needed. " -%}
+{%- when 'bcec8cbadb6cd424' -%}{%- assign wp_text = "Wine styles to learn about" -%}
+{%- when '69a1c22014669fc8' -%}{%- assign wp_text = "Your preferred occasions can guide which styles feel useful to explore at your own pace. " -%}
+{%- when 'b864d45753cbed3b' -%}{%- assign wp_text = "Compare notes with a friend; different impressions are welcome. " -%}
+{%- when '5406b3937c590927' -%}{%- assign wp_text = "Save the comparison for a celebration you already have planned. " -%}
+{%- when '0d7f0adbc5f7040f' -%}{%- assign wp_text = "Use your notes to explain a style when choosing a gift. " -%}
+{%- when '1fdb067b6c1a0f1a' -%}{%- assign wp_text = "For your interest in cellaring, remember that ageing potential depends on the individual bottle and storage. " -%}
+{%- when '2356c969c5296155' -%}{%- assign wp_text = "Date your notes so you can compare them with a future tasting. " -%}
+{%- when 'c0fdef90b31b5db1' -%}{%- assign wp_text = "Keep a short note for your next discovery. " -%}
+{%- when '9cd595279295f648' -%}{%- assign wp_text = "Bold, Savoury &amp; Familiar" -%}
+{%- when '993692707e748590' -%}{%- assign wp_text = "Familiar styles can be a comfortable starting point, with small comparisons helping you notice differences. " -%}
+{%- when '069c8410a899eada' -%}{%- assign wp_text = "I usually stick with familiar favourites" -%}
+{%- when '5d8d49febfe240a1' -%}{%- assign wp_text = "Bold, Savoury &amp; Curious" -%}
+{%- when '6d2a3fad66fef96e' -%}{%- assign wp_text = "An occasional change of style can offer a gentle way to broaden your own reference points. " -%}
+{%- when 'f339abf04f59a449' -%}{%- assign wp_text = "I occasionally try something different" -%}
+{%- when 'f18d1514d66ffbda' -%}{%- assign wp_text = "Bold, Savoury &amp; Explorative" -%}
+{%- when '669078348e49e5f5' -%}{%- assign wp_text = "There is no need to have settled preferences; noticing what interests you is a useful beginning. " -%}
+{%- when '4aeb22b5f66e32cb' -%}{%- assign wp_text = "I&#39;m still learning what I enjoy" -%}
+{%- when '8ac54133952ad97d' -%}{%- assign wp_text = "One grape, more than one expression" -%}
+{%- when 'eb393ce1393cf293' -%}{%- assign wp_text = "A suggested journal topic: how Chardonnay became both still and sparkling wine in one vintage." -%}
+{%- when '12fe45deb0ab04c8' -%}{%- assign wp_text = "From grape to glass, one small batch at a time" -%}
+{%- when '31e2ccbde2cfdf25' -%}{%- assign wp_text = "A suggested journal topic: fermentation choices and the lessons of the 2025 sparkling Chardonnay." -%}
+{%- when 'd5403d028efc16a8' -%}{%- assign wp_text = "Why texture matters at the table" -%}
+{%- when '42c59f3b1b0825e0' -%}{%- assign wp_text = "A suggested journal topic: using the dry 2025 rosé as a starting point for thinking about food and texture." -%}
+{%- when '55c15b1af1ee8e39' -%}{%- assign wp_text = "Finding words for what you notice" -%}
+{%- when '9c6d380d0fca52a6' -%}{%- assign wp_text = "A suggested journal topic: comparing the described textures of the 2025 rosé and Chardonnay." -%}
+{%- when '360bafe75d04be6b' -%}{%- assign wp_text = "A vintage begins with a place" -%}
+{%- when '021b57a45875c7fa' -%}{%- assign wp_text = "A suggested journal topic: following the Mudgee and Riverland fruit recorded in the vintage archive." -%}
+{%- when 'e103fbf3ff33d5e1' -%}{%- assign wp_text = "It offers a starting point for your interest in freshness. " -%}
+{%- when '387d382466dcfccf' -%}{%- assign wp_text = "Dry Riesling" -%}
+{%- when '63592c68c0cf3483' -%}{%- assign wp_text = "Lime-like freshness and a mouth-watering finish." -%}
+{%- when 'bbf9ec682ef35d91' -%}{%- assign wp_text = "Light, dry Pinot Grigio" -%}
+{%- when '052017b3393f93ea' -%}{%- assign wp_text = "Pear-like aromas in a light, fresh frame." -%}
+{%- when '14f4c9725c60f002' -%}{%- assign wp_text = "Dry Sauvignon Blanc" -%}
+{%- when '936f09c76d9c5e25' -%}{%- assign wp_text = "Citrus-like acidity and herbaceous aromas." -%}
+{%- when '1c181d02fb8c05f9' -%}{%- assign wp_text = "Sweet pink Moscato" -%}
+{%- when '652ff493e93e518e' -%}{%- assign wp_text = "Rose-petal aromas and sweet red-fruit flavours." -%}
+{%- when '7f59056a741e1834' -%}{%- assign wp_text = "It offers a starting point for your interest in sweet, smooth flavours. " -%}
+{%- when '4a406fcaa692918f' -%}{%- assign wp_text = "Elegant &amp; Familiar" -%}
+{%- when '321de29e08a2a69e' -%}{%- assign wp_text = "Elegant &amp; Curious" -%}
+{%- when 'd415ec4c5087db87' -%}{%- assign wp_text = "Elegant &amp; Adventurous" -%}
+{%- when 'c07dea482b53b176' -%}{%- assign wp_text = "Elegant &amp; Explorative" -%}
+{%- when 'dfb907abb28908d5' -%}{%- assign wp_text = "Exploring &amp; Familiar" -%}
+{%- when 'd5fa1039cb907985' -%}{%- assign wp_text = "Exploring &amp; Curious" -%}
+{%- when '9386e28751dfab3d' -%}{%- assign wp_text = "Exploring &amp; Adventurous" -%}
+{%- when 'beddbb3c488fed1f' -%}{%- assign wp_text = "Exploring &amp; Explorative" -%}
+{%- when '2dc3ffbd5cd226c2' -%}{%- assign wp_text = "Bold &amp; Familiar" -%}
+{%- when '46d7c286be8d5798' -%}{%- assign wp_text = "Bold &amp; Curious" -%}
+{%- when '3d0ff8e55878236e' -%}{%- assign wp_text = "Bold &amp; Explorative" -%}
+{%- when '4c0b8a34ee183802' -%}{%- assign wp_text = "Discovering Your Wine Preferences" -%}
+{%- when 'be1705d5abef0fad' -%}{%- assign wp_text = "Fresh &amp; Familiar" -%}
+{%- when '3ec03cde0a22893b' -%}{%- assign wp_text = "Fresh &amp; Curious" -%}
+{%- when '4a75d9eab0c7dc9f' -%}{%- assign wp_text = "Fresh &amp; Adventurous" -%}
+{%- when '43aa8c273586b4e8' -%}{%- assign wp_text = "Fresh &amp; Explorative" -%}
+{%- when '1de7b83b95bc5e8c' -%}{%- assign wp_text = "Bold, Fresh &amp; Familiar" -%}
+{%- when '1a4c9a7c33cab72a' -%}{%- assign wp_text = "Bold, Fresh &amp; Curious" -%}
+{%- when '75812ed2593f74ad' -%}{%- assign wp_text = "Bold, Fresh &amp; Explorative" -%}
+{%- when '9ff3e1465e920e6b' -%}{%- assign wp_text = "This medium-bodied expression also offers a contrast to your light-bodied preference. " -%}
+{%- when '4bbb1f2974619d03' -%}{%- assign wp_text = "Elegant, Aromatic &amp; Familiar" -%}
+{%- when '5543e7b18d87f097' -%}{%- assign wp_text = "Elegant, Aromatic &amp; Curious" -%}
+{%- when '3984005904363b44' -%}{%- assign wp_text = "Elegant, Aromatic &amp; Adventurous" -%}
+{%- when 'a25eabd0cbbb47f8' -%}{%- assign wp_text = "Elegant, Aromatic &amp; Explorative" -%}
+{%- when '26fc1fdf05211266' -%}{%- assign wp_text = "Aromatic &amp; Familiar" -%}
+{%- when 'c53aa009ed0efa75' -%}{%- assign wp_text = "Aromatic &amp; Curious" -%}
+{%- when '73e03675860ed373' -%}{%- assign wp_text = "Aromatic &amp; Adventurous" -%}
+{%- when 'a1eff99a002a5d7e' -%}{%- assign wp_text = "Aromatic &amp; Explorative" -%}
+{%- when '2c6ae6d186688215' -%}{%- assign wp_text = "Bold, Aromatic &amp; Familiar" -%}
+{%- when '5cd7cf1ddc0218ce' -%}{%- assign wp_text = "Bold, Aromatic &amp; Curious" -%}
+{%- when '4d64ea432dadfb1c' -%}{%- assign wp_text = "Bold, Aromatic &amp; Explorative" -%}
+{%- when '02533681500e73e1' -%}{%- assign wp_text = "Fresh, Aromatic &amp; Familiar" -%}
+{%- when 'fe1742582513c167' -%}{%- assign wp_text = "Fresh, Aromatic &amp; Curious" -%}
+{%- when '65465c0abd30454e' -%}{%- assign wp_text = "Fresh, Aromatic &amp; Adventurous" -%}
+{%- when 'c2e73521bd70fc59' -%}{%- assign wp_text = "Fresh, Aromatic &amp; Explorative" -%}
+{%- when 'a67d7b90d4a8de55' -%}{%- assign wp_text = "Elegant, Savoury &amp; Familiar" -%}
+{%- when '9fcc812e4783cab0' -%}{%- assign wp_text = "Elegant, Savoury &amp; Curious" -%}
+{%- when 'd892a4a5d42a741d' -%}{%- assign wp_text = "Elegant, Savoury &amp; Adventurous" -%}
+{%- when '8dd5a52f14d48f7d' -%}{%- assign wp_text = "Elegant, Savoury &amp; Explorative" -%}
+{%- when '62bf62a90f90b999' -%}{%- assign wp_text = "Exploring, Savoury &amp; Familiar" -%}
+{%- when '8a2516fc6c92cbd6' -%}{%- assign wp_text = "Exploring, Savoury &amp; Curious" -%}
+{%- when 'e6be3a6785b976bc' -%}{%- assign wp_text = "Exploring, Savoury &amp; Adventurous" -%}
+{%- when '7e5382f85eb76fc1' -%}{%- assign wp_text = "Exploring, Savoury &amp; Explorative" -%}
+{%- when 'd0da9d4f2372adda' -%}{%- assign wp_text = "Fresh, Savoury &amp; Familiar" -%}
+{%- when '5c9d60a8184af19b' -%}{%- assign wp_text = "Fresh, Savoury &amp; Curious" -%}
+{%- when '7664f4e684ccaf34' -%}{%- assign wp_text = "Fresh, Savoury &amp; Adventurous" -%}
+{%- when '14cf9059181e207d' -%}{%- assign wp_text = "Fresh, Savoury &amp; Explorative" -%}
+{%- when 'cc76c46d601aee95' -%}{%- assign wp_text = "Aromatic, Savoury &amp; Familiar" -%}
+{%- when '7f4f8e158ef0e56f' -%}{%- assign wp_text = "Aromatic, Savoury &amp; Curious" -%}
+{%- when '20d7a9240e858b5b' -%}{%- assign wp_text = "Aromatic, Savoury &amp; Adventurous" -%}
+{%- when 'befa39479811b9f4' -%}{%- assign wp_text = "Aromatic, Savoury &amp; Explorative" -%}
+{%- when '3d0d6b738f59e97c' -%}{%- assign wp_text = "Soft &amp; Familiar" -%}
+{%- when '302c5c471d654fac' -%}{%- assign wp_text = "Soft &amp; Curious" -%}
+{%- when 'f624d2f819582351' -%}{%- assign wp_text = "Soft &amp; Adventurous" -%}
+{%- when '5eb71ddba4ac2d2d' -%}{%- assign wp_text = "Soft &amp; Explorative" -%}
+{%- when '068993c96249abd4' -%}{%- assign wp_text = "Soft, Savoury &amp; Familiar" -%}
+{%- when '059146ea816fb1bf' -%}{%- assign wp_text = "Soft, Savoury &amp; Curious" -%}
+{%- when 'c8b8249d3b58cfe1' -%}{%- assign wp_text = "Soft, Savoury &amp; Adventurous" -%}
+{%- when '7ae024c244e90d56' -%}{%- assign wp_text = "Soft, Savoury &amp; Explorative" -%}
+{%- when '000f956ddcb77e3d' -%}{%- assign wp_text = "Off-dry Riesling" -%}
+{%- when 'd5193c8b7b6fac88' -%}{%- assign wp_text = "A little sweetness balanced by citrus-like acidity." -%}
+{%- when 'aadd4cf84686bea4' -%}{%- assign wp_text = "Look for a off-dry example to match your sweetness preference. " -%}
+{%- when 'b726c5420412fa26' -%}{%- assign wp_text = "Sweet Moscato" -%}
+{%- when 'a9623c4fa2f12882' -%}{%- assign wp_text = "Floral and grape-like aromas with a sweet finish." -%}
+{%- when '3a7c94a006a92534' -%}{%- assign wp_text = "Demi-sec sparkling wine" -%}
+{%- when 'c7bc141539c933fb' -%}{%- assign wp_text = "Noticeable sweetness lifted by bubbles and acidity." -%}
+{%- endcase -%}
+{%- case wp_fields[1] -%}
+{%- when 'title' -%}{%- assign wp_title = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary0' -%}{%- assign wp_summary0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary1' -%}{%- assign wp_summary1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary2' -%}{%- assign wp_summary2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary3' -%}{%- assign wp_summary3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary4' -%}{%- assign wp_summary4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary5' -%}{%- assign wp_summary5 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary6' -%}{%- assign wp_summary6 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'summary7' -%}{%- assign wp_summary7 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'preference0' -%}{%- assign wp_preference0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'preference1' -%}{%- assign wp_preference1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'preference2' -%}{%- assign wp_preference2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'preference3' -%}{%- assign wp_preference3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'preference4' -%}{%- assign wp_preference4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exerciseTitle' -%}{%- assign wp_exerciseTitle = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise0' -%}{%- assign wp_exercise0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise1' -%}{%- assign wp_exercise1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise2' -%}{%- assign wp_exercise2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise3' -%}{%- assign wp_exercise3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise4' -%}{%- assign wp_exercise4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise5' -%}{%- assign wp_exercise5 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise6' -%}{%- assign wp_exercise6 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'exercise7' -%}{%- assign wp_exercise7 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'journalTitle' -%}{%- assign wp_journalTitle = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'journalDetail' -%}{%- assign wp_journalDetail = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'styleHeading' -%}{%- assign wp_styleHeading = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'style0' -%}{%- assign wp_style0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'sensory0' -%}{%- assign wp_sensory0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason0_0' -%}{%- assign wp_reason0_0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason0_1' -%}{%- assign wp_reason0_1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason0_2' -%}{%- assign wp_reason0_2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason0_3' -%}{%- assign wp_reason0_3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason0_4' -%}{%- assign wp_reason0_4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'style1' -%}{%- assign wp_style1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'sensory1' -%}{%- assign wp_sensory1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason1_0' -%}{%- assign wp_reason1_0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason1_1' -%}{%- assign wp_reason1_1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason1_2' -%}{%- assign wp_reason1_2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason1_3' -%}{%- assign wp_reason1_3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason1_4' -%}{%- assign wp_reason1_4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'style2' -%}{%- assign wp_style2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'sensory2' -%}{%- assign wp_sensory2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason2_0' -%}{%- assign wp_reason2_0 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason2_1' -%}{%- assign wp_reason2_1 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason2_2' -%}{%- assign wp_reason2_2 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason2_3' -%}{%- assign wp_reason2_3 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- when 'reason2_4' -%}{%- assign wp_reason2_4 = wp_text -%}{%- if wp_text != blank -%}{%- assign wp_resolved = wp_resolved | plus: 1 -%}{%- endif -%}
+{%- endcase -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your Chateau Follent Wine Profile</title></head><body style="margin:0;background:#f2f0ea;font-family:Arial,Helvetica,sans-serif;color:#34343a"><table role="presentation" width="100%" style="background:#f2f0ea"><tr><td align="center" style="padding:16px 8px"><table role="presentation" width="100%" style="max-width:600px;background:#fcfbf8;border-collapse:collapse"><tr><td style="padding:32px 24px;text-align:center;border-bottom:1px solid #d2cdc4"><p style="font:400 26px/1.2 Georgia,serif;letter-spacing:3px;margin:0">CHATEAU<br>FOLLENT</p></td></tr><tr><td style="padding:24px">{% if wp_resolved == wp_expected and wp_expected > 0 and wp_title != blank and wp_style0 != blank and wp_style1 != blank and wp_style2 != blank %}<p style="font-size:16px;line-height:1.7;margin:0 0 18px">Dear {{ customer.first_name | default: "wine explorer" | escape }},</p><h1 style="font:400 32px/1.3 Georgia,serif">{{ wp_title }}</h1><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_summary0 }}{{ wp_summary1 }}{{ wp_summary2 }}{{ wp_summary3 }}{{ wp_summary4 }}{{ wp_summary5 }}{{ wp_summary6 }}{{ wp_summary7 }}</p><h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">Preferences at a glance</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Wine categories:</strong> {{ wp_preference0 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Flavour characteristics:</strong> {{ wp_preference1 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Wine body:</strong> {{ wp_preference2 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Sweetness:</strong> {{ wp_preference3 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>New styles:</strong> {{ wp_preference4 }}</p><h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">{{ wp_styleHeading }}</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px">Educational suggestions, not wines offered for sale by Chateau Follent. Styles vary by producer, region and vintage.</p><h3 style="font:400 21px/1.4 Georgia,serif;color:#4a002e">1. {{ wp_style0 }}</h3><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_reason0_0 }}{{ wp_reason0_1 }}{{ wp_reason0_2 }}{{ wp_reason0_3 }}{{ wp_reason0_4 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Look for:</strong> {{ wp_sensory0 }}</p><h3 style="font:400 21px/1.4 Georgia,serif;color:#4a002e">2. {{ wp_style1 }}</h3><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_reason1_0 }}{{ wp_reason1_1 }}{{ wp_reason1_2 }}{{ wp_reason1_3 }}{{ wp_reason1_4 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Look for:</strong> {{ wp_sensory1 }}</p><h3 style="font:400 21px/1.4 Georgia,serif;color:#4a002e">3. {{ wp_style2 }}</h3><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_reason2_0 }}{{ wp_reason2_1 }}{{ wp_reason2_2 }}{{ wp_reason2_3 }}{{ wp_reason2_4 }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><strong>Look for:</strong> {{ wp_sensory2 }}</p><h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">{{ wp_exerciseTitle }}</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_exercise0 }}{{ wp_exercise1 }}{{ wp_exercise2 }}{{ wp_exercise3 }}{{ wp_exercise4 }}{{ wp_exercise5 }}{{ wp_exercise6 }}{{ wp_exercise7 }}</p><h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">From the winery: {{ wp_journalTitle }}</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px">{{ wp_journalDetail }}</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px"><a style="color:#4a002e" href="{{ shop.url }}">Explore Chateau Follent</a></p><p style="font-size:16px;line-height:1.7;margin:0 0 18px">This is a suggested topic, rather than a newly published journal article.</p><h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">A place in the beginning</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px">Chateau Follent is a small Australian wine and mead project led by Lord James Follent. We are learning, refining and sharing each vintage on the journey towards a vineyard and winery. Thank you for bringing your curiosity to its next chapter.</p><p style="font-size:16px;line-height:1.7;margin:0 0 18px">With warm regards,<br>The Chateau Follent Team</p>{% else %}<h2 style="font:400 24px/1.4 Georgia,serif;color:#4a002e;margin:28px 0 14px">Your Wine Profile</h2><p style="font-size:16px;line-height:1.7;margin:0 0 18px">Your personalised profile could not be loaded for this message. Please return to the quiz to view your results.</p><a href="{{ shop.url }}/pages/wine-profile">Open the Wine Profile</a>{% endif %}</td></tr><tr><td style="padding:24px;background:#0a0a0c;color:#f2f0ea;font-size:13px;line-height:1.7">For adults aged 18 and over. A reflection of your stated preferences, not a measurement of tasting ability.<br><a style="color:#f2f0ea" href="{{ shop.url }}">Chateau Follent</a> · <a style="color:#f2f0ea" href="{{ shop.url }}/policies/privacy-policy">Privacy Policy</a><br><a style="color:#f2f0ea" href="{{ unsubscribe_url }}">Unsubscribe</a></td></tr></table></td></tr></table>{{ open_tracking_block }}</body></html>

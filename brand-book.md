@@ -2,8 +2,8 @@
 
 Canonical brand source
 
-Version: 1.0
-Date: 2026-05-23
+Version: 1.1
+Date: 2026-10-20
 Steward: Lord James Follent
 
 ## 1. Purpose and Source Authority
@@ -16,9 +16,9 @@ This brand book is the canonical source for the Chateau Follent identity system.
 
 ### Brand Name
 
-The default brand name is Chateau Follent.
+The brand name is Chateau Follent.
 
-Use Chateau Follent for URLs, page titles, product names, forms, metadata, labels, and operational contexts. The accented French form may be used selectively for ceremonial or editorial moments only when the publishing system supports it cleanly and the text will not corrupt, substitute, or display malformed characters.
+Use Chateau Follent consistently for URLs, page titles, product names, forms, metadata, labels, operational contexts, and ceremonial or editorial copy. Spell Chateau without a circumflex accent.
 
 ### Founder and Steward
 

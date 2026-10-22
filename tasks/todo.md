@@ -1,5 +1,47 @@
 # Task List
 
+## Wine Profile Prototype
+
+- [x] Build the direct-link, mobile-first Wine Profile for Lord James Follent with adult screening, seven questions, deterministic recommendations, separate consent and a responsive mock email.
+- [x] Document the CRM schema and future Shopify/transactional delivery boundary without adding live collection, analytics or payments.
+- [x] Add dependency-free tests for age, selection rules, varied profiles, consent, attribution, safe rendering and truthful submission states.
+- [x] Walk through mobile and desktop flows, changed-answer results, keyboard controls, independent consent, email previews and existing-page smoke checks.
+
+## Wine Profile Shopify Discovery
+
+- [x] Implement the Stage 1 quiz as a generated Shopify section and page template with complete on-page results and no contact capture or transport.
+- [x] Generate a full individual-results Messaging template using versioned content/answer/recommendation tags and verify it with a real local Liquid renderer.
+- [x] Validate 10,000 varied tag projections, contrasting rendered reports, escaped personal text, incomplete-data fallback and customer tags beyond the first 50.
+- [x] Duplicate Story launch into unpublished Wine Profile development (`188760850606`), install section/template/schema locale keys and create hidden Wine Profile page (`164315136174`) outside navigation.
+- [x] Verify the seven-question quiz, required answers, full red results, edit retention, changed mead recommendations and mobile results inside the draft Shopify theme.
+- [x] Verify actual-theme restart/clearing, underage rejection, keyboard entry/selection, section removal/restoration, white/exploratory parity and the non-drinking exercise.
+- [ ] Complete manual actual-theme print-layout review; Chrome's print preview is unavailable to browser automation.
+- [x] Save production Messaging template (`1887861`) and verify full red/white rendering in separate synthetic proof template (`1887895`).
+- [x] Verify contrasting red/white emails received in the owner's Gmail inbox against all 20 expected fields per profile; record source hashes and screenshots without enabling sending.
+- [x] Implement/test shared signed-proxy authentication, CSRF, strict profile validation, safe tag/metafield persistence, request coordination and answer-only login handoff.
+- [x] Prepare the closed Cloudflare Worker bundle, customer-scoped Durable Object wrapper and token refresh provider; pass actual local runtime smoke and Wrangler deployment dry run.
+- [x] Wire optional email controls, answer-only return, repeated adult screening and unchecked native signup in a separate disabled Stage 2 artifact. Verify synthetic browser states, mobile layout and late-response cleanup; leave the installed Stage 1 unchanged.
+- [x] Build read-only request review protected by signed admin ID tokens and a server-side reviewer allowlist; verify filtering, isolation, native Cloudflare RPC and synthetic browser failure paths. Default review access remains closed.
+- [x] Validate the actual backend GraphQL operations against Shopify 2026-10 and prepare inspected, schema-validated customer metafield definitions without executing store mutations. Record deletion/retention boundaries and acceptance checks in the integration data-lifecycle checklist.
+- [ ] Configure and verify actual embedded Shopify operator authentication for the intended reviewer; implement profile deletion/retention handling before real customer collection.
+- [ ] Verify real Shopify sign-in, native signup/CAPTCHA, confirmation and subscriber-only saving through the deployed integration before enabling the Stage 2 section.
+- [ ] Provision the backend/app after Lord James Follent handles scoped Wrangler authorization and instructs deployment to proceed. Deployment deferred at his request on 21 October 2026. Both dashboards are accessible; no app, Worker, credential or permission grant has been created.
+- [ ] Resolve the Basic-plan restriction on custom-app Flow tasks. Proposed built-in tag trigger awaits Lord James Follent's choice; do not substitute silently or upgrade the plan.
+- [ ] After received proofs pass, implement authenticated app-proxy/Worker customer saving, explicit signup and Flow automation; keep sending disabled until integration tests pass.
+
+- [x] Inspect the existing Shopify store read-only and record its Basic plan, selected/draft themes, private access, installed apps, domain connection and authenticated Shopify sender in the implementation plan.
+  - Owner: Lord James Follent
+- [x] Confirm the underlying theme/version and actual Messaging test-delivery capability using [the Shopify implementation plan](../docs/wine-profile-shopify-plan.md).
+  - Owner: Lord James Follent
+  - Priority: High
+  - Horizon 4.3.0 and contrasting received Messaging test emails are confirmed. Real customer-tag mapping and subscriber-only automation remain unverified.
+- [x] Choose the storefront integration and delivery provider: a Shopify page section followed by Shopify Messaging, with Flow and a custom authenticated integration after the email proof.
+  - Owner: Lord James Follent; implementation owner to be assigned
+  - Priority: High
+- [x] Set first-release boundaries: Stage 1 shows results only; Stage 2 saves/email results only for signed-in confirmed marketing subscribers. Retention and integration failure handling remain implementation requirements after the proof.
+  - Owner: Lord James Follent
+  - Priority: Medium
+
 ## Docker Compose Tunnel Integration
 
 - [x] Add `cloudflared` service to `docker-compose.yml` with the specified image, command, volume mount, dependency on `web`, and `unless-stopped` restart policy so the tunnel starts with the stack.

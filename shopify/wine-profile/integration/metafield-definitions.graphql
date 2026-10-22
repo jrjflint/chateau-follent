@@ -1,0 +1,40 @@
+# Owner: Lord James Follent. Provisioning only; not executed by the Worker.
+# First inspect existing definitions. Do not replace conflicting definitions.
+query WineProfileDefinitions {
+  metafieldDefinitions(first: 10, ownerType: CUSTOMER, namespace: "chateau_wine_profile") {
+    nodes {
+      key
+      type { name }
+      access { storefront customerAccount }
+    }
+  }
+}
+
+# Run only after app installation and the existing-definition check.
+# Each alias has its own userErrors; success is not atomic across aliases.
+mutation CreateWineProfileDefinitions {
+  snapshot: metafieldDefinitionCreate(definition: {
+    name: "Wine Profile snapshot"
+    description: "Versioned quiz answers and regenerated results. No name, email or date of birth."
+    namespace: "chateau_wine_profile"
+    key: "snapshot"
+    type: "json"
+    ownerType: CUSTOMER
+    access: { storefront: NONE, customerAccount: NONE }
+  }) {
+    createdDefinition { id key }
+    userErrors { field message code }
+  }
+  request: metafieldDefinitionCreate(definition: {
+    name: "Wine Profile email request"
+    description: "Submission reference and processing status shared with Shopify Flow. Does not establish email delivery."
+    namespace: "chateau_wine_profile"
+    key: "request"
+    type: "json"
+    ownerType: CUSTOMER
+    access: { storefront: NONE, customerAccount: NONE }
+  }) {
+    createdDefinition { id key }
+    userErrors { field message code }
+  }
+}

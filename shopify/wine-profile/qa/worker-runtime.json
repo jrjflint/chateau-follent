@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-21T20:09:01.850Z",
+  "runtime": "Miniflare 4.20260730.0 / workerd",
+  "compatibility_date": "2026-07-30",
+  "bundle_sha256": "16721032af088c1bdba7fd5c9ee91a5ddf26578eb828b1481b9c810a9b52a8b2",
+  "passed": true,
+  "checks": [
+    "closed landing and health",
+    "unsigned requests rejected",
+    "environment flag cannot enable an unconfigured delivery adapter",
+    "real SQLite-backed Durable Object and customer-name isolation",
+    "admin-token authentication, reviewer allowlist and read-only Durable Object RPC"
+  ],
+  "outbound_requests": 0,
+  "deployed": false
+}

@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-10-22",
+  "bundle_sha256": "16721032af088c1bdba7fd5c9ee91a5ddf26578eb828b1481b9c810a9b52a8b2",
+  "wrangler_version": "4.151.3",
+  "dry_run_passed": true,
+  "dry_run_bundle_matches_runtime_test": true,
+  "wrangler_authenticated": false,
+  "latest_workers_types_version": "5.20261021.1",
+  "binding_types_generated_locally": true,
+  "reviewer_allowlist_configured": false,
+  "live_operator_authentication_verified": false,
+  "shopify_dev_dashboard_available": true,
+  "shopify_app_created": false,
+  "cloudflare_dashboard_available": true,
+  "worker_deployed": false,
+  "email_requests_enabled": false,
+  "deployment_deferred_by_owner": true,
+  "authorization_owner": "Lord James Follent",
+  "authorization_note": "Automatic approval review rejected a login-scopes command as a possible credential/permission change. No authorization flow was opened. On 2026-10-21, Lord James Follent deferred deployment and chose to handle authorization himself."
+}

@@ -392,7 +392,7 @@ const html = `<!doctype html>
       <p class="wordmark">CHATEAU<br>FOLLENT</p>
       <p class="subtitle">Canonical Brand Source</p>
       <h1>Brand Book</h1>
-      <p class="cover-meta">Version 1.0 | 2026-05-23 | Steward: Lord James Follent</p>
+      <p class="cover-meta">Version 1.1 | 2026-10-20 | Steward: Lord James Follent</p>
     </section>
     <article>
       ${body}

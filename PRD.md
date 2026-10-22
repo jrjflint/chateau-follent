@@ -140,3 +140,9 @@ Lord James Follent needs a credible, maintainable web presence that can be updat
 - `third-party-scripts.md` — approved external script register and compliance notes.
 - `marketing-links.md` — canonical QR campaign links and UTM conventions.
 - `SECURITY.md` — vulnerability disclosure and security response process.
+
+## 21. Wine Profile Shopify delivery phase
+
+Lord James Follent has authorised a separate Shopify delivery phase. Stage 1 ports the existing quiz to a dedicated page in an unpublished copy of the Story launch theme, with on-page results and no collection or sending. Stage 2 uses Shopify Messaging for complete personalised reports to signed-in, confirmed marketing subscribers, supported by Shopify Flow and a custom app with a Cloudflare Worker backend.
+
+The local stack uses Node 24 and dependency-free generators for the Shopify section and Messaging Liquid template. A temporary LiquidJS QA installation may validate the compiled template without introducing runtime dependencies into the static site. Preserve the existing static prototype. Received contrasting Messaging emails are a release gate before completing or enabling the authenticated sending integration. Theme publication, removing storefront privacy and domain migration are outside this phase.

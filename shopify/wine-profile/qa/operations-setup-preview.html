@@ -1,0 +1,93 @@
+<!doctype html><html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Wine Profile request review</title>
+<meta name="shopify-api-key" content="synthetic-client-id"><meta name="shopify-disabled-features" content="fetch"><script>
+window.shopify = {idToken:async()=> 'synthetic-preview-token'};
+window.fetch = async(path,options)=>{
+  if(!['/operations/requests','/operations/identity'].includes(path)||options.method!=='POST')throw Error('Only synthetic review is available');
+  if(path==='/operations/identity')return Response.json({userId:'9001'});
+  const scenario=document.querySelector('[data-review-scenario]').value;
+  if(scenario==='unavailable')throw Error('Synthetic service failure');
+  if(scenario==='denied')return Response.json({error:'review_access_denied'},{status:403});
+  const customerId=JSON.parse(options.body).customerId;
+  const submissionId='b071de22-67bd-40fe-8dbb-abf906f2c122';
+  return Response.json({customerId,activeSubmissionId:scenario==='empty'?null:submissionId,records:scenario==='empty'?[]:[{submissionId,status:'review',code:'dispatch_outcome_unknown',updatedAt:'2026-10-22T00:00:00.000Z'}]});
+};
+</script>
+<style nonce="PJ43zLhF+q9h6WsElaFVv7uW">body{margin:0;padding:2rem;background:#f7f7f5;color:#21211f;font:16px/1.5 Arial,sans-serif}main{max-width:75rem;margin:auto}form{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-block:2rem}input,button{font:inherit;padding:.6rem}button{background:#4a002e;color:white;border:0;border-radius:.25rem}button:disabled{opacity:.6}th,td{text-align:left;padding:.7rem;border-bottom:1px solid #ccc;vertical-align:top;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;min-width:40rem}.history{overflow:auto}h1{font-size:1.8rem}h2{font-size:1.2rem;margin-top:2rem}[role=status]:focus{outline:2px solid #4a002e;outline-offset:.3rem}</style>
+</head><body><aside style="padding:1rem;background:#fff4ca;margin-bottom:2rem"><strong>Local operations simulation — synthetic data only</strong><p>No Shopify sign-in, customer lookup, email or profile changes occur here.</p><label>Scenario <select data-review-scenario><option value="review">Request held for review</option><option value="empty">No stored requests</option><option value="denied">Reviewer access denied</option><option value="unavailable">Service unavailable</option></select></label></aside><main><h1>Wine Profile integration</h1><p>Email requests are disabled while setup and verification are completed.</p><p>Request review is not configured yet.</p><section><h2>Reviewer setup</h2><p>Use your verified Shopify user ID when asking the owner to configure review access. Showing your ID does not grant access to customer request history.</p><button type="button" data-review-identity>Show my Shopify user ID</button><p role="status" tabindex="-1" data-review-identity-status></p></section></main>
+<script nonce="PJ43zLhF+q9h6WsElaFVv7uW">(function mountRequestReview({ document, getToken, fetcher = fetch }) {
+  const form = document.querySelector('[data-review-form]');
+  const status = document.querySelector('[data-review-status]');
+  const result = document.querySelector('[data-review-result]');
+  const labels = { needs_subscription: 'Waiting for subscription', preparing: 'Preparing', dispatching: 'Dispatching', accepted: 'Email requested',
+    processed: 'Automation processed; delivery unconfirmed', skipped: 'Skipped', failed: 'Preparation failed', review: 'Review required', unknown: 'Unknown' };
+  const errors = { review_not_configured: 'Review access has not been configured.', invalid_admin_token: 'Open this app in Shopify admin and try again.',
+    review_access_denied: 'Your Shopify user is not on the request-review allowlist.', invalid_customer: 'Enter a numeric Shopify customer ID.' };
+  async function call(path, body) {
+    let tokenTimeout;
+    try {
+      const token = await Promise.race([getToken(), new Promise((resolve, reject) => {
+        tokenTimeout = setTimeout(() => reject(new Error('invalid_admin_token')), 10000);
+      })]);
+      clearTimeout(tokenTimeout);
+      if (typeof token !== 'string' || !token) throw new Error('invalid_admin_token');
+      const response = await fetcher(path, { method: 'POST', credentials: 'omit', redirect: 'error', cache: 'no-store',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        ...(body === undefined ? {} : { body: JSON.stringify(body) }), signal: AbortSignal.timeout(20000) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data?.error);
+      return data;
+    } finally { clearTimeout(tokenTimeout); }
+  }
+  const identityButton = document.querySelector('[data-review-identity]');
+  const identityStatus = document.querySelector('[data-review-identity-status]');
+  identityButton?.addEventListener('click', async () => {
+    if (identityButton.disabled) return;
+    identityButton.disabled = true; identityStatus.textContent = 'Verifying your Shopify identity…';
+    try {
+      const data = await call('/operations/identity');
+      if (typeof data.userId !== 'string' || !/^[1-9]\d{0,19}$/.test(data.userId)) throw new Error('invalid_response');
+      identityStatus.textContent = 'Your verified Shopify user ID is ' + data.userId + '. The owner can use this ID when configuring reviewer access.';
+    } catch (error) { identityStatus.textContent = errors[error.message] ?? 'Your Shopify identity is unavailable. Open this app in Shopify admin and try again.'; }
+    finally { identityButton.disabled = false; identityStatus.focus({ preventScroll: true }); }
+  });
+  if (!form || !status || !result) return;
+  let pending = false;
+  form.elements.customer_id.addEventListener('input', () => {
+    result.replaceChildren(); status.textContent = 'Look up the entered customer ID to load request history.';
+  });
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (pending) return;
+    const customerId = form.elements.customer_id.value.trim();
+    result.replaceChildren();
+    if (!/^[1-9]\d{0,19}$/.test(customerId)) { status.textContent = errors.invalid_customer; return; }
+    pending = true; form.querySelector('button').disabled = true; form.elements.customer_id.disabled = true; status.textContent = 'Loading stored request status…';
+    try {
+      const data = await call('/operations/requests', { customerId });
+      if (data.customerId !== customerId || !Array.isArray(data.records)) throw new Error('invalid_response');
+      status.textContent = data.records.length ? 'Stored request history loaded. No delivery confirmation is implied.' : 'No stored requests for this customer.';
+      const caption = document.createElement('p'); caption.textContent = 'Customer ID: ' + customerId; result.append(caption);
+      if (data.records.length) {
+        const table = document.createElement('table');
+        const head = document.createElement('thead'); const header = document.createElement('tr');
+        for (const title of ['Request reference', 'Stored status', 'Error code', 'Updated (UTC)', 'Profile lock']) {
+          const cell = document.createElement('th'); cell.scope = 'col'; cell.textContent = title; header.append(cell);
+        }
+        head.append(header); table.append(head);
+        const body = document.createElement('tbody');
+        for (const record of data.records.slice(0, 50)) {
+          const row = document.createElement('tr');
+          for (const value of [record.submissionId ?? 'Unavailable', labels[record.status] ?? labels.unknown, record.code ?? '—', record.updatedAt ?? 'Unavailable',
+            record.submissionId && record.submissionId === data.activeSubmissionId ? 'Locked' : '—']) {
+            const cell = document.createElement('td'); cell.textContent = value; row.append(cell);
+          }
+          body.append(row);
+        }
+        table.append(body); result.append(table);
+      }
+    } catch (error) { status.textContent = errors[error.message] ?? 'Request status is unavailable. Try the lookup again; no email was resent.'; }
+    finally { pending = false; form.querySelector('button').disabled = false; form.elements.customer_id.disabled = false; status.focus({ preventScroll: true }); }
+  });
+})({document,getToken:()=>shopify.idToken()});</script>
+</body></html>

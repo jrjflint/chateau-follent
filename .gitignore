@@ -4,3 +4,7 @@ cloudflared/.env
 *.pem
 *.crt
 *.log
+.wrangler/
+shopify/wine-profile/integration/.dev.vars*
+shopify/wine-profile/integration/.env*
+shopify/wine-profile/integration/.wrangler/

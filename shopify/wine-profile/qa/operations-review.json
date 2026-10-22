@@ -1,0 +1,29 @@
+{
+  "owner": "Lord James Follent",
+  "checked_on": "2026-10-22",
+  "bundle_sha256": "16721032af088c1bdba7fd5c9ee91a5ddf26578eb828b1481b9c810a9b52a8b2",
+  "preview_sha256": "45a8c2066dc23214f3933a7df86802dad29f3951992f1b2d40813bcd5e43768d",
+  "setup_preview_sha256": "f88c6cf42c8eb4584849cb69d177d3a86be9333b2723f7c7eafafb43e53c793d",
+  "screenshot": "wine-profile-operations-review.png",
+  "screenshot_sha256": "838ff0070004720c4a4d306a86dda934fa8f393b6e5ace9a933b5c73fa33328a",
+  "local_tests_passed": 68,
+  "operator_tests_passed": 7,
+  "native_runtime_review_rpc_passed": true,
+  "runtime_outbound_requests": 0,
+  "dry_run_bundle_matches_runtime_test": true,
+  "latest_workers_types_version": "5.20261021.1",
+  "binding_types_generated_locally": true,
+  "browser_checks": [
+    "Synthetic review history displays its submission reference, error code and profile lock",
+    "Empty, denied and unavailable lookups clear prior request rows",
+    "Keyboard Enter submits a lookup",
+    "Editing the customer ID clears the previous customer's history",
+    "Setup with request access closed offers only verified self-ID lookup and no customer lookup form",
+    "No resend, consent-change, deletion or unlock control is present"
+  ],
+  "reviewer_allowlist_configured": false,
+  "live_operator_authentication_verified": false,
+  "worker_deployed": false,
+  "email_requests_enabled": false,
+  "limitations": "Browser data and identity responses are synthetic. Native runtime testing covers authenticated HTTP through the actual review RPC with empty history; nonempty histories and direct cross-customer review calls are covered in unit tests. Real embedded Shopify authentication and reviewer permissions remain release checks."
+}
