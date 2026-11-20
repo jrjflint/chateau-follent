@@ -1087,3 +1087,24 @@ body.podcast-page .footer-nav-links a:focus-visible {
     width: 100%;
   }
 }
+
+.archive-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  position: relative;
+  z-index: 1;
+  padding: 0.65rem 1rem;
+  background: #262018;
+  color: #fff8e8;
+  font: 0.9rem/1.5 system-ui, sans-serif;
+  text-align: center;
+}
+
+.archive-banner a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
